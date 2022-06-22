@@ -1,3 +1,4 @@
+import { Box, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -14,8 +15,11 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <h1>Home</h1>
+      <Box bg="url('/images/indexbg.jpeg')" w="100vw" h="100vh" zIndex={1}>
+        <Text as="h1" color="aquamarine" zIndex={2}>
+          Home
+        </Text>
+      </Box>
     </>
   );
 };
