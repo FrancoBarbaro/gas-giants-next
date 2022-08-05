@@ -16,7 +16,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box bg="url('/images/indexbg.jpeg')" w="100vw" h="100vh" zIndex={1}>
-        <Text as="h1" color="aquamarine" zIndex={2}>
+        <Text
+          as="h1"
+          color="aquamarine"
+          zIndex={2}
+          fontWeight="semibold"
+          fontSize={24}
+        >
           Home
         </Text>
       </Box>
