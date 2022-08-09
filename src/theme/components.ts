@@ -44,13 +44,13 @@ const runeStyle = {
 const runeHoverStyle = {
 	textDecoration: 'none',
 	color: colors.neonPink,
-	textShadow: `0 0 0.3em ${colors.runeShadowOnHover}, 0 0 0.9em ${colors.neonPink}`,
+	textShadow: `0 0 0.4em ${colors.runeShadowOnHover}, 0 0 0.9em ${colors.neonPink}`,
 	'-webkit-text-stroke': `1px ${colors.runeOutlineOnHover}`,
 };
 
 const runeActiveStyle = {
 	color: colors.neonRed,
-	textShadow: `0 0 0.3em ${colors.runeShadowOnClick}, 0 0 0.9em ${colors.neonRed}`,
+	textShadow: `0 0 0.5em ${colors.runeShadowOnClick}, 0 0 0.9em ${colors.neonRed}`,
 	'-webkit-text-stroke': `1px ${colors.runeOutlineOnClick}`,
 };
 
