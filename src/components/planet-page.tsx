@@ -1,4 +1,4 @@
-import { Skeleton, Stack, Text } from '@chakra-ui/react';
+import { Heading, Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { ContentWrapper } from '~/components/layout/content-wrapper';
 
@@ -18,8 +18,26 @@ const SkeletonLayout: FC = () => (
 export const PlanetPage: FC<PlanetPageProps> = ({ bg, planet }) => (
 	<ContentWrapper bg={bg}>
 		{/* TODO: need a ternary here to conditionally display the skeleton... do this in the ContentWrapper or here? */}
-		<Text as="h3" color="pink">
-			Content
-		</Text>
+		<VStack mr={10}>
+			<section>
+				<Heading as="h1" textTransform="capitalize">
+					About {planet}:
+				</Heading>
+				{/* <Text>{planetDescription}</Text> */}
+			</section>
+			<section>
+				<Heading>Symbol:</Heading>
+				{/* <Text>{symbolDescription}</Text> */}
+			</section>
+		</VStack>
+		<VStack as="section" ml={10}>
+			<Heading>Fun Facts:</Heading>
+			<UnorderedList>
+				{/* {facts.map((fact, index) => (
+						<ListItem key={index}>{fact}</ListItem>
+					))} */}
+			</UnorderedList>
+			{/* <Image src={imageUrl} alt={imageAltText} /> */}
+		</VStack>
 	</ContentWrapper>
 );
