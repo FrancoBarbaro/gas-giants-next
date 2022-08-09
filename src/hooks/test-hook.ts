@@ -3,13 +3,15 @@ import useSWR from 'swr';
 
 export const useFetchSomething = (someParam: any) => {
 	// TODO: have this request to an endpoint in the api folder which requests to firebase for the info
-	// TODO: firebase might return an object something like:
+
+	// TODO: move this to common/types
 	type firebaseReturnObj = {
-		facts: string[];
-		image: string;
-		imageDesc: string;
-		symbol: string;
+		planetDesc: string;
 		symbolDesc: string;
+		funFacts: string[];
+		imageUrl: string;
+		imageAltText: string;
+		imageDesc: string;
 	};
 	// use zod to validate this object
 
