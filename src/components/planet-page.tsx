@@ -33,7 +33,7 @@ export const PlanetPage: FC<PlanetPageProps> = ({ bg, planet }) => (
 		<VStack as="section" ml={10}>
 			<Heading>Fun Facts:</Heading>
 			<UnorderedList>
-				{/* {facts.map((fact, index) => (
+				{/* {funFacts.map((fact, index) => (
 						<ListItem key={index}>{fact}</ListItem>
 					))} */}
 			</UnorderedList>
