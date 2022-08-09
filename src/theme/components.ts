@@ -26,7 +26,6 @@ export const Button = {
 			...buttonStyle,
 			_hover: activeButtonStyle,
 			_focus: activeButtonStyle,
-			// _disabled: { ...buttonStyle, cursor: 'pointer', _hover: buttonStyle },
 		},
 	},
 };
