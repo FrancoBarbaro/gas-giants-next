@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Center, Flex } from '@chakra-ui/react';
 import type { FC, ReactNode } from 'react';
 import { colors } from '~/common/colors';
 import { Footer } from '~/components/layout/footer';
@@ -17,7 +17,9 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ bg, children }) => (
 		<NavBar />
 		<Flex justifyContent="space-between">
 			<LeftRunes />
-			<Box as="main">{children}</Box>
+			<Center as="main" w="75%" maxW="60rem">
+				{children}
+			</Center>
 			<RightRunes />
 		</Flex>
 		<Footer />
