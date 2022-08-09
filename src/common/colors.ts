@@ -4,4 +4,5 @@ export const colors = {
 	lightGray: '#b4b4b4',
 	spaceGray: '#343d52',
 	darkGray: '#242a38',
+	spaceBlue: '#003b59',
 };
