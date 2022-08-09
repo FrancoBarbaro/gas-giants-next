@@ -1,19 +1,10 @@
 import useSWR from 'swr';
-// import { MobileDeviceData } from "~/common/types/device";
+import { FirebaseReturnType } from '~/common/types';
 
 export const useFetchSomething = (someParam: any) => {
 	// TODO: have this request to an endpoint in the api folder which requests to firebase for the info
 
-	// TODO: move this to common/types
-	type firebaseReturnObj = {
-		planetDesc: string;
-		symbolDesc: string;
-		funFacts: string[];
-		imageUrl: string;
-		imageAltText: string;
-		imageDesc: string;
-	};
-	// use zod to validate this object
+	// use zod to validate the object firebase returns
 
 	// const { data, error } = useSWR<MobileDeviceData[]>(
 	//   orgId ? `/api/organization/${orgId}/devices` : null
