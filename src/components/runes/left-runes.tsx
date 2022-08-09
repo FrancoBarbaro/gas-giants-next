@@ -1,9 +1,14 @@
-import { Text, VStack } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { Link } from '~/components/link';
 
 export const LeftRunes: FC = () => (
-	<VStack>
-		<Text color="pink">Jupiter Rune</Text>
-		<Text color="pink">Saturn Rune</Text>
-	</VStack>
+	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between">
+		<Link href="/jupiter" variant="rune">
+			&#9795;
+		</Link>
+		<Link href="/saturn" variant="rune">
+			&#9796;
+		</Link>
+	</Flex>
 );

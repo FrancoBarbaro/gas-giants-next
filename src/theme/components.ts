@@ -1,6 +1,6 @@
 import { colors } from '~/common/colors';
 
-const buttonStyle = {
+const navButtonStyle = {
 	textTransform: 'uppercase',
 	bg: colors.white,
 	color: colors.galacticPurple,
@@ -14,7 +14,7 @@ const buttonStyle = {
 	fontFamily: `'Varela Round', sans-serif`,
 };
 
-const activeButtonStyle = {
+const navButtonHoverStyle = {
 	bg: colors.galacticPurple,
 	color: colors.white,
 	boxShadow: `-10px -10px 0 ${colors.white}`,
@@ -23,29 +23,63 @@ const activeButtonStyle = {
 export const Button = {
 	variants: {
 		'nav-button': {
-			...buttonStyle,
-			_hover: activeButtonStyle,
-			_focus: activeButtonStyle,
+			...navButtonStyle,
+			_hover: navButtonHoverStyle,
+			_focus: navButtonHoverStyle,
 		},
 	},
 };
 
-const linkHoverStyle = {
+// TODO: try to use Chakra values instead of px and em. also make custom colors for hsla values
+const runeStyle = {
+	color: 'transparent',
+	fontSize: 64,
+	mx: 16,
+	borderRadius: 4,
+	textShadow: `0 0 0.125em ${colors.runeShadow}, 0 0 0.45em ${colors.darkPurple}`,
+	transition: 'color 0.5s linear, text-shadow 0.5s linear',
+	'-webkit-text-stroke': `1px ${colors.runeOutline}`,
+};
+
+const runeHoverStyle = {
+	textDecoration: 'none',
+	color: colors.neonPink,
+	textShadow: `0 0 0.3em ${colors.runeShadowOnHover}, 0 0 0.9em ${colors.neonPink}`,
+	'-webkit-text-stroke': `1px ${colors.runeOutlineOnHover}`,
+};
+
+const runeActiveStyle = {
+	color: colors.neonRed,
+	textShadow: `0 0 0.3em ${colors.runeShadowOnClick}, 0 0 0.9em ${colors.neonRed}`,
+	'-webkit-text-stroke': `1px ${colors.runeOutlineOnClick}`,
+};
+
+const gradientUnderlineStyle = {
+	bg: 'linear-gradient(90deg, magenta, blue)',
+	bgSize: '0% 3px',
+	bgRepeat: 'no-repeat',
+	bgPos: '0% 90%',
+	transition: '0.3s ease',
+};
+
+const gradientUnderlineHoverStyle = {
 	textDecoration: 'none',
 	bgSize: '100% 3px',
 };
 
 export const Link = {
 	variants: {
+		rune: {
+			...runeStyle,
+			_hover: runeHoverStyle,
+			_focus: { ...runeHoverStyle, boxShadow: 'none' },
+			_active: runeActiveStyle,
+		},
 		'gradient-underline': {
-			bg: 'linear-gradient(90deg, magenta, blue)',
-			bgSize: '0% 3px',
-			bgRepeat: 'no-repeat',
-			bgPos: '0% 90%',
-			transition: '0.3s ease',
-			_active: { color: '#9b6bf3' },
-			_hover: linkHoverStyle,
-			_focus: { ...linkHoverStyle, boxShadow: 'none' },
+			...gradientUnderlineStyle,
+			_hover: gradientUnderlineHoverStyle,
+			_focus: { ...gradientUnderlineHoverStyle, boxShadow: 'none' },
+			_active: { color: colors.magentaPurple },
 		},
 	},
 };
