@@ -15,10 +15,11 @@ export const HomePage: FC = () => (
 				Content
 			</Text>
 		</Center>
-		{/* TODO: make this a component */}
+		{/* TODO: make this a component and portal it to be the last thing in the next js div in the dom */}
 		<Box
 			w="100%"
 			h="100%"
+			bgSize="100%"
 			bgColor={colors.spaceBlue}
 			bgImg="url('/images/indexbg.jpeg')"
 			bgPos="center"
