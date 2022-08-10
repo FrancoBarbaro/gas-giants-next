@@ -37,6 +37,8 @@ export const PlanetPage: FC<PlanetPageProps> = ({ bg, planet }) => (
 						<ListItem key={index}>{fact}</ListItem>
 					))} */}
 			</UnorderedList>
+			{/* TODO: create 'FlipCard' component, the chakra ui 'Image' component will be inside it. */}
+			{/* Pass down src and alt as props or pass the whole Image compoenent as a child? */}
 			{/* <Image src={imageUrl} alt={imageAltText} /> */}
 		</VStack>
 	</ContentWrapper>
