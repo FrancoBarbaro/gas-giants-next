@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { Link } from '~/components/link';
 
 export const RightRunes: FC = () => (
-	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between">
+	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between" zIndex={2}>
 		<Link href="/uranus" variant="rune">
 			&#9954;
 		</Link>

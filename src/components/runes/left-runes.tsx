@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { Link } from '~/components/link';
 
 export const LeftRunes: FC = () => (
-	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between">
+	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between" zIndex={2}>
 		<Link href="/jupiter" variant="rune">
 			&#9795;
 		</Link>

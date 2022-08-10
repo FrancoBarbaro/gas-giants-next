@@ -14,6 +14,7 @@ export const Footer: FC = () => (
 		mx="auto"
 		my={12}
 		color={colors.lightGray}
+		zIndex={2}
 	>
 		<Center width="50%">
 			<Text as="h3">&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
