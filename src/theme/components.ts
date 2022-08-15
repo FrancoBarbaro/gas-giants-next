@@ -6,6 +6,7 @@ const navButtonStyle = {
 	color: colors.galacticPurple,
 	px: 6,
 	py: 3,
+	lineHeight: 4,
 	fontWeight: 'bold',
 	boxShadow: `10px 10px 0 ${colors.galacticPurple}`,
 	transition: 'all 0.5s',
