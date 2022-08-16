@@ -1,6 +1,6 @@
-import { Box, Center, Skeleton, Stack, Text } from '@chakra-ui/react';
+import { Center, Skeleton, Stack, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { colors } from '~/common/colors';
+import { Background } from '~/components/layout/background';
 
 const SkeletonLayout: FC = () => (
 	<Stack>
@@ -16,17 +16,6 @@ export const HomePage: FC = () => (
 			</Text>
 		</Center>
 		{/* TODO: make this a component and portal it to be the last thing in the next js div in the dom */}
-		<Box
-			w="100%"
-			h="100%"
-			bgSize="100%"
-			bgColor={colors.spaceBlue}
-			bgImg="url('/images/indexbg.jpeg')"
-			bgPos="center"
-			pos="absolute"
-			top={0}
-			left={0}
-			zIndex={1}
-		/>
+		<Background img="url('/images/indexbg.jpeg')" />
 	</>
 );

@@ -20,6 +20,7 @@ export const Footer: FC = () => (
 			<Text as="h3">&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
 		</Center>
 		<Center width="50%">
+			{/* TODO: find a way to make links blur on click */}
 			<Link href="/feedback" variant="gradient-underline">
 				Feedback
 			</Link>

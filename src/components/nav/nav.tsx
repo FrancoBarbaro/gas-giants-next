@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { NavButton } from './nav-button';
 
 // TODO: if the screen width gets small enough, make this have a width of 100% or 100vh
+// actually the better way to do the above might be to make the margin dynamic. how do we do that with auto...
 export const NavBar: FC = () => (
 	<Flex as="nav" fontSize={4} w="75%" maxW="60rem" mx="auto" py={12} justifyContent="space-between" zIndex={2}>
 		<NavButton path="/home">Home</NavButton>

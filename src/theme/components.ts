@@ -31,7 +31,6 @@ export const Button = {
 	},
 };
 
-// TODO: try to use Chakra values instead of px and em. also make custom colors for hsla values
 const runeStyle = {
 	color: 'transparent',
 	fontSize: 64,
@@ -55,6 +54,7 @@ const runeActiveStyle = {
 	'-webkit-text-stroke': `1px ${colors.runeOutlineOnClick}`,
 };
 
+// TODO: give this rounded edges
 const gradientUnderlineStyle = {
 	bg: 'linear-gradient(90deg, magenta, blue)',
 	bgSize: '0% 3px',

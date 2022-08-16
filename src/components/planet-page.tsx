@@ -1,6 +1,6 @@
-import { Box, Center, Heading, Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
+import { Center, Heading, Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { colors } from '~/common/colors';
+import { Background } from '~/components/layout/background';
 
 type PlanetPageProps = {
 	bg: string;
@@ -44,17 +44,6 @@ export const PlanetPage: FC<PlanetPageProps> = ({ bg, planet }) => (
 			</VStack>
 		</Center>
 		{/* TODO: make this a component and portal it to be the last thing in the next js div in the dom */}
-		<Box
-			w="100%"
-			h="100%"
-			bgSize="100%"
-			bgColor={colors.spaceBlue}
-			bgImg={bg}
-			bgPos="center"
-			pos="absolute"
-			top={0}
-			left={0}
-			zIndex={1}
-		/>
+		<Background img={bg} />
 	</>
 );
