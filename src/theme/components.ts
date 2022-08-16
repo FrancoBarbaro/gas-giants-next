@@ -38,20 +38,20 @@ const runeStyle = {
 	borderRadius: 4,
 	textShadow: `0 0 0.125em ${colors.runeShadow}, 0 0 0.45em ${colors.darkPurple}`,
 	transition: 'color 0.5s linear, text-shadow 0.5s linear',
-	'-webkit-text-stroke': `1px ${colors.runeOutline}`,
+	WebkitTextStroke: `1px ${colors.runeOutline}`,
 };
 
 const runeHoverStyle = {
 	textDecoration: 'none',
 	color: colors.neonPink,
 	textShadow: `0 0 0.4em ${colors.runeShadowOnHover}, 0 0 0.9em ${colors.neonPink}`,
-	'-webkit-text-stroke': `1px ${colors.runeOutlineOnHover}`,
+	WebkitTextStroke: `1px ${colors.runeOutlineOnHover}`,
 };
 
 const runeActiveStyle = {
 	color: colors.neonRed,
 	textShadow: `0 0 0.5em ${colors.runeShadowOnClick}, 0 0 0.9em ${colors.neonRed}`,
-	'-webkit-text-stroke': `1px ${colors.runeOutlineOnClick}`,
+	WebkitTextStroke: `1px ${colors.runeOutlineOnClick}`,
 };
 
 // TODO: give this rounded edges
