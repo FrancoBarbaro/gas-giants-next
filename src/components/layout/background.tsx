@@ -5,8 +5,8 @@ import { Transition } from 'react-transition-group';
 import { colors } from '~/common/colors';
 
 export const Background: FC = () => {
-	const router = useRouter();
-	const bgUrl = `url('/images${router.pathname}bg.jpeg')`;
+	const { pathname } = useRouter();
+	const bgUrl = `url('/images${pathname}bg.jpeg')`;
 
 	return (
 		<Transition in={true} timeout={2000}>

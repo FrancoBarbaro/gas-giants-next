@@ -13,7 +13,7 @@ export const Link: FC<LinkProps> = ({ href, children, variant }) => (
 	<NextLink href={href} passHref>
 		<ChakraLink
 			variant={variant}
-			// TODO: maybe instead of blurring here we want to always light the rune of the active page
+			// TODO: none of the blurs seem to be working anymore... windows problem?
 			onClick={(event) => {
 				event.currentTarget.blur();
 			}}

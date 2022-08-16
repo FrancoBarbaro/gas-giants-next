@@ -10,7 +10,7 @@ const SaturnPage: NextPage = () => {
 				<meta name="description" content="Information about the planet Saturn" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PlanetPage planet="saturn" bg="url('/images/saturnbg.jpeg')" />
+			<PlanetPage planet="saturn" />
 		</>
 	);
 };

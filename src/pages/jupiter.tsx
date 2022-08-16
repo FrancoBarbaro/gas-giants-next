@@ -10,7 +10,7 @@ const JupiterPage: NextPage = () => {
 				<meta name="description" content="Information about the planet Jupiter" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PlanetPage planet="jupiter" bg="url('/images/jupiterbg.jpeg')" />
+			<PlanetPage planet="jupiter" />
 		</>
 	);
 };

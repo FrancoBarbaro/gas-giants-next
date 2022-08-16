@@ -10,7 +10,7 @@ const NeptunePage: NextPage = () => {
 				<meta name="description" content="Information about the planet Neptune" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<PlanetPage planet="neptune" bg="url('/images/neptunebg.jpeg')" />
+			<PlanetPage planet="neptune" />
 		</>
 	);
 };
