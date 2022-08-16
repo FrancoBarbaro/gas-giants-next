@@ -3,6 +3,7 @@ import '@fontsource/patua-one/400.css';
 import '@fontsource/space-mono/400.css';
 import '@fontsource/varela-round/400.css';
 import type { AppProps } from 'next/app';
+import { Background } from '~/components/layout/background';
 import { ContentWrapper } from '~/components/layout/content-wrapper';
 import '../styles/globals.css';
 import { theme } from '../theme';
@@ -22,6 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 			<ContentWrapper>
 				<Component {...pageProps} />
 			</ContentWrapper>
+			<Background />
 		</ChakraProvider>
 		// </SWRConfig>
 	);

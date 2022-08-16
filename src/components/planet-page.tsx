@@ -1,6 +1,5 @@
 import { Center, Heading, Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { Background } from '~/components/layout/background';
 
 type PlanetPageProps = {
 	bg: string;
@@ -16,34 +15,30 @@ const SkeletonLayout: FC = () => (
 // TODO: make an endpoint with Next Connect and request to it with the planet's name
 // TODO: have a chakra skeleton display while waiting on the request
 export const PlanetPage: FC<PlanetPageProps> = ({ bg, planet }) => (
-	<>
-		<Center as="main" w="75%" maxW="60rem" pos="relative" zIndex={2}>
-			<VStack mr={10}>
-				{/* TODO: need a ternary here to conditionally display the skeleton... do this in the ContentWrapper or here? */}
-				<section>
-					<Heading as="h1" textTransform="capitalize">
-						About {planet}:
-					</Heading>
-					{/* <Text>{planetDescription}</Text> */}
-				</section>
-				<section>
-					<Heading>Symbol:</Heading>
-					{/* <Text>{symbolDescription}</Text> */}
-				</section>
-			</VStack>
-			<VStack as="section" ml={10}>
-				<Heading>Fun Facts:</Heading>
-				<UnorderedList>
-					{/* {funFacts.map((fact, index) => (
+	<Center as="main" w="75%" maxW="60rem" pos="relative" zIndex={2}>
+		<VStack mr={10}>
+			{/* TODO: need a ternary here to conditionally display the skeleton... do this in the ContentWrapper or here? */}
+			<section>
+				<Heading as="h1" textTransform="capitalize">
+					About {planet}:
+				</Heading>
+				{/* <Text>{planetDescription}</Text> */}
+			</section>
+			<section>
+				<Heading>Symbol:</Heading>
+				{/* <Text>{symbolDescription}</Text> */}
+			</section>
+		</VStack>
+		<VStack as="section" ml={10}>
+			<Heading>Fun Facts:</Heading>
+			<UnorderedList>
+				{/* {funFacts.map((fact, index) => (
 						<ListItem key={index}>{fact}</ListItem>
 					))} */}
-				</UnorderedList>
-				{/* TODO: create 'FlipCard' component, the chakra ui 'Image' component will be inside it. */}
-				{/* Pass down src and alt as props or pass the whole Image compoenent as a child? */}
-				{/* <Image src={imageUrl} alt={imageAltText} /> */}
-			</VStack>
-		</Center>
-		{/* TODO: make this a component and portal it to be the last thing in the next js div in the dom */}
-		<Background img={bg} />
-	</>
+			</UnorderedList>
+			{/* TODO: create 'FlipCard' component, the chakra ui 'Image' component will be inside it. */}
+			{/* Pass down src and alt as props or pass the whole Image compoenent as a child? */}
+			{/* <Image src={imageUrl} alt={imageAltText} /> */}
+		</VStack>
+	</Center>
 );
