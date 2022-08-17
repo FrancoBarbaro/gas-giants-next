@@ -10,23 +10,21 @@ import { theme } from '../theme';
 // import { SWRConfig } from 'swr';
 // import { fetcher } from '~/common/clients/fetcher';
 
-const App = ({ Component, pageProps }: AppProps) => {
-	return (
-		// TODO: add this
-		// <SWRConfig
-		// 	value={{
-		// 		fetcher,
-		// 		errorRetryCount: 2,
-		// 	}}
-		// >
-		<ChakraProvider theme={theme}>
-			<ContentWrapper>
-				<Component {...pageProps} />
-			</ContentWrapper>
-			<Background />
-		</ChakraProvider>
-		// </SWRConfig>
-	);
-};
+// TODO: add this
+// <SWRConfig
+// 	value={{
+// 		fetcher,
+// 		errorRetryCount: 2,
+// 	}}
+// >
+
+const App = ({ Component, pageProps, router }: AppProps) => (
+	<ChakraProvider theme={theme}>
+		<ContentWrapper>
+			<Component {...pageProps} />
+		</ContentWrapper>
+		<Background currentPath={router.pathname} />
+	</ChakraProvider>
+);
 
 export default App;
