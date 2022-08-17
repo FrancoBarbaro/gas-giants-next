@@ -7,7 +7,16 @@ import { NavButton } from './nav-button';
 // chakra has funcitonality for this dynamic margin concept. pass an array to mx
 // do the same exact thing with the footer too
 export const NavBar: FC = () => (
-	<Flex as="nav" fontSize={4} w="75%" maxW="60rem" mx="auto" py={12} justifyContent="space-between" zIndex={2}>
+	<Flex
+		as="nav"
+		fontSize={4}
+		w={['95%', '95%', '90%', '85%', '75%']}
+		maxW="60rem"
+		mx="auto"
+		py={12}
+		justifyContent="space-between"
+		zIndex={2}
+	>
 		<NavButton path="/home">Home</NavButton>
 		<NavButton path="/jupiter">Jupiter</NavButton>
 		<NavButton path="/saturn">Saturn</NavButton>
