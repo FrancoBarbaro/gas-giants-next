@@ -1,5 +1,6 @@
-import { Heading, Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
+import { Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 type PlanetPageProps = {
 	planet: 'jupiter' | 'saturn' | 'uranus' | 'neptune';
@@ -18,18 +19,17 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => (
 		<VStack mr={10}>
 			{/* TODO: need a ternary here to conditionally display the skeleton... do this in the ContentWrapper or here? */}
 			<section>
-				<Heading as="h1" textTransform="capitalize">
-					About {planet}:
-				</Heading>
-				{/* <Text>{planetDescription}</Text> */}
+				<RoundedTextBox textType="h1">About {planet}:</RoundedTextBox>
+				{/* <RoundedTextBox textType="p">{planetDescription}</RoundedTextBox> */}
 			</section>
 			<section>
-				<Heading>Symbol:</Heading>
-				{/* <Text>{symbolDescription}</Text> */}
+				<RoundedTextBox textType="h2">Symbol:</RoundedTextBox>
+				{/* <RoundedTextBox textType="p">{symbolDescription}</RoundedTextBox> */}
 			</section>
 		</VStack>
 		<VStack as="section" ml={10}>
-			<Heading>Fun Facts:</Heading>
+			<RoundedTextBox textType="h2">Fun Facts:</RoundedTextBox>
+			{/* TODO: consider creating 'RoundedListBox' component */}
 			<UnorderedList>
 				{/* {funFacts.map((fact, index) => (
 						<ListItem key={index}>{fact}</ListItem>

@@ -1,5 +1,5 @@
 import { Box, keyframes } from '@chakra-ui/react';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
 import { colors } from '~/common/colors';
 

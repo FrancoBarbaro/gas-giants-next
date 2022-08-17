@@ -21,7 +21,7 @@ const navButtonHoverStyle = {
 	boxShadow: `-10px -10px 0 ${colors.white}`,
 };
 
-export const Button = {
+const Button = {
 	variants: {
 		'nav-button': {
 			...navButtonStyle,
@@ -68,7 +68,7 @@ const gradientUnderlineHoverStyle = {
 	bgSize: '100% 3px',
 };
 
-export const Link = {
+const Link = {
 	variants: {
 		rune: {
 			...runeStyle,
@@ -83,4 +83,9 @@ export const Link = {
 			_active: { color: colors.magentaPurple },
 		},
 	},
+};
+
+export const components = {
+	Button,
+	Link,
 };

@@ -5,6 +5,7 @@ export const colors = {
 	spaceGray: '#343d52',
 	darkGray: '#242a38',
 	spaceBlue: '#003b59',
+	blueGray: '#2d3e50',
 	neonPink: '#ff14bd',
 	neonRed: '#ff144f',
 	darkPurple: '#31202b',
