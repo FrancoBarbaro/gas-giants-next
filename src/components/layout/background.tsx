@@ -27,7 +27,7 @@ const baseStyle = {
 const transitionStyles = {
 	entering: { opacity: 0, sx: { animation: `${fadeIn} ${duration}ms linear` } },
 	entered: { opacity: 1 },
-	exiting: { opacity: 1, sx: { animation: `${fadeOut} ${duration * 0.8}ms ease-in` } },
+	exiting: { opacity: 1, sx: { animation: `${fadeOut} ${Math.floor(duration * 0.8)}ms ease-in` } },
 	exited: { opacity: 0 },
 	unmounted: {},
 };

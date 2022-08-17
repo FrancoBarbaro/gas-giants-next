@@ -16,10 +16,3 @@ const JupiterPage: NextPage = () => {
 };
 
 export default JupiterPage;
-
-// TODO: maybe opt for this approach
-// import { NextPage } from 'next';
-
-// const Page: NextPage<JupiterPageProps> = JupiterPage;
-
-// export default Page;
