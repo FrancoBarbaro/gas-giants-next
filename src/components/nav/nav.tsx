@@ -11,7 +11,7 @@ export const NavBar: FC = () => (
 		as="nav"
 		fontSize={4}
 		w={['95%', '95%', '90%', '85%', '75%']}
-		maxW="60rem"
+		maxW="75rem"
 		mx="auto"
 		py={12}
 		justifyContent="space-between"

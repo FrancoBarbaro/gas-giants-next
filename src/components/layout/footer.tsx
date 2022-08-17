@@ -10,7 +10,7 @@ export const Footer: FC = () => (
 		border={`2px solid ${colors.darkGray}`}
 		borderRadius={15}
 		w={['95%', '95%', '90%', '85%', '75%']}
-		maxW="60rem"
+		maxW="75rem"
 		mx="auto"
 		my={12}
 		color={colors.lightGray}
