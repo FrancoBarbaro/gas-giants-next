@@ -1,5 +1,6 @@
 import { Skeleton, Stack, UnorderedList, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { RoundedListBox } from '~/components/rounded-box/rounded-list-box';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 type PlanetPageProps = {
@@ -29,12 +30,7 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => (
 		</VStack>
 		<VStack as="section" ml={10}>
 			<RoundedTextBox textType="h2">Fun Facts:</RoundedTextBox>
-			{/* TODO: consider creating 'RoundedListBox' component */}
-			<UnorderedList>
-				{/* {funFacts.map((fact, index) => (
-						<ListItem key={index}>{fact}</ListItem>
-					))} */}
-			</UnorderedList>
+			{/* <RoundedListBox list={funFacts} /> */}
 			{/* TODO: create 'FlipCard' component, the chakra ui 'Image' component will be inside it. */}
 			{/* Pass down src and alt as props or pass the whole Image compoenent as a child? */}
 			{/* <Image src={imageUrl} alt={imageAltText} /> */}
