@@ -1,5 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/patua-one/400.css';
+import '@fontsource/quicksand/500.css';
 import '@fontsource/space-mono/400.css';
 import '@fontsource/varela-round/400.css';
 import type { AppProps } from 'next/app';

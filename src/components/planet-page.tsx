@@ -37,3 +37,5 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => (
 		</VStack>
 	</>
 );
+
+// <Link href={extractedHref} target="_blank" variant="gradient-underline">{extractedText}</Link>

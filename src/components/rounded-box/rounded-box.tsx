@@ -7,7 +7,7 @@ type RoundedBoxProps = {
 };
 
 export const RoundedBox: FC<RoundedBoxProps> = ({ children }) => (
-	<Box bg={colors.white} p={6} py={3} borderRadius={15}>
+	<Box bg={colors.white} p={6} py={3} borderRadius={15} w="fit-content">
 		{children}
 	</Box>
 );
