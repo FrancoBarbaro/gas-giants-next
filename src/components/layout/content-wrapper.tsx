@@ -16,13 +16,13 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 		<Flex h="100vh" bg="transparent" flexDir="column" justifyContent="space-between" pos="relative" zIndex={2}>
 			<NavBar />
 			{isSmallerThan768 ? (
-				<Center as="main" w="90%" mx="auto" pos="relative" zIndex={2}>
+				<Center as="main" w="90%" mx="auto" pos="relative">
 					{children}
 				</Center>
 			) : (
 				<Flex justifyContent="space-between">
 					<LeftRunes />
-					<Center as="main" w="75%" maxW="60rem" pos="relative" zIndex={2}>
+					<Center as="main" w="75%" maxW="60rem" pos="relative">
 						{children}
 					</Center>
 					<RightRunes />

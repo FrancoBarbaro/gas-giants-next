@@ -15,7 +15,6 @@ export const NavBar: FC = () => (
 		mx="auto"
 		py={12}
 		justifyContent="space-between"
-		zIndex={2}
 	>
 		<NavButton path="/home">Home</NavButton>
 		<NavButton path="/jupiter">Jupiter</NavButton>
