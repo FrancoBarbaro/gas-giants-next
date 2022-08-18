@@ -1,19 +1,20 @@
-import { Heading, Text } from '@chakra-ui/react';
-import type { FC, ReactNode } from 'react';
+import { Heading } from '@chakra-ui/react';
+import { FC } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { colors } from '~/common/colors';
 import { RoundedBox } from '~/components/rounded-box/rounded-box';
 
 type RoundedTextBoxProps = {
 	textType: 'p' | 'h1' | 'h2';
-	children: ReactNode;
+	children: string;
 };
 
 export const RoundedTextBox: FC<RoundedTextBoxProps> = ({ textType, children }) => (
-	<RoundedBox>
+	<RoundedBox color={textType === 'p' ? colors.galacticPurple : colors.blueGray}>
 		{textType === 'p' ? (
-			<Text color={colors.galacticPurple}>{children}</Text>
+			<ReactMarkdown skipHtml>{children}</ReactMarkdown>
 		) : (
-			<Heading as={textType} color={colors.blueGray} fontSize={textType === 'h1' ? 32 : 24} textTransform="capitalize">
+			<Heading as={textType} fontSize={textType === 'h1' ? 32 : 24} textTransform="capitalize">
 				{children}
 			</Heading>
 		)}

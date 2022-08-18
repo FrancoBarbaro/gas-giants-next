@@ -16,7 +16,7 @@ export const Footer: FC = () => (
 		color={colors.lightGray}
 	>
 		<Center width="50%">
-			<Text as="h3">&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
+			<Text>&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
 		</Center>
 		<Center width="50%">
 			{/* TODO: find a way to make links blur on click */}
