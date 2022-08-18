@@ -1,7 +1,7 @@
 import { Center, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { colors } from '~/common/colors';
-import { Link } from '~/components/link';
+import { PageLink } from '~/components/page-link';
 
 export const Footer: FC = () => (
 	<Center
@@ -20,9 +20,9 @@ export const Footer: FC = () => (
 		</Center>
 		<Center width="50%">
 			{/* TODO: find a way to make links blur on click */}
-			<Link href="/feedback" variant="gradient-underline">
+			<PageLink href="/feedback" variant="gradient-underline">
 				Feedback
-			</Link>
+			</PageLink>
 		</Center>
 	</Center>
 );

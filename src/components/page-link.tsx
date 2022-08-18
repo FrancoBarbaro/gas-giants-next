@@ -9,7 +9,7 @@ type LinkProps = {
 };
 
 // TODO: make this component flexible to more props, especially 'target', maybe just take 'props' and spread it. Chakra probably has a type for its Link component
-export const Link: FC<LinkProps> = ({ href, children, variant }) => (
+export const PageLink: FC<LinkProps> = ({ href, children, variant }) => (
 	<NextLink href={href} passHref>
 		<ChakraLink
 			variant={variant}
