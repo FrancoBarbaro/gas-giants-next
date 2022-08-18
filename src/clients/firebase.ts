@@ -1,39 +1,46 @@
 import axios from 'axios';
 
-// type FailedFirebaseResult = {
-// 	success: false;
-// 	error: string;
-// };
+type FailedFirebaseResult = {
+	success: false;
+	error: string;
+};
 
-// type SuccessFirebaseResult<T> = {
-// 	success: true;
-// 	data: T;
-// };
+type SuccessFirebaseResult<T> = {
+	success: true;
+	data: T;
+};
 
-// type FirebaseResult<T> = SuccessFirebaseResult<T> | FailedFirebaseResult;
-
-// issue firebase token
+type FirebaseResult<T> = SuccessFirebaseResult<T> | FailedFirebaseResult;
 
 const FIREBASE_URL = 'https://gas-giants-api-9e3f4-default-rtdb.firebaseio.com/';
-// const FIREBASE_URL = process.env.FIREBASE_API_URL ?? 'https://gas-giants-api-9e3f4-default-rtdb.firebaseio.com/';
 
 /**
  * Client description
  */
-export const firebaseAxiosClient = axios.create({
+const firebaseAxiosClient = axios.create({
 	baseURL: FIREBASE_URL,
 	responseType: 'json',
 });
 
+// firebaseAxiosClient.interceptors.request.use(async (request) => {
+// 	const token = await gandalfBachTokenProvider.getValidToken();
+
+// 	request.headers = {
+// 		...(request.headers ?? {}),
+// 		Authorization: `Bearer ${token}`,
+// 	};
+
+// 	return request;
+// });
+
+// export { firebaseAxiosClient };
+
 /**
  * Fetcher description
  */
-export const firebaseApiFetcher = () => {};
-
-// TODO: probably don't need this one
-// TODO: add todo highlighting for NOTE: and IDEA:
-
-/**
- * Poster description
- */
-// export const firebaseApiPoster = () => {};
+export const firebaseApiFetcher = async <T = unknown>(url: string): Promise<FirebaseResult<T>> => {
+	return firebaseAxiosClient
+		.get(`${url}.json`)
+		.then((res) => ({ success: true, data: res.data } as SuccessFirebaseResult<T>))
+		.catch((error: Error) => ({ success: false, error: error.message } as FailedFirebaseResult));
+};

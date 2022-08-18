@@ -1,7 +1,9 @@
-export type FirebaseReturnType = {
+export type GasGiant = 'jupiter' | 'saturn' | 'uranus' | 'neptune';
+
+export type PlanetInfo = {
 	planetDesc: string;
 	symbolDesc: string;
-	funFacts: string[];
+	funFacts: Record<string, string>;
 	imageUrl: string;
 	imageAltText: string;
 	imageDesc: string;
