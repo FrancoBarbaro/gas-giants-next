@@ -9,7 +9,7 @@ export const NavBar: FC = () => (
 		w={['95%', '95%', '90%', '85%', '75%']}
 		maxW="75rem"
 		mx="auto"
-		py={12}
+		my={12}
 		justifyContent="space-between"
 	>
 		<NavButton path="/home">Home</NavButton>
