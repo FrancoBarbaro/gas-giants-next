@@ -13,7 +13,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 	const [isSmallerThan768] = useMediaQuery('(max-width: 768px)');
 
 	return (
-		<Flex h="100vh" bg="transparent" flexDir="column" justifyContent="space-between" pos="relative" zIndex={2}>
+		<Flex h="100vh" bg="transparent" flexDir="column" justifyContent="space-between" pos="relative" zIndex={3}>
 			<NavBar />
 			{isSmallerThan768 ? (
 				<Center as="main" w="90%" mx="auto" pos="relative">
