@@ -54,7 +54,7 @@ const runeActiveStyle = {
 	WebkitTextStroke: `1px ${colors.runeOutlineOnClick}`,
 };
 
-// TODO: give this rounded edges
+// use javascript or calc() to make its position depend on the line height
 const gradientUnderlineStyle = {
 	bg: 'linear-gradient(90deg, magenta, blue)',
 	bgSize: '0% 3px',
