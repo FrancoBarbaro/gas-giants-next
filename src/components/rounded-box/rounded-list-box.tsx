@@ -13,7 +13,14 @@ export const RoundedListBox: FC<RoundedListBoxProps> = ({ list }) => (
 		<UnorderedList color={colors.galacticPurple}>
 			{list.map((item, index) => (
 				<ListItem key={index}>
-					<ReactMarkdown skipHtml>{item}</ReactMarkdown>
+					<ReactMarkdown
+						components={{
+							p: ({ children }) => <>{children}</>,
+						}}
+						skipHtml
+					>
+						{item}
+					</ReactMarkdown>
 				</ListItem>
 			))}
 		</UnorderedList>
