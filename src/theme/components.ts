@@ -34,7 +34,6 @@ const Button = {
 const runeStyle = {
 	color: 'transparent',
 	fontSize: 64,
-	mx: 16,
 	borderRadius: 4,
 	textShadow: `0 0 0.125em ${colors.runeShadow}, 0 0 0.45em ${colors.darkPurple}`,
 	transition: 'color 0.5s linear, text-shadow 0.5s linear',
