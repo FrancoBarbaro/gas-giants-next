@@ -21,5 +21,6 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 	const { data } = useFetchPlanetInfo(planet);
 
 	// TODO: have a SwitchTransition here
-	return data ? <PlanetPageContent planet={planet} info={data} /> : <PlanetPageSkeleton planet={planet} />;
+	return <PlanetPageSkeleton planet={planet} />;
+	// return data ? <PlanetPageContent planet={planet} info={data} /> : <PlanetPageSkeleton planet={planet} />;
 };

@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { PageLink } from '~/components/page-link';
 
 // TODO: if the device is too small, make these not show so more space is saved for the main content
+// TODO: make the rune div's with dynamic
 export const RightRunes: FC = () => (
 	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between" my="auto">
 		<PageLink href="/uranus" variant="rune">
