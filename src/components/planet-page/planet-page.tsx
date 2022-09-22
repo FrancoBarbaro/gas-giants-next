@@ -15,8 +15,6 @@ const SkeletonLayout: FC = () => (
 	</Stack>
 );
 
-// TODO: make an endpoint with Next Connect and request to it with the planet's name
-// TODO: have a chakra skeleton display while waiting on the request
 export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 	const { data } = useFetchPlanetInfo(planet);
 
