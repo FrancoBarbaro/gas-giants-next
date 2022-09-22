@@ -9,7 +9,6 @@ type PlanetPageSkeletonProps = {
 export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
 	<>
 		<VStack mr={10} w="50%">
-			{/* TODO: need a ternary here to conditionally display the skeleton */}
 			<VStack as="section" alignItems="initial" w="100%">
 				<RoundedTextBox textType="h1">{`About ${planet}:`}</RoundedTextBox>
 				<Skeleton w="100%" h={40} borderRadius={15} />

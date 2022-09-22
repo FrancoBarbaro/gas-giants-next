@@ -15,7 +15,6 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 	return (
 		<>
 			<VStack mr={10}>
-				{/* TODO: need a ternary here to conditionally display the skeleton */}
 				<section>
 					<RoundedTextBox textType="h1">{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
