@@ -7,7 +7,7 @@ type RightRunesProps = {
 };
 
 export const RightRunes: FC<RightRunesProps> = ({ mx }) => (
-	<Flex as="aside" flexDir="column" h="50vh" justifyContent="space-between" my="auto" mx={mx}>
+	<Flex as="nav" flexDir="column" h="50vh" justifyContent="space-between" my="auto" mx={mx} zIndex={3}>
 		<PageLink href="/uranus" variant="rune">
 			&#9954;
 		</PageLink>
