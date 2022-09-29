@@ -11,7 +11,7 @@ export const FlipCardCaption: FC<FlipCardCaptionProps> = ({ imageDesc }) => (
 		<ReactMarkdown
 			components={{
 				a: ({ href, children }) => (
-					<Link href={href} target="_blank" children={children} variant="gradient-underline" />
+					<Link href={href} target="_blank" variant="gradient-underline">{children}</Link>
 				),
 				p: ({ children }) => <Text>{children}</Text>,
 			}}
