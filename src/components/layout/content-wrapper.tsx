@@ -22,6 +22,13 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 		runeMarginX = 4;
 	}
 
+	// TODO: the question here is wether to have this width adjust dynamically or have the rune margin adjust dynamically?
+	const breakpoints = {
+		sm: '95%',
+		md: '90%',
+		xl: '95%',
+	};
+
 	return (
 		<Flex justifyContent="space-between">
 			{!isSmallerThan1200 && <LeftRunes mx={runeMarginX} />}
@@ -35,7 +42,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				w="full"
 			>
 				<NavBar />
-				<Center as="main" w={['95%', '95%', '90%', '85%', '75%']} maxW="60rem" pos="relative" m="auto">
+				<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto">
 					{children}
 				</Center>
 				<Footer />
