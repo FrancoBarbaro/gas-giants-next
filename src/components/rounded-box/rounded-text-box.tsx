@@ -7,10 +7,11 @@ import { RoundedBox } from '~/components/rounded-box/rounded-box';
 type RoundedTextBoxProps = {
 	textType: 'p' | 'h1' | 'h2';
 	children: string;
+	[x: string]: any;
 };
 
-export const RoundedTextBox: FC<RoundedTextBoxProps> = ({ textType, children }) => (
-	<RoundedBox>
+export const RoundedTextBox: FC<RoundedTextBoxProps> = ({ textType, children, ...rest }) => (
+	<RoundedBox {...rest}>
 		{textType === 'p' ? (
 			<ReactMarkdown
 				components={{

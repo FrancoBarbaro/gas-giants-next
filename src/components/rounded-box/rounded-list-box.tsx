@@ -6,10 +6,11 @@ import { RoundedBox } from '~/components/rounded-box/rounded-box';
 
 type RoundedListBoxProps = {
 	list: string[];
+	fontSize: number | string;
 };
 
-export const RoundedListBox: FC<RoundedListBoxProps> = ({ list }) => (
-	<RoundedBox>
+export const RoundedListBox: FC<RoundedListBoxProps> = ({ list, fontSize }) => (
+	<RoundedBox fontSize={fontSize}>
 		<UnorderedList color={colors.galacticPurple}>
 			{list.map((item, index) => (
 				<ListItem key={index}>
