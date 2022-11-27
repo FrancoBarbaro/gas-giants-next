@@ -4,6 +4,7 @@ export const colors = {
 	lightGray: '#b4b4b4',
 	spaceGray: '#343d52',
 	darkGray: '#242a38',
+	grayBlack: '#161a20',
 	spaceBlue: '#003b59',
 	blueGray: '#2d3e50',
 	neonPink: '#ff14bd',
