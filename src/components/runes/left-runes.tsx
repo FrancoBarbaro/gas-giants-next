@@ -2,8 +2,6 @@ import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PageLink } from '~/components/page-link';
 
-// TODO: find out why the runes are changing height depending on the main div
-
 type LeftRunesProps = {
 	mx: number;
 };
