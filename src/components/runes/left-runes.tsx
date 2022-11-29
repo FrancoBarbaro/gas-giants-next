@@ -11,10 +11,10 @@ type LeftRunesProps = {
 
 export const LeftRunes: FC<LeftRunesProps> = ({ mx }) => (
 	<Flex as="nav" flexDir="column" h="50vh" justifyContent="space-between" my="auto" mx={mx} zIndex={3}>
-		<PageLink href="/jupiter" variant="rune">
+		<PageLink href="/jupiter" variant="rune" tabIndex={-1}>
 			&#9795;
 		</PageLink>
-		<PageLink href="/saturn" variant="rune">
+		<PageLink href="/saturn" variant="rune" tabIndex={-1}>
 			&#9796;
 		</PageLink>
 	</Flex>
