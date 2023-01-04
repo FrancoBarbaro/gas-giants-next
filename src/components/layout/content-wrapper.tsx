@@ -42,7 +42,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				w="full"
 			>
 				<NavBar />
-				<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto">
+				<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto" overflowY="auto">
 					{children}
 				</Center>
 				<Footer />
