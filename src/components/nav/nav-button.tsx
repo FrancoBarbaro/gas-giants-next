@@ -11,6 +11,9 @@ export const NavButton: FC<NavButtonProps> = ({ path, children }) => (
 	<NextLink href={path}>
 		<Button
 			variant="nav-button"
+			size={['xs', 'sm', 'md', 'auto']}
+			borderRadius={[8, 10, 12, 10, 10]}
+			fontSize={['xs', 'sm', 'md']}
 			onClick={(event) => {
 				event.currentTarget.blur();
 			}}

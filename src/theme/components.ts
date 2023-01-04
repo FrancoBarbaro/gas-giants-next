@@ -10,7 +10,6 @@ const navButtonStyle = {
 	fontWeight: 'bold',
 	boxShadow: `10px 10px 0 ${colors.galacticPurple}`,
 	transition: 'all 0.5s',
-	borderRadius: 10,
 	letterSpacing: '1.2px',
 	fontFamily: `'Varela Round', sans-serif`,
 };
