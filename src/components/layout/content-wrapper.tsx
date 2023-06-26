@@ -1,4 +1,4 @@
-import { Center, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Box, Center, Flex, useMediaQuery } from '@chakra-ui/react';
 import type { FC, ReactNode } from 'react';
 import { Footer } from '~/components/layout/footer';
 import { NavBar } from '~/components/nav/nav';
@@ -42,10 +42,12 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				w="full"
 			>
 				<NavBar />
-				<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto" overflowY="auto">
-					{children}
-				</Center>
-				<Footer />
+				<Box overflow="auto">
+					<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto">
+						{children}
+					</Center>
+					<Footer />
+				</Box>
 			</Flex>
 			{!isSmallerThan1200 && <RightRunes mx={runeMarginX} />}
 		</Flex>
