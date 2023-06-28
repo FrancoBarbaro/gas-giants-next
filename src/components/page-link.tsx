@@ -18,6 +18,7 @@ export const PageLink: FC<PageLinkProps> = ({ href, children, variant, tabIndex 
 			onClick={(event) => {
 				event.currentTarget.blur();
 			}}
+			// TODO: see if an onTouch blur needs to be added for mobile support
 			tabIndex={tabIndex}
 		>
 			{children}
