@@ -1,27 +1,26 @@
-import { Center, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PageLink } from '~/components/page-link';
 import { colors } from '~/theme/colors';
 
 export const Footer: FC = () => (
-	<Center
+	<Flex
 		as="footer"
 		bg={colors.spaceGray}
 		border={`2px solid ${colors.darkGray}`}
 		borderRadius={15}
-		w={['95%', '95%', '90%', '85%']}
-		maxW="75rem"
+		w={{ base: '95%', md: '90%', lg: '85%' }}
 		mx="auto"
 		my={12}
 		color={colors.lightGray}
+		justifyContent="space-around"
+		alignItems="center"
+		fontSize={{ base: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xl: 'lg' }}
+		flexDir={{ base: 'column', sm: 'row' }}
 	>
-		<Center width="50%">
-			<Text>&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
-		</Center>
-		<Center width="50%">
-			<PageLink href="/feedback" variant="gradient-underline">
-				Feedback
-			</PageLink>
-		</Center>
-	</Center>
+		<Text textAlign="center">&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
+		<PageLink href="/feedback" variant="gradient-underline">
+			Feedback
+		</PageLink>
+	</Flex>
 );

@@ -1,11 +1,11 @@
 import { colors } from '~/theme/colors';
 
 const navButtonStyle = {
+	w: 'fit-content',
+	h: 'fit-content',
 	textTransform: 'uppercase',
 	bg: colors.white,
 	color: colors.galacticPurple,
-	px: 6,
-	py: 3,
 	lineHeight: 4,
 	fontWeight: 'bold',
 	boxShadow: `10px 10px 0 ${colors.galacticPurple}`,
