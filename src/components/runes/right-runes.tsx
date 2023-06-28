@@ -2,12 +2,15 @@ import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PageLink } from '~/components/page-link';
 
-type RightRunesProps = {
-	mx: number;
-};
-
-export const RightRunes: FC<RightRunesProps> = ({ mx }) => (
-	<Flex flexDir="column" h="50vh" justifyContent="space-between" my="auto" mx={mx} zIndex={3}>
+export const RightRunes: FC = () => (
+	<Flex
+		flexDir="column"
+		h="50vh"
+		justifyContent="space-between"
+		my="auto"
+		mx={{ base: 4, lg: 8, xl: 16, xxl: 28 }}
+		zIndex={3}
+	>
 		<PageLink href="/uranus" variant="rune" tabIndex={-1}>
 			&#9954;
 		</PageLink>

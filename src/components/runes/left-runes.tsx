@@ -2,15 +2,15 @@ import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PageLink } from '~/components/page-link';
 
-type LeftRunesProps = {
-	mx: number;
-};
-
-// TODO: remove this comment after testing
-// mx={[16, 16, 16, 8, 4, 0]}
-
-export const LeftRunes: FC<LeftRunesProps> = ({ mx }) => (
-	<Flex flexDir="column" h="50vh" justifyContent="space-between" my="auto" mx={mx} zIndex={3}>
+export const LeftRunes: FC = () => (
+	<Flex
+		flexDir="column"
+		h="50vh"
+		justifyContent="space-between"
+		my="auto"
+		mx={{ base: 4, lg: 8, xl: 16, xxl: 28 }}
+		zIndex={3}
+	>
 		<PageLink href="/jupiter" variant="rune" tabIndex={-1}>
 			&#9795;
 		</PageLink>

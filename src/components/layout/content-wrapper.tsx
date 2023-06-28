@@ -10,28 +10,14 @@ type ContentWrapperProps = {
 };
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
-	const [isSmallerThan1200] = useMediaQuery('(max-width: 1200px)');
-	const [isSmallerThan1300] = useMediaQuery('(max-width: 1300px)');
-	const [isSmallerThan1400] = useMediaQuery('(max-width: 1400px)');
-
-	let runeMarginX = 16;
-
-	if (isSmallerThan1300) {
-		runeMarginX = 8;
-	} else if (isSmallerThan1400) {
-		runeMarginX = 4;
-	}
-
-	// TODO: the question here is wether to have this width adjust dynamically or have the rune margin adjust dynamically?
-	const breakpoints = {
-		sm: '95%',
-		md: '90%',
-		xl: '95%',
-	};
+	// these booleans are based off of the viewport's dimensions
+	const [widthSmallerThan1200] = useMediaQuery('(max-width: 75em)');
+	const [widthSmallerThan300] = useMediaQuery('(max-width: 20em)');
+	const [heightSmallerThan725] = useMediaQuery('(max-height: 45em)');
 
 	return (
 		<Flex justifyContent="space-between">
-			{!isSmallerThan1200 && <LeftRunes mx={runeMarginX} />}
+			{!widthSmallerThan1200 && <LeftRunes />}
 			<Flex
 				h="100vh"
 				bg="transparent"
@@ -39,17 +25,29 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				justifyContent="space-between"
 				pos="relative"
 				zIndex={3}
-				w="full"
+				w="100%"
 			>
-				<NavBar />
-				<Box overflow="auto">
-					<Center as="main" w={breakpoints} maxW="75rem" pos="relative" m="auto">
-						{children}
-					</Center>
-					<Footer />
-				</Box>
+				{widthSmallerThan300 || heightSmallerThan725 ? (
+					<>
+						<NavBar />
+						<Box overflow="auto">
+							<Center as="main" pos="relative" m="auto" w="95%">
+								{children}
+							</Center>
+							<Footer />
+						</Box>
+					</>
+				) : (
+					<>
+						<NavBar />
+						<Center as="main" pos="relative" m="auto" w={{ base: '95%', md: '90%', xl: '95%' }}>
+							{children}
+						</Center>
+						<Footer />
+					</>
+				)}
 			</Flex>
-			{!isSmallerThan1200 && <RightRunes mx={runeMarginX} />}
+			{!widthSmallerThan1200 && <RightRunes />}
 		</Flex>
 	);
 };
