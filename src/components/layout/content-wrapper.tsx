@@ -1,6 +1,6 @@
 import { Box, Center, Flex, useMediaQuery } from '@chakra-ui/react';
 import type { FC, ReactNode } from 'react';
-import { Footer } from '~/components/layout/footer';
+import { Footer } from '~/components/footer/footer';
 import { NavBar } from '~/components/nav/nav';
 import { LeftRunes } from '~/components/runes/left-runes';
 import { RightRunes } from '~/components/runes/right-runes';

@@ -1,9 +1,12 @@
-import { Flex, Text } from '@chakra-ui/react';
-import type { FC } from 'react';
-import { PageLink } from '~/components/page-link';
+import { Flex } from '@chakra-ui/react';
+import type { FC, ReactNode } from 'react';
 import { colors } from '~/theme/colors';
 
-export const Footer: FC = () => (
+type FooterContainerProps = {
+	children: ReactNode;
+};
+
+export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 	<Flex
 		as="footer"
 		bg={colors.spaceGray}
@@ -18,9 +21,6 @@ export const Footer: FC = () => (
 		fontSize={{ base: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xl: 'lg' }}
 		flexDir={{ base: 'column', sm: 'row' }}
 	>
-		<Text textAlign="center">&copy; Franco Barbaro 2022. All Rights Reserved.</Text>
-		<PageLink href="/feedback" variant="gradient-underline">
-			Feedback
-		</PageLink>
+		{children}
 	</Flex>
 );
