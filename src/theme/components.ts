@@ -8,7 +8,6 @@ const navButtonStyle = {
 	color: colors.galacticPurple,
 	lineHeight: 4,
 	fontWeight: 'bold',
-	boxShadow: `10px 10px 0 ${colors.galacticPurple}`,
 	transition: 'all 0.5s',
 	letterSpacing: '1.2px',
 	fontFamily: `'Varela Round', sans-serif`,
@@ -16,12 +15,23 @@ const navButtonStyle = {
 	py: { base: 1, sm: 2, md: 3, lg: 3, xl: 4 },
 	borderRadius: { base: 7, sm: 9, md: 11, lg: 11, xl: 14 },
 	fontSize: { base: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xl: 'lg' },
+	boxShadow: {
+		base: `4px 4px 0 ${colors.galacticPurple}`,
+		xs: `6px 6px 0 ${colors.galacticPurple}`,
+		sm: `8px 8px 0 ${colors.galacticPurple}`,
+		md: `10px 10px 0 ${colors.galacticPurple}`,
+	},
 };
 
 const navButtonHoverStyle = {
 	bg: colors.galacticPurple,
 	color: colors.white,
-	boxShadow: `-10px -10px 0 ${colors.white}`,
+	boxShadow: {
+		base: `-4px -4px 0 ${colors.white}`,
+		xs: `-6px -6px 0 ${colors.white}`,
+		sm: `-8px -8px 0 ${colors.white}`,
+		md: `-10px -10px 0 ${colors.white}`,
+	},
 };
 
 const Button = {
