@@ -1,7 +1,7 @@
 import { Box, keyframes } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
-import { colors } from '~/common/colors';
+import { colors } from '~/theme/colors';
 
 type BackgroundProps = {
 	currentPath: string;

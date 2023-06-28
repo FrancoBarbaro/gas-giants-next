@@ -1,8 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { colors } from '~/common/colors';
 import { RoundedBox } from '~/components/rounded-box/rounded-box';
+import { colors } from '~/theme/colors';
 
 type RoundedTextBoxProps = {
 	textType: 'p' | 'h1' | 'h2';

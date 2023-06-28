@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import type { FC, ReactNode } from 'react';
-import { colors } from '~/common/colors';
+import { colors } from '~/theme/colors';
 
 type RoundedBoxProps = {
 	children: ReactNode;

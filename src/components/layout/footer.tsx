@@ -1,7 +1,7 @@
 import { Center, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { colors } from '~/common/colors';
 import { PageLink } from '~/components/page-link';
+import { colors } from '~/theme/colors';
 
 export const Footer: FC = () => (
 	<Center
