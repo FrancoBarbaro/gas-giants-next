@@ -1,6 +1,4 @@
-import { extendTheme } from '@chakra-ui/react';
-
-export const fonts: ReturnType<typeof extendTheme>['fonts'] = {
+export const fonts = {
 	heading: `'Patua One', cursive, fantasy`,
 	body: `'Quicksand', times, sans-serif`,
 };
