@@ -70,7 +70,7 @@ const gradientUnderlineStyle = {
 	bg: 'linear-gradient(90deg, magenta, blue)',
 	bgSize: '0% 3px',
 	bgRepeat: 'no-repeat',
-	bgPos: '0% 90%',
+	bgPos: '0% 95%',
 	transition: '0.3s ease',
 };
 
