@@ -1,24 +1,37 @@
-import { colors } from '~/common/colors';
+import { colors } from '~/theme/colors';
 
 const navButtonStyle = {
+	w: 'fit-content',
+	h: 'fit-content',
 	textTransform: 'uppercase',
 	bg: colors.white,
 	color: colors.galacticPurple,
-	px: 6,
-	py: 3,
 	lineHeight: 4,
 	fontWeight: 'bold',
-	boxShadow: `10px 10px 0 ${colors.galacticPurple}`,
 	transition: 'all 0.5s',
-	borderRadius: 10,
 	letterSpacing: '1.2px',
 	fontFamily: `'Varela Round', sans-serif`,
+	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6 },
+	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4 },
+	borderRadius: { xxs: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
+	fontSize: { xxs: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg' },
+	boxShadow: {
+		xxs: `4px 4px 0 ${colors.galacticPurple}`,
+		xs: `6px 6px 0 ${colors.galacticPurple}`,
+		sm: `8px 8px 0 ${colors.galacticPurple}`,
+		md: `10px 10px 0 ${colors.galacticPurple}`,
+	},
 };
 
 const navButtonHoverStyle = {
 	bg: colors.galacticPurple,
 	color: colors.white,
-	boxShadow: `-10px -10px 0 ${colors.white}`,
+	boxShadow: {
+		xxs: `-4px -4px 0 ${colors.white}`,
+		xs: `-6px -6px 0 ${colors.white}`,
+		sm: `-8px -8px 0 ${colors.white}`,
+		md: `-10px -10px 0 ${colors.white}`,
+	},
 };
 
 const Button = {
@@ -53,12 +66,11 @@ const runeActiveStyle = {
 	WebkitTextStroke: `1px ${colors.runeOutlineOnClick}`,
 };
 
-// use javascript or calc() to make its position depend on the line height
 const gradientUnderlineStyle = {
 	bg: 'linear-gradient(90deg, magenta, blue)',
 	bgSize: '0% 3px',
 	bgRepeat: 'no-repeat',
-	bgPos: '0% 90%',
+	bgPos: '0% 95%',
 	transition: '0.3s ease',
 };
 

@@ -1,7 +1,7 @@
 import { Box, keyframes } from '@chakra-ui/react';
-import type { FC } from 'react';
+import { FC, useRef } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
-import { colors } from '~/common/colors';
+import { colors } from '~/theme/colors';
 
 type BackgroundProps = {
 	currentPath: string;
@@ -34,11 +34,12 @@ const transitionStyles = {
 
 export const Background: FC<BackgroundProps> = ({ currentPath }) => {
 	const bgUrl = `url('/images${currentPath}bg.jpeg')`;
+	const nodeRef = useRef(null);
 
 	return (
 		<SwitchTransition mode="in-out">
-			<Transition key={bgUrl} timeout={duration}>
-				{(state) => <Box {...baseStyle} pos="absolute" bgImg={bgUrl} {...transitionStyles[state]} />}
+			<Transition key={bgUrl} timeout={duration} nodeRef={nodeRef}>
+				{(state) => <Box {...baseStyle} pos="absolute" bgImg={bgUrl} ref={nodeRef} {...transitionStyles[state]} />}
 			</Transition>
 		</SwitchTransition>
 	);
