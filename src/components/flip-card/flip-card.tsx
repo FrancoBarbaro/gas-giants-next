@@ -35,10 +35,13 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					h="100%"
 					textAlign="center"
 					bg={colors.grayBlack}
-					color={colors.white}
+					color={colors.neptuneBlue}
 					transform="rotateY(180deg)"
 					borderRadius={15}
 					overflow="hidden"
+					display="grid"
+					placeItems="center"
+					fontSize={{ base: 'xx-small', sm: 'sm', md: 'md', lg: 'lg', xxl: 'xx-large' }}
 					__css={{ backfaceVisibility: 'hidden' }}
 				>
 					<FlipCardCaption imageDesc={imageDesc} />
