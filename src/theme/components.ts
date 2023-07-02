@@ -13,7 +13,7 @@ const navButtonStyle = {
 	fontFamily: `'Varela Round', sans-serif`,
 	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6 },
 	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4 },
-	borderRadius: { xxs: 7, xs: 7, sm: 10, md: 13, lg: 14 },
+	borderRadius: { xxs: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
 	fontSize: { xxs: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg' },
 	boxShadow: {
 		xxs: `4px 4px 0 ${colors.galacticPurple}`,
