@@ -41,7 +41,7 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					overflow="hidden"
 					display="grid"
 					placeItems="center"
-					fontSize={{ base: 'xx-small', sm: 'sm', md: 'md', lg: 'lg', xxl: 'xx-large' }}
+					fontSize={{ xxs: 'xx-small', sm: 'sm', md: 'md', lg: 'lg', xxl: 'xx-large' }}
 					__css={{ backfaceVisibility: 'hidden' }}
 				>
 					<FlipCardCaption imageDesc={imageDesc} />

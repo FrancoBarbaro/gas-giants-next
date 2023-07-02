@@ -8,7 +8,7 @@ export const LeftRunes: FC = () => (
 		h="50vh"
 		justifyContent="space-between"
 		my="auto"
-		mx={{ base: 4, lg: 8, xl: 16, xxl: 28 }}
+		mx={{ xxs: 4, lg: 8, xl: 16, xxl: 28 }}
 		zIndex={3}
 	>
 		<PageLink href="/jupiter" variant="rune" tabIndex={-1}>
