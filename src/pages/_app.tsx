@@ -5,9 +5,9 @@ import '@fontsource/space-mono/400.css';
 import '@fontsource/varela-round/400.css';
 import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
-import { fetcher } from '~/clients/fetcher';
 import { Background } from '~/components/layout/background';
 import { ContentWrapper } from '~/components/layout/content-wrapper';
+import { fetcher } from '~/firebase/fetcher';
 import '../styles/globals.css';
 import { theme } from '../theme';
 
