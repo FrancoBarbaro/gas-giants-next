@@ -1,5 +1,5 @@
+import { firebaseApiFetcher } from '~/clients/firebase/firebase-fetcher';
 import { PlanetInfo } from '~/common/types';
-import { firebaseApiFetcher } from '~/firebase/fetcher';
 import { PlanetInfoReturnType } from '~/server/endpoints/planets/types';
 
 export const getPlanetInfoFromName = async (planet: string): Promise<PlanetInfoReturnType> => {
