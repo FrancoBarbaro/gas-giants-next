@@ -20,13 +20,12 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
 	return (
 		<ChakraProvider theme={theme}>
-			{/* TODO: think more about the position of this provider in the component tree */}
-			<FirebaseAuthContextProvider>
-				<ContentWrapper>
+			<ContentWrapper>
+				<FirebaseAuthContextProvider>
 					<Component {...pageProps} />
-				</ContentWrapper>
-				<Background currentPath={router.pathname} />
-			</FirebaseAuthContextProvider>
+				</FirebaseAuthContextProvider>
+			</ContentWrapper>
+			<Background currentPath={router.pathname} />
 		</ChakraProvider>
 	);
 };
