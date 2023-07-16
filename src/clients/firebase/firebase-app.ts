@@ -1,9 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from 'firebase/auth';
+// import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: 'AIzaSyBkB2N4aNMrUGrh5mjMbAxtL3Faqo_ct_I',
 	authDomain: 'gas-giants-api-9e3f4.firebaseapp.com',
@@ -14,9 +12,17 @@ const firebaseConfig = {
 	appId: '1:914718213413:web:c37e5061021ab34f4dc6cc',
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+// initialize firebase
+const firebaseApp = initializeApp(firebaseConfig);
 
-export const initFirebase = () => {
-	return app;
-};
+// initialize and export auth object
+export const auth = getAuth(firebaseApp);
+
+// TODO: incorporate firebase app check
+// const appCheck = initializeAppCheck(app, {
+// 	provider: new ReCaptchaV3Provider('abcdefghijklmnopqrstuvwxy-1234567890abcd'),
+
+// 	// Optional argument. If true, the SDK automatically refreshes App Check
+// 	// tokens as needed.
+// 	isTokenAutoRefreshEnabled: true,
+// });
