@@ -27,6 +27,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				zIndex={3}
 				w="100%"
 			>
+				{/* TODO: maybe this conditional could work better with the condition being dimensions are smaller than 100vw or 100vh */}
 				{widthSmallerThan300 || heightSmallerThan725 ? (
 					<>
 						<NavBar />
