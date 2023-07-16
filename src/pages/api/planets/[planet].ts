@@ -15,8 +15,11 @@ const handler = nc().get(async (req: NextApiRequest, res: NextApiResponse) => {
 	}
 
 	const { planet } = validatedSchemaResult.data;
+	const token = req.headers.authorization?.replace('Bearer ', '');
 
-	const response = await getPlanetInfoFromName(planet);
+	if (!token) return res.status(401).json({ message: 'Request did not include an auth token!' });
+	const response = await getPlanetInfoFromName(planet, token);
+
 	if (response.error) return res.status(500).json({ message: 'Fetching planet info by name failed!' });
 	return res.status(200).json({ info: response.data });
 });
