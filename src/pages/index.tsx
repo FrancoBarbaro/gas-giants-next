@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 export const getStaticProps = () => ({
 	redirect: {
 		destination: '/home',
-		permanent: false,
+		permanent: true,
 	},
 	props: {},
 });
