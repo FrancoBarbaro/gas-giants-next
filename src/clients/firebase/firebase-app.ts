@@ -19,7 +19,9 @@ const firebaseApp = initializeApp(firebaseConfig);
 export const auth = getAuth(firebaseApp);
 
 // initialize firebase app check
-initializeAppCheck(firebaseApp, {
-	provider: new ReCaptchaV3Provider('6Lfx5TUnAAAAAKmmh38KCTmAyjVwky-pLONOj0ya'),
-	isTokenAutoRefreshEnabled: true,
-});
+if (typeof window !== 'undefined') {
+	initializeAppCheck(firebaseApp, {
+		provider: new ReCaptchaV3Provider('6Lfx5TUnAAAAAKmmh38KCTmAyjVwky-pLONOj0ya'),
+		isTokenAutoRefreshEnabled: true,
+	});
+}
