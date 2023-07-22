@@ -1,5 +1,4 @@
 import { initializeApp } from 'firebase/app';
-import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -13,15 +12,7 @@ const firebaseConfig = {
 };
 
 // initialize firebase
-const firebaseApp = initializeApp(firebaseConfig);
+export const firebaseApp = initializeApp(firebaseConfig);
 
 // initialize and export auth object
 export const auth = getAuth(firebaseApp);
-
-// initialize firebase app check
-if (typeof window !== 'undefined') {
-	initializeAppCheck(firebaseApp, {
-		provider: new ReCaptchaV3Provider('6Lfx5TUnAAAAAKmmh38KCTmAyjVwky-pLONOj0ya'),
-		isTokenAutoRefreshEnabled: true,
-	});
-}
