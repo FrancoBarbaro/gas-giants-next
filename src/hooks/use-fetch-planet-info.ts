@@ -1,21 +1,26 @@
-import { User } from 'firebase/auth';
 import useSWR from 'swr';
 import { GasGiant, PlanetInfo } from '~/common/types';
-import type { UserState } from '~/context/firebase-auth-context';
 
-const fetcher = async (url: RequestInfo, user: UserState) => {
-	if (!user) return;
+type DataType = { info: PlanetInfo };
 
-	const token = await user.getIdToken();
-	const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
-	
+const fetcher = async (url: RequestInfo, authToken: string | null, appCheckToken: string | null) => {
+	if (!authToken || !appCheckToken) {
+		throw new Error('Request did not include the required credentials!');
+	}
+
+	const res = await fetch(url, {
+		headers: { Authorization: `Bearer ${authToken}`, 'x-firebase-appcheck': appCheckToken },
+	});
+
 	if (!res.ok) {
 		throw new Error('An error occurred while fetching the data!');
 	}
 	return res.json();
 };
 
-export const useFetchPlanetInfo = (planet: GasGiant, user: UserState) => {
-	const { data } = useSWR<{ info: PlanetInfo }>([`/api/planets/${planet}`, user], fetcher, { errorRetryCount: 2 });
+export const useFetchPlanetInfo = (planet: GasGiant, authToken: string | null, appCheckToken: string | null) => {
+	const { data } = useSWR<DataType>([`/api/planets/${planet}`, authToken, appCheckToken], fetcher, {
+		errorRetryCount: 2,
+	});
 	return { data: data?.info };
 };
