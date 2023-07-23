@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 import { GasGiant } from '~/common/types';
 import { PlanetPageContent } from '~/components/planet-page/planet-page-content';
 import { PlanetPageSkeleton } from '~/components/planet-page/planet-page-skeleton';
-import { FirebaseAuthContext } from '~/context/firebase-auth-context';
+import { FirebaseContext } from '~/context/firebase-context';
 import { useFetchPlanetInfo } from '~/hooks/use-fetch-planet-info';
 
 type PlanetPageProps = {
@@ -10,8 +10,8 @@ type PlanetPageProps = {
 };
 
 export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
-	const user = useContext(FirebaseAuthContext);
-	const { data } = useFetchPlanetInfo(planet, user);
+	const { authToken, appCheckToken } = useContext(FirebaseContext);
+	const { data } = useFetchPlanetInfo(planet, authToken, appCheckToken);
 
 	// TODO: have a SwitchTransition here
 	// return <PlanetPageSkeleton planet={planet} />;
