@@ -11,6 +11,7 @@ type ContentWrapperProps = {
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 	// these booleans are based off of the viewport's dimensions
+	// TODO: change this to make the nav be a hamburger as the screen gets very small
 	const [widthSmallerThan1200] = useMediaQuery('(max-width: 75em)');
 	const [widthSmallerThan300] = useMediaQuery('(max-width: 20em)');
 	const [heightSmallerThan725] = useMediaQuery('(max-height: 45em)');
