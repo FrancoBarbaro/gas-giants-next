@@ -18,10 +18,7 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 			<VStack mr={10} w="50%" h="100%">
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1">{`About ${planet}:`}</RoundedTextBox>
-					{/* TODO: find out what's overriding this margin top, what chakra element is the CSS style coming from? */}
-					<RoundedTextBox textType="p" mt={8}>
-						{planetDesc}
-					</RoundedTextBox>
+					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
 				</VStack>
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h2">Symbol:</RoundedTextBox>
