@@ -22,14 +22,16 @@ const firebaseAxiosClient = axios.create({
 	responseType: 'json',
 });
 
-// TODO: consider refactoring this client to use the fetch api instead of axios
-
 /**
  * Fetcher description
  */
-export const firebaseApiFetcher = async <T = unknown>(url: string, token: string): Promise<FirebaseResult<T>> => {
+export const firebaseApiFetcher = async <T = unknown>(
+	url: string,
+	authToken: string,
+	appCheckToken: string,
+): Promise<FirebaseResult<T>> => {
 	return firebaseAxiosClient
-		.get(`${url}.json?auth=${token}`)
+		.get(`${url}.json?auth=${authToken}`, { headers: { 'x-firebase-appcheck': appCheckToken } })
 		.then((res) => ({ success: true, data: res.data } as SuccessFirebaseResult<T>))
 		.catch((error: Error) => ({ success: false, error: error.message } as FailedFirebaseResult));
 };
