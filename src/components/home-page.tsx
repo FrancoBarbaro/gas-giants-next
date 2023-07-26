@@ -1,10 +1,56 @@
-import { Text } from '@chakra-ui/react';
-import type { FC } from 'react';
+import { Button, Flex, FormControl, FormHelperText, FormLabel, Input, Textarea } from '@chakra-ui/react';
+import { FC, FormEvent, useState } from 'react';
+import { useFetchAiResponse } from '~/hooks/use-fetch-ai-response';
+import { colors } from '~/theme/colors';
 
-// TODO: add an ai chatbot on this page, it would replace the table and maybe the picture
 // TODO: add og image (image that shows up when url is sent, tweeted, etc.)
-export const HomePage: FC = () => (
-	<Text as="h3" color="pink">
-		Content
-	</Text>
-);
+export const HomePage: FC = () => {
+	const [prompt, setPrompt] = useState('');
+	const { fetchAiResponse, answer } = useFetchAiResponse();
+
+	const validPrompt = prompt.trim() !== '';
+
+	const submitHandler = (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		if (validPrompt) {
+			fetchAiResponse(prompt);
+		}
+		setPrompt('');
+	};
+
+	return (
+		<form onSubmit={submitHandler}>
+			<FormControl color={colors.white}>
+				<FormLabel fontSize={24}>AI Helper</FormLabel>
+				<Textarea h={60} bg={colors.grayBlack} opacity={0.85} value={answer} resize="none" readOnly />
+				<Flex flexDir="row">
+					<Input
+						bg={colors.grayBlack}
+						opacity={0.85}
+						placeholder="Ask a question"
+						type="text"
+						value={prompt}
+						onChange={(event) => setPrompt(event.target.value)}
+					/>
+					<Button
+						type="submit"
+						disabled={!validPrompt}
+						bg={colors.white}
+						color={colors.galacticPurple}
+						_disabled={{
+							opacity: 0.4,
+							cursor: 'not-allowed',
+							_hover: { bg: colors.white, color: colors.galacticPurple },
+						}}
+						_hover={{ bg: colors.galacticPurple, color: colors.white }}
+					>
+						Ask
+					</Button>
+				</Flex>
+				<FormHelperText color={colors.neonPink}>
+					Ask our knowledgable AI helper any questions that you have about the Gas Giants
+				</FormHelperText>
+			</FormControl>
+		</form>
+	);
+};
