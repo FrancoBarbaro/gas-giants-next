@@ -9,7 +9,7 @@ const fetcher = async (url: RequestInfo, authToken: string | null, appCheckToken
 	}
 
 	const res = await fetch(url, {
-		headers: { Authorization: `Bearer ${authToken}`, 'x-firebase-appcheck': appCheckToken },
+		headers: { Authorization: `Bearer ${authToken}`, 'X-Firebase-AppCheck': appCheckToken },
 	});
 
 	if (!res.ok) {

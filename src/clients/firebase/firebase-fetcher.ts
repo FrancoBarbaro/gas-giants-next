@@ -31,7 +31,7 @@ export const firebaseApiFetcher = async <T = unknown>(
 	appCheckToken: string,
 ): Promise<FirebaseResult<T>> => {
 	return firebaseAxiosClient
-		.get(`${url}.json?auth=${authToken}`, { headers: { 'x-firebase-appcheck': appCheckToken } })
+		.get(`${url}.json?auth=${authToken}`, { headers: { 'X-Firebase-AppCheck': appCheckToken } })
 		.then((res) => ({ success: true, data: res.data } as SuccessFirebaseResult<T>))
 		.catch((error: Error) => ({ success: false, error: error.message } as FailedFirebaseResult));
 };
