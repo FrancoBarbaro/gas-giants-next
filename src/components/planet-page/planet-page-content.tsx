@@ -15,7 +15,7 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 
 	return (
 		<>
-			<VStack mr={10} w="50%" h="100%">
+			<VStack mr={10} w="50%" h="100%" justifyContent="space-between">
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1">{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
@@ -25,7 +25,7 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 					<RoundedTextBox textType="p">{symbolDesc}</RoundedTextBox>
 				</VStack>
 			</VStack>
-			<VStack ml={10} w="50%" h="100%">
+			<VStack ml={10} w="50%" h="100%" justifyContent="space-between">
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h2">Fun Facts:</RoundedTextBox>
 					<RoundedListBox list={Object.values(funFacts)} fontSize={15.5} />
