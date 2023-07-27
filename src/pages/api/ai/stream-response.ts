@@ -21,10 +21,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	if (!appCheckToken) return res.status(401).json({ message: 'Request did not include a firebase app check token!' });
 
 	// set headers to allow for a streaming response
-	res.setHeader('Content-Type', 'text/event-stream;charset=utf-8');
-	res.setHeader('Cache-Control', 'no-cache, no-transform');
-	res.setHeader('X-Accel-Buffering', 'no');
-	res.setHeader('Connection', 'keep-alive');
+	// res.setHeader('Content-Type', 'text/event-stream;charset=utf-8');
+	// res.setHeader('Cache-Control', 'no-cache, no-transform');
+	// res.setHeader('X-Accel-Buffering', 'no');
+	// res.setHeader('Connection', 'keep-alive');
+
+	res.writeHead(200, {
+		Connection: 'keep-alive',
+		'Content-Encoding': 'none',
+		'Cache-Control': 'no-cache',
+		'Content-Type': 'text/event-stream',
+	});
 
 	// get a stream from calling the OpenAI API and pipe it to our response
 	const stream = await getAiResponseStream(prompt);
