@@ -39,3 +39,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	// signal the end of the response to stop the stream
 	res.end();
 }
+
+// configure this file to use Edge runtime instead of Node
+export const config = {
+	runtime: 'edge',
+};
