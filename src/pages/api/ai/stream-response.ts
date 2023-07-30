@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getAiResponseStream } from '~/server/endpoints/ai/get-ai-response-stream';
 
@@ -6,35 +6,49 @@ const AiResponseQuerySchema = z.object({
 	prompt: z.string(),
 });
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-	const validatedSchemaResult = AiResponseQuerySchema.safeParse(req.body);
+export default async function handler(req: NextRequest) {
+	const validatedSchemaResult = AiResponseQuerySchema.safeParse(await req.json());
 
 	if (!validatedSchemaResult.success) {
-		return res.status(400).json({ message: validatedSchemaResult.error.message });
+		return new NextResponse(JSON.stringify({ success: false, message: validatedSchemaResult.error.message }), {
+			status: 401,
+			headers: { 'content-type': 'application/json' },
+		});
 	}
 
 	const { prompt } = validatedSchemaResult.data;
-	const authToken = req.headers.authorization?.replace('Bearer ', '');
-	const appCheckToken = req.headers['x-firebase-appcheck'];
+	const authToken = req.headers.get('authorization')?.replace('Bearer ', '');
+	const appCheckToken = req.headers.get('x-firebase-appcheck');
 
-	if (!authToken) return res.status(401).json({ message: 'Request did not include an auth token!' });
-	if (!appCheckToken) return res.status(401).json({ message: 'Request did not include a firebase app check token!' });
+	if (!authToken) {
+		return new NextResponse(JSON.stringify({ success: false, message: 'Request did not include an auth token!' }), {
+			status: 401,
+			headers: { 'content-type': 'application/json' },
+		});
+	}
 
-	// set headers to allow for a streaming response
-	res.setHeader('Content-Type', 'text/event-stream;charset=utf-8');
-	res.setHeader('Cache-Control', 'no-cache, no-transform');
-	res.setHeader('X-Accel-Buffering', 'no');
+	if (!appCheckToken) {
+		return new NextResponse(
+			JSON.stringify({ success: false, message: 'Request did not include a firebase app check token!' }),
+			{
+				status: 401,
+				headers: { 'content-type': 'application/json' },
+			},
+		);
+	}
 
 	// get a stream from calling the OpenAI API and pipe it to our response
 	const stream = await getAiResponseStream(prompt);
-	await stream.pipeTo(
-		new WritableStream({
-			write(chunk) {
-				res.write(chunk);
-			},
-		}),
-	);
-
-	// signal the end of the response to stop the stream
-	res.end();
+	return new NextResponse(stream, {
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+			'Content-Type': 'text/event-stream; charset=utf-8',
+			Connection: 'keep-alive',
+			'Cache-Control': 'no-cache, no-transform',
+			'X-Accel-Buffering': 'no',
+			'Content-Encoding': 'none',
+		},
+	});
 }
+
+export const runtime = 'edge';
