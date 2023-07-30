@@ -10,7 +10,7 @@ type PageLinkProps = {
 };
 
 export const PageLink: FC<PageLinkProps> = ({ href, children, variant, tabIndex }) => (
-	<NextLink href={href} passHref>
+	<NextLink href={href} legacyBehavior passHref>
 		<ChakraLink
 			variant={variant}
 			// TODO: none of the blurs seem to be working anymore... windows problem?
