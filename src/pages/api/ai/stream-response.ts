@@ -6,6 +6,9 @@ const AiResponseQuerySchema = z.object({
 	prompt: z.string(),
 });
 
+// configures this file to use the Edge runtime instead of Node
+export const runtime = 'edge';
+
 export default async function handler(req: NextRequest) {
 	const validatedSchemaResult = AiResponseQuerySchema.safeParse(await req.json());
 
@@ -50,5 +53,3 @@ export default async function handler(req: NextRequest) {
 		},
 	});
 }
-
-export const runtime = 'edge';
