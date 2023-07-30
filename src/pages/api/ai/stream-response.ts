@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { getAiResponseStream } from '~/server/endpoints/ai/get-ai-response-stream';
 
+// configures this file to use the Edge runtime instead of Node
+export const runtime = 'edge';
+
 const AiResponseQuerySchema = z.object({
 	prompt: z.string(),
 });
-
-// configures this file to use the Edge runtime instead of Node
-export const runtime = 'edge';
 
 export default async function handler(req: NextRequest) {
 	const validatedSchemaResult = AiResponseQuerySchema.safeParse(await req.json());
