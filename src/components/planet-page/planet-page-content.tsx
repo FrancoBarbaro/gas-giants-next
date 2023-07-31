@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { AspectRatio, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PlanetInfo } from '~/common/types';
 import { FlipCard } from '~/components/flip-card/flip-card';
@@ -15,23 +15,35 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 
 	return (
 		<>
-			<VStack mr={10} w="50%" h="100%" justifyContent="space-between">
-				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h1">{`About ${planet}:`}</RoundedTextBox>
+			<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
+				<VStack as="section" alignItems="initial" w="100%" mb={6}>
+					<RoundedTextBox textType="h1" mb={2}>{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
 				</VStack>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2">Symbol:</RoundedTextBox>
+					<RoundedTextBox textType="h2" mb={2}>
+						Symbol:
+					</RoundedTextBox>
 					<RoundedTextBox textType="p">{symbolDesc}</RoundedTextBox>
 				</VStack>
 			</VStack>
-			<VStack ml={10} w="50%" h="100%" justifyContent="space-between">
+			<VStack
+				ml={{ xxs: 0, md: 10 }}
+				mt={{ xxs: 8, md: 0 }}
+				w={{ xxs: '100%', md: '50%' }}
+				h="100%"
+				justifyContent="space-between"
+			>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2">Fun Facts:</RoundedTextBox>
+					<RoundedTextBox textType="h2" mt={1} mb={3}>
+						Fun Facts:
+					</RoundedTextBox>
 					<RoundedListBox list={Object.values(funFacts)} fontSize={15.5} />
 				</VStack>
 				<VStack as="section" alignItems="initial" w="100%">
-					<FlipCard imageUrl={imageUrl} imageDesc={imageDesc} imageAltText={imageAltText} />
+					<AspectRatio ratio={480 / 219} w="100%">
+						<FlipCard imageUrl={imageUrl} imageDesc={imageDesc} imageAltText={imageAltText} />
+					</AspectRatio>
 				</VStack>
 			</VStack>
 		</>
