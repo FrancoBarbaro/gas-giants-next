@@ -42,6 +42,7 @@ export default async function handler(req: NextRequest) {
 
 	// get a stream from calling the OpenAI API and pipe it to our response
 	const stream = await getAiResponseStream(prompt);
+	
 	return new NextResponse(stream, {
 		headers: {
 			'Access-Control-Allow-Origin': '*',
