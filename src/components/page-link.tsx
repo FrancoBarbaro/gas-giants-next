@@ -1,6 +1,6 @@
 import { Link as ChakraLink } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import type { FC, ReactNode } from 'react';
+import type { FC, MouseEvent, ReactNode, TouchEvent } from 'react';
 
 type PageLinkProps = {
 	href: string;
@@ -9,17 +9,19 @@ type PageLinkProps = {
 	tabIndex?: number;
 };
 
+const unfocusButton = (event: TouchEvent<HTMLAnchorElement>) => {
+	event.currentTarget.blur();
+};
+
 export const PageLink: FC<PageLinkProps> = ({ href, children, variant, tabIndex }) => (
 	<NextLink href={href} legacyBehavior passHref>
 		<ChakraLink
 			variant={variant}
-			// TODO: none of the blurs seem to be working anymore... windows problem?
-			// for more context: on mac, blur is working on click, not on drag. check again on windows
-			onClick={(event) => {
-				event.currentTarget.blur();
-			}}
-			// TODO: see if an onTouch blur needs to be added for mobile support
 			tabIndex={tabIndex}
+			// onClick={unfocusButton}
+			// TODO: see if an onTouch blur needs to be added for mobile support
+			onTouchEnd={unfocusButton}
+			onTouchCancel={unfocusButton}
 		>
 			{children}
 		</ChakraLink>
