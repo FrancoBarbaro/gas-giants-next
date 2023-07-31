@@ -1,4 +1,4 @@
-import { Box, Center, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Center, Flex, useMediaQuery } from '@chakra-ui/react';
 import type { FC, ReactNode } from 'react';
 import { Footer } from '~/components/footer/footer';
 import { NavBar } from '~/components/nav/nav';
@@ -10,15 +10,12 @@ type ContentWrapperProps = {
 };
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
-	// these booleans are based off of the viewport's dimensions
 	// TODO: change this to make the nav be a hamburger as the screen gets very small
-	const [widthSmallerThan1200] = useMediaQuery('(max-width: 75em)');
-	const [widthSmallerThan300] = useMediaQuery('(max-width: 20em)');
-	const [heightSmallerThan725] = useMediaQuery('(max-height: 45em)');
+	const [widthSmallerThan75] = useMediaQuery('(max-width: 75em)');
 
 	return (
-		<Flex justifyContent="space-between">
-			{!widthSmallerThan1200 && <LeftRunes />}
+		<Flex justifyContent="space-between" overflow="auto">
+			{!widthSmallerThan75 && <LeftRunes />}
 			<Flex
 				h="100vh"
 				bg="transparent"
@@ -28,34 +25,19 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				zIndex={3}
 				w="100%"
 			>
-				{/* TODO: maybe this conditional could work better with the condition being dimensions are smaller than 100vw or 100vh */}
-				{widthSmallerThan300 || heightSmallerThan725 ? (
-					<>
-						<NavBar />
-						<Box overflow="auto">
-							<Center as="main" pos="relative" m="auto" w="95%" flexDir={{ xxs: 'column', md: 'row' }}>
-								{children}
-							</Center>
-							<Footer />
-						</Box>
-					</>
-				) : (
-					<>
-						<NavBar />
-						<Center
-							as="main"
-							pos="relative"
-							m="auto"
-							w={{ xxs: '95%', md: '90%', xl: '95%' }}
-							flexDir={{ xxs: 'column', md: 'row' }}
-						>
-							{children}
-						</Center>
-						<Footer />
-					</>
-				)}
+				<NavBar />
+				<Center
+					as="main"
+					pos="relative"
+					m="auto"
+					w={{ xxs: '95%', md: '90%', xl: '95%' }}
+					flexDir={{ xxs: 'column', md: 'row' }}
+				>
+					{children}
+				</Center>
+				<Footer />
 			</Flex>
-			{!widthSmallerThan1200 && <RightRunes />}
+			{!widthSmallerThan75 && <RightRunes />}
 		</Flex>
 	);
 };

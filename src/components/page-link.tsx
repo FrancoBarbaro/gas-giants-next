@@ -9,7 +9,6 @@ type PageLinkProps = {
 	tabIndex?: number;
 };
 
-
 export const PageLink: FC<PageLinkProps> = ({ href, children, variant, tabIndex }) => (
 	<NextLink href={href} legacyBehavior passHref>
 		<ChakraLink variant={variant} tabIndex={tabIndex} onClick={(event) => event.currentTarget.blur()}>
