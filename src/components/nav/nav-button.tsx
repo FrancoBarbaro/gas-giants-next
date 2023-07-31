@@ -12,12 +12,6 @@ export const NavButton: FC<NavButtonProps> = ({ path, children }) => (
 		<Button
 			variant="nav-button"
 			onClick={(event) => event.currentTarget.blur()}
-			onTouchStartCapture={(event) => {
-				const target = event.currentTarget;
-				setTimeout(() => {
-					target.blur();
-				}, 1000);
-			}}
 		>
 			{children}
 		</Button>
