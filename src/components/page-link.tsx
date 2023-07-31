@@ -9,26 +9,10 @@ type PageLinkProps = {
 	tabIndex?: number;
 };
 
-// const unfocusButton = (event: TouchEvent<HTMLAnchorElement>) => {
-// 	setTimeout(() => {
-// 		event.currentTarget.blur();
-// 	}, 500);
-// };
 
 export const PageLink: FC<PageLinkProps> = ({ href, children, variant, tabIndex }) => (
 	<NextLink href={href} legacyBehavior passHref>
-		<ChakraLink
-			variant={variant}
-			tabIndex={tabIndex}
-			// onClick={unfocusButton}
-			// TODO: see if an onTouch blur needs to be added for mobile support
-			onTouchStart={(event) =>
-				setTimeout(() => {
-					event.currentTarget.blur();
-				}, 1000)
-			}
-			onTouchCancel={(event) => event.currentTarget.blur()}
-		>
+		<ChakraLink variant={variant} tabIndex={tabIndex} onClick={(event) => event.currentTarget.blur()}>
 			{children}
 		</ChakraLink>
 	</NextLink>

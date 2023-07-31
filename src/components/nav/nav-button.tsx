@@ -11,9 +11,8 @@ export const NavButton: FC<NavButtonProps> = ({ path, children }) => (
 	<NextLink href={path}>
 		<Button
 			variant="nav-button"
-			onClick={(event) => {
-				event.currentTarget.blur();
-			}}
+			onClick={(event) => event.currentTarget.blur()}
+			onTouchEnd={(event) => event.currentTarget.blur()}
 		>
 			{children}
 		</Button>
