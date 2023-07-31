@@ -4,7 +4,6 @@ import { useFetchAiResponse } from '~/hooks/use-fetch-ai-response';
 import { colors } from '~/theme/colors';
 
 // TODO: add og image (image that shows up when url is sent, tweeted, etc.)
-// TODO: figure out why the response isn't streaming on production, instead it's appearing all at once
 export const HomePage: FC = () => {
 	const [prompt, setPrompt] = useState('');
 	const { fetchAiResponse, answer } = useFetchAiResponse();
