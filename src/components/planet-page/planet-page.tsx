@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { FC, useContext } from 'react';
 import { GasGiant } from '~/common/types';
 import { PlanetPageContent } from '~/components/planet-page/planet-page-content';
@@ -12,8 +13,18 @@ type PlanetPageProps = {
 export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 	const { authToken, appCheckToken } = useContext(FirebaseContext);
 	const { data } = useFetchPlanetInfo(planet, authToken, appCheckToken);
-
+	const capitalizedPlanetName = planet[0].toUpperCase() + planet.slice(1);
 	// TODO: have a SwitchTransition here
 	// return <PlanetPageSkeleton planet={planet} />;
-	return data ? <PlanetPageContent planet={planet} info={data} /> : <PlanetPageSkeleton planet={planet} />;
+
+	return (
+		<>
+			<Head>
+				<title>{capitalizedPlanetName}</title>
+				<meta name="description" content={`Information about the planet ${capitalizedPlanetName}`} />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			{data ? <PlanetPageContent planet={planet} info={data} /> : <PlanetPageSkeleton planet={planet} />}
+		</>
+	);
 };
