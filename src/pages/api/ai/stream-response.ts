@@ -14,7 +14,7 @@ export default async function handler(req: NextRequest) {
 
 	if (!validatedSchemaResult.success) {
 		return new NextResponse(JSON.stringify({ success: false, message: validatedSchemaResult.error.message }), {
-			status: 401,
+			status: 400,
 			headers: { 'content-type': 'application/json' },
 		});
 	}
