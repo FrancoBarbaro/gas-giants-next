@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { NavButton } from './nav-button';
 
+// TODO: make my dynamic
 export const NavBar: FC = () => (
 	<Flex as="nav" w={{ xxs: '95%', md: '90%', lg: '85%' }} mx="auto" my={12} justifyContent="space-between">
 		<NavButton path="/home">Home</NavButton>
