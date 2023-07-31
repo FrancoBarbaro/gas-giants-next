@@ -21,7 +21,6 @@
 		"firebase": "^9.23.0",
 		"framer-motion": "^6.3.12",
 		"next": "^13.4.12",
-		"next-connect": "^0.13.0",
 		"openai": "^3.3.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
