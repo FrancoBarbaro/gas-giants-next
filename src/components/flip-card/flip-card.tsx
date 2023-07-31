@@ -1,5 +1,5 @@
 import { AspectRatio, Box, Image } from '@chakra-ui/react';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { FlipCardCaption } from '~/components/flip-card/flip-card-caption';
 import { colors } from '~/theme/colors';
 
