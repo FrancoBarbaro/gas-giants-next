@@ -8,7 +8,7 @@ type BackgroundProps = {
 };
 
 export const Background: FC<BackgroundProps> = ({ currentPath }) => (
-	<Box pos="absolute" w="100%" h="100%" top={0} left={0}>
+	<Box pos="absolute" w="100%" h="100%" top={0} left={0} zIndex={1}>
 		<BackgroundImage currentPath={currentPath} />
 		<ShootingStars />
 	</Box>

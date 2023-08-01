@@ -19,9 +19,6 @@ const baseStyle = {
 	bgRepeat: 'no-repeat',
 	bgColor: colors.spaceBlue,
 	bgPos: 'center',
-	top: 0,
-	left: 0,
-	zIndex: 1,
 };
 
 const transitionStyles = {
