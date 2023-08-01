@@ -10,9 +10,10 @@ type PlanetPageContentProps = {
 	info: PlanetInfo;
 };
 
+// TODO: make font size dynamic
 export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) => {
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
-
+	
 	return (
 		<>
 			<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
