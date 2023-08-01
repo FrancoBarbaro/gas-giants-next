@@ -1,4 +1,4 @@
-import { Box, keyframes } from '@chakra-ui/react';
+import { Box, keyframes, usePrefersReducedMotion } from '@chakra-ui/react';
 import { FC, useRef } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
 import { colors } from '~/theme/colors';
@@ -32,14 +32,36 @@ const transitionStyles = {
 	unmounted: {},
 };
 
+const zoom = keyframes`
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+`;
+
 export const Background: FC<BackgroundProps> = ({ currentPath }) => {
 	const bgUrl = `url('/images${currentPath}bg.jpeg')`;
 	const nodeRef = useRef(null);
+	const prefersReducedMotion = usePrefersReducedMotion();
 
 	return (
 		<SwitchTransition mode="in-out">
 			<Transition key={bgUrl} timeout={duration} nodeRef={nodeRef}>
-				{(state) => <Box {...baseStyle} pos="absolute" bgImg={bgUrl} ref={nodeRef} {...transitionStyles[state]} />}
+				{(state) => (
+					<Box
+						{...baseStyle}
+						pos="absolute"
+						bgImg={bgUrl}
+						animation={prefersReducedMotion ? undefined : `${zoom} 30s linear infinite`}
+						ref={nodeRef}
+						{...transitionStyles[state]}
+					/>
+				)}
 			</Transition>
 		</SwitchTransition>
 	);
