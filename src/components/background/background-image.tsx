@@ -29,17 +29,11 @@ const transitionStyles = {
 	unmounted: {},
 };
 
-const zoom = keyframes`
-	0% {
-		transform: scale(1);
-	}
-	50% {
-		transform: scale(1.2);
-	}
-	100% {
-		transform: scale(1);
-	}
-`;
+const zoom = keyframes({
+	'0%': { transform: 'scale(1)' },
+	'50%': { transform: 'scale(1.2)' },
+	'100%': { transform: 'scale(1)' },
+});
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({ currentPath }) => {
 	const bgUrl = `url('/images${currentPath}bg.jpeg')`;
