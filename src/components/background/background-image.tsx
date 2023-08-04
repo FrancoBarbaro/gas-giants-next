@@ -1,15 +1,11 @@
 import { Box, keyframes, usePrefersReducedMotion } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
 import { colors } from '~/theme/colors';
 
-type BackgroundImageProps = {
-	currentPath: string;
-};
-
 const fadeIn = keyframes({ from: { opacity: 0 }, to: { opacity: 1 } });
 const fadeOut = keyframes({ from: { opacity: 1 }, to: { opacity: 0 } });
-
 const duration = 300;
 
 const baseStyle = {
@@ -35,8 +31,9 @@ const zoom = keyframes({
 	'100%': { transform: 'scale(1)' },
 });
 
-export const BackgroundImage: FC<BackgroundImageProps> = ({ currentPath }) => {
-	const bgUrl = `url('/images${currentPath}bg.jpeg')`;
+export const BackgroundImage: FC = () => {
+	const { pathname } = useRouter();
+	const bgUrl = `url('/images${pathname}bg.jpeg')`;
 	const nodeRef = useRef(null);
 	const prefersReducedMotion = usePrefersReducedMotion();
 

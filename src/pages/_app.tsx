@@ -10,14 +10,14 @@ import { FirebaseContextProvider } from '~/context/firebase-context';
 import '../styles/globals.css';
 import { theme } from '../theme';
 
-const App = ({ Component, pageProps, router }: AppProps) => (
+const App = ({ Component, pageProps }: AppProps) => (
 	<ChakraProvider theme={theme}>
 		<ContentWrapper>
 			<FirebaseContextProvider>
 				<Component {...pageProps} />
 			</FirebaseContextProvider>
 		</ContentWrapper>
-		<Background currentPath={router.pathname} />
+		<Background />
 	</ChakraProvider>
 );
 
