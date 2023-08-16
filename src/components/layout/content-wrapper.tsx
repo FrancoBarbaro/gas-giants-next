@@ -10,12 +10,13 @@ type ContentWrapperProps = {
 };
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
+	// TODO: fix problem on mobile where there is no space under footer when you scroll all the way down
 	// TODO: change this to make the nav be a hamburger as the screen gets very small
-	const [widthSmallerThan75] = useMediaQuery('(max-width: 75em)');
+	const [widthSmallerThan75em] = useMediaQuery('(max-width: 75em)');
 
 	return (
 		<Flex justifyContent="space-between" overflow="auto">
-			{!widthSmallerThan75 && <LeftRunes />}
+			{!widthSmallerThan75em && <LeftRunes />}
 			<Flex
 				h="100vh"
 				bg="transparent"
@@ -37,7 +38,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				</Center>
 				<Footer />
 			</Flex>
-			{!widthSmallerThan75 && <RightRunes />}
+			{!widthSmallerThan75em && <RightRunes />}
 		</Flex>
 	);
 };
