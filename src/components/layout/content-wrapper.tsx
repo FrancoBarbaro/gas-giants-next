@@ -11,7 +11,6 @@ type ContentWrapperProps = {
 
 export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 	// TODO: fix problem on mobile where there is no space under footer when you scroll all the way down
-	// TODO: change this to make the nav be a hamburger as the screen gets very small
 	const [widthSmallerThan75em] = useMediaQuery('(max-width: 75em)');
 
 	return (

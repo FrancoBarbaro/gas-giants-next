@@ -56,7 +56,6 @@ export async function getAiResponseStream(prompt: string) {
 						controller.enqueue(encoder.encode(text));
 						counter++;
 					} catch (err) {
-						// TODO: is this all i have to do, or should i return some sort of error?
 						controller.error(err);
 					}
 				}

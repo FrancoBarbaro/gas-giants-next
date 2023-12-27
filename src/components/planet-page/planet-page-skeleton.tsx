@@ -6,14 +6,7 @@ type PlanetPageSkeletonProps = {
 	planet: string;
 };
 
-/* TODO: responsiveness improvements list:
-1. Make headers resize nicer when screen gets smaller (also, consider changing the first header to be the same size
-		as the others)
-2. Main issue: each planet has a different amount of text for each section, so they will be different in size,
-		so how do i make a generalized skeleton layout? this may be a non-issue as the loading will be quite fast
-3. For very small devices the sections should all stack vertically, so the fun facts section would be below the symbol section
-*/
-
+// TODO: Make headers resize nicer when screen gets smaller
 export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
 	<>
 		<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">

@@ -14,8 +14,6 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 	const { authToken, appCheckToken } = useContext(FirebaseContext);
 	const { data } = useFetchPlanetInfo(planet, authToken, appCheckToken);
 	const capitalizedPlanetName = planet[0].toUpperCase() + planet.slice(1);
-	// TODO: have a SwitchTransition here
-	// return <PlanetPageSkeleton planet={planet} />;
 
 	return (
 		<>
