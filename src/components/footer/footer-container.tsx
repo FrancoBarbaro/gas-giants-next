@@ -14,8 +14,8 @@ export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 		borderRadius={15}
 		w={{ xxs: '95%', md: '90%', lg: '85%' }}
 		mx="auto"
-		// TODO: make my dynamic
-		my={12}
+		mt={{ xxs: 6, sm: 8, md: 12, lg: 14 }}
+		mb={{ xxs: 2, sm: 4, md: 8, lg: 10 }}
 		color={colors.lightGray}
 		justifyContent="space-around"
 		alignItems="center"
