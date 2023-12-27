@@ -1,4 +1,4 @@
-import { Box, keyframes, usePrefersReducedMotion } from '@chakra-ui/react';
+import { Box, keyframes } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { FC, useRef } from 'react';
 import { SwitchTransition, Transition } from 'react-transition-group';
@@ -31,11 +31,14 @@ const zoom = keyframes({
 	'100%': { transform: 'scale(1)' },
 });
 
-export const BackgroundImage: FC = () => {
+type BackgroundImageProps = {
+	animated: boolean;
+};
+
+export const BackgroundImage: FC<BackgroundImageProps> = ({ animated }) => {
 	const { pathname } = useRouter();
 	const bgUrl = `url('/images${pathname}bg.jpeg')`;
 	const nodeRef = useRef(null);
-	const prefersReducedMotion = usePrefersReducedMotion();
 
 	return (
 		<SwitchTransition mode="in-out">
@@ -45,7 +48,7 @@ export const BackgroundImage: FC = () => {
 						{...baseStyle}
 						pos="absolute"
 						bgImg={bgUrl}
-						animation={prefersReducedMotion ? undefined : `${zoom} 30s linear infinite`}
+						animation={animated ? `${zoom} 30s linear infinite` : undefined}
 						ref={nodeRef}
 						{...transitionStyles[state]}
 					/>
