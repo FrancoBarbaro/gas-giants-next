@@ -1,12 +1,7 @@
-import { Skeleton, Stack, Text } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import type { FC } from 'react';
 
-const SkeletonLayout: FC = () => (
-	<Stack>
-		<Skeleton />
-	</Stack>
-);
-
+// TODO: complete this page
 export const FeedbackPage: FC = () => (
 	<Text as="h3" color="pink">
 		Content
