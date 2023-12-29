@@ -7,7 +7,7 @@ export const NavBar: FC = () => (
 		as="nav"
 		w={{ xxs: '95%', md: '90%', lg: '85%' }}
 		mx="auto"
-		mt={{ xxs: 2, sm: 4, md: 8, lg: 10 }}
+		mt={{ xxs: 2, sm: 4, md: 6 }}
 		mb={{ xxs: 6, sm: 8, md: 12, lg: 14 }}
 		justifyContent="space-between"
 	>
