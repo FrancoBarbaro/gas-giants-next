@@ -23,7 +23,9 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					w="100%"
 					h="100%"
 					pos="absolute"
-					borderRadius={15}
+					// TODO: make border radius dynamic and make it match the border radius of the rounded boxes
+					// borderRadius={15}
+					borderRadius={{ xxs: 8, xs: 10, sm: 12, md: 15 }}
 					overflow="hidden"
 					__css={{ backfaceVisibility: 'hidden' }}
 				>

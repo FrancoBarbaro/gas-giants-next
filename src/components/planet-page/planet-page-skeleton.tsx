@@ -6,7 +6,7 @@ type PlanetPageSkeletonProps = {
 	planet: string;
 };
 
-// TODO: Make headers resize nicer when screen gets smaller
+// TODO: Apply all dynamic styling from PlanetPageContent to the Skeletons as well
 export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
 	<>
 		<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
