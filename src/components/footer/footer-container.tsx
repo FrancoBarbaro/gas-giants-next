@@ -10,7 +10,7 @@ export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 	<Box
 		w={{ xxs: '95%', md: '90%', lg: '85%' }}
 		pt={{ xxs: 6, sm: 8, md: 12, lg: 14 }}
-		pb={{ xxs: 2, sm: 4, md: 6 }}
+		pb={{ xxs: 4, sm: 5, md: 6 }}
 		mx="auto"
 	>
 		<Flex
