@@ -7,16 +7,16 @@ import { colors } from '~/theme/colors';
 // TODO: make the user not be able to ask another question while the ai is still responding
 export const HomePage: FC = () => {
 	const [prompt, setPrompt] = useState('');
-	const { fetchAiResponse, answer } = useFetchAiResponse();
+	const { fetchAiResponse, answer, isReady } = useFetchAiResponse();
 
 	const validPrompt = prompt.trim() !== '';
 
 	const submitHandler = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		if (validPrompt) {
+		if (validPrompt && isReady) {
 			fetchAiResponse(prompt);
+			setPrompt('');
 		}
-		setPrompt('');
 	};
 
 	return (
@@ -35,7 +35,7 @@ export const HomePage: FC = () => {
 					/>
 					<Button
 						type="submit"
-						disabled={!validPrompt}
+						disabled={!validPrompt || !isReady}
 						bg={colors.white}
 						color={colors.galacticPurple}
 						_disabled={{
