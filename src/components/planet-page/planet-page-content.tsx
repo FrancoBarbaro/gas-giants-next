@@ -11,6 +11,7 @@ type PlanetPageContentProps = {
 };
 
 // TODO: make font size dynamic
+// TODO make vertical margins dynamic
 export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) => {
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
 	
