@@ -3,8 +3,6 @@ import { FC, FormEvent, useState } from 'react';
 import { useFetchAiResponse } from '~/hooks/use-fetch-ai-response';
 import { colors } from '~/theme/colors';
 
-// TODO: add og image (image that shows up when url is sent, tweeted, etc.)
-// TODO: make the user not be able to ask another question while the ai is still responding
 export const HomePage: FC = () => {
 	const [prompt, setPrompt] = useState('');
 	const { fetchAiResponse, answer, isReady } = useFetchAiResponse();
