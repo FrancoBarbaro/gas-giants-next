@@ -13,7 +13,7 @@ export const RoundedListBox: FC<RoundedListBoxProps> = ({ list, fontSize }) => (
 	<RoundedBox fontSize={fontSize}>
 		<UnorderedList color={colors.galacticPurple}>
 			{list.map((item, index) => (
-				<ListItem key={index} fontSize={{ xxs: 8, xs: 10, sm: 12, md: 14, lg: 16 }}>
+				<ListItem key={index} fontSize={{ xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', '2xl': 'lg' }}>
 					<ReactMarkdown
 						components={{
 							p: ({ children }) => <>{children}</>,
