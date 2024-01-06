@@ -12,7 +12,7 @@ const Feedback: NextPage = () => {
 				<meta name="description" content="A form for user feedback" />
 				<meta property="og:title" content="Feedback" />
 				<meta property="og:description" content="A form for user feedback" />
-				<meta property="og:image" content="url('/images/feedbackbg.jpeg')" />
+				<meta property="og:image" content="/images/feedbackbg.jpeg" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<FeedbackPage />
