@@ -37,7 +37,7 @@ type BackgroundImageProps = {
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({ animated }) => {
 	const { pathname } = useRouter();
-	const bgUrl = `url('/images${pathname}bg.jpeg')`;
+	const bgUrl = `/images${pathname}bg.jpeg`;
 	const nodeRef = useRef(null);
 
 	return (

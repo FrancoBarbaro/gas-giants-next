@@ -14,8 +14,8 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 	const { authToken, appCheckToken } = useContext(FirebaseContext);
 	const { data } = useFetchPlanetInfo(planet, authToken, appCheckToken);
 	const capitalizedPlanetName = planet[0].toUpperCase() + planet.slice(1);
-	const pageTitle = `${capitalizedPlanetName} | The Gas Giants`;
-	const ogImageUrl = `url('/images/${capitalizedPlanetName.toLowerCase()}bg.jpeg')`;
+	const pageTitle = `${capitalizedPlanetName} - The Gas Giants`;
+	const ogImageUrl = `/images/${capitalizedPlanetName.toLowerCase()}bg.jpeg`;
 
 	return (
 		<>
