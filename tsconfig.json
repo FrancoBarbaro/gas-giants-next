@@ -17,6 +17,7 @@
 		"incremental": true,
 		"removeComments": true,
 		"noImplicitAny": true,
+		"sourceMap": true,
 		"paths": {
 			"~/*": ["./*"]
 		}
