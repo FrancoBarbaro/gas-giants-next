@@ -11,10 +11,10 @@ const navButtonStyle = {
 	transition: 'all 0.5s',
 	letterSpacing: '1.2px',
 	fontFamily: `'Varela Round', sans-serif`,
-	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6 },
-	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4 },
+	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6, xxl: 7 },
+	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4, xxl: 5 },
 	borderRadius: { xxs: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
-	fontSize: { xxs: 8, xs: 10, sm: 'sm', md: 'md', lg: 'lg' },
+	fontSize: { xxs: 8, xs: 10, sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' },
 	boxShadow: {
 		xxs: `4px 4px 0 ${colors.galacticPurple}`,
 		xs: `6px 6px 0 ${colors.galacticPurple}`,
@@ -46,7 +46,7 @@ const Button = {
 
 const runeStyle = {
 	color: 'transparent',
-	fontSize: 64,
+	fontSize: { xxs: 64, xxl: '8xl' },
 	borderRadius: 4,
 	textShadow: `0 0 0.125em ${colors.runeShadow}, 0 0 0.45em ${colors.darkPurple}`,
 	transition: 'color 0.5s linear, text-shadow 0.5s linear',

@@ -11,9 +11,10 @@ type RoundedBoxProps = {
 export const RoundedBox: FC<RoundedBoxProps> = ({ children, color, ...rest }) => (
 	<Box
 		bg={colors.white}
-		px={{ xxs: 2, xs: 4, md: 6 }}
-		py={{ xxs: 1, xs: 2, md: 3 }}
-		borderRadius={{ xxs: 8, xs: 10, sm: 12, md: 15 }}
+		// TODO fine tune these values, they look bad on mobile
+		px={{ xxs: 2, xs: 4, md: 6, xxl: 8 }}
+		py={{ xxs: 1, xs: 2, md: 3, xxl: 4 }}
+		borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 		w="fit-content"
 		color={color}
 		{...rest}

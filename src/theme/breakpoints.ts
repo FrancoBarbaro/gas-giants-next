@@ -7,5 +7,5 @@ export const breakpoints = createBreakpoints({
 	md: '48em',
 	lg: '64em',
 	xl: '80em',
-	xxl: '120em',
+	xxl: '140em',
 });

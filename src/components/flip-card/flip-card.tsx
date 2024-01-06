@@ -9,6 +9,8 @@ type FlipCardProps = {
 	imageAltText: string;
 };
 
+const dynamicBorderRadius = { xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 };
+
 export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText }) => (
 	<AspectRatio ratio={480 / 219}>
 		<Box w="100%" role="group">
@@ -23,9 +25,7 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					w="100%"
 					h="100%"
 					pos="absolute"
-					// TODO: make border radius dynamic and make it match the border radius of the rounded boxes
-					// borderRadius={15}
-					borderRadius={{ xxs: 8, xs: 10, sm: 12, md: 15 }}
+					borderRadius={dynamicBorderRadius}
 					overflow="hidden"
 					__css={{ backfaceVisibility: 'hidden' }}
 				>
@@ -39,11 +39,11 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					bg={colors.grayBlack}
 					color={colors.neptuneBlue}
 					transform="rotateY(180deg)"
-					borderRadius={15}
+					borderRadius={dynamicBorderRadius}
 					overflow="hidden"
 					display="grid"
 					placeItems="center"
-					fontSize={{ xxs: 'xx-small', sm: 'sm', md: 'md', lg: 'lg', xxl: 'xx-large' }}
+					fontSize={{ xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', xxl: '2xl' }}
 					__css={{ backfaceVisibility: 'hidden' }}
 				>
 					<FlipCardCaption imageDesc={imageDesc} />

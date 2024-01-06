@@ -17,12 +17,12 @@ export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 			as="footer"
 			bg={colors.spaceGray}
 			border={`2px solid ${colors.darkGray}`}
-			borderRadius={15}
+			borderRadius="full"
 			w="100%"
 			color={colors.lightGray}
 			justifyContent="space-around"
 			alignItems="center"
-			fontSize={{ xxs: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xl: 'lg' }}
+			fontSize={{ xxs: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' }}
 			flexDir={{ xxs: 'column', sm: 'row' }}
 		>
 			{children}

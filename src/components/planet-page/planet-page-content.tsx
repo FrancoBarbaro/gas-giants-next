@@ -10,20 +10,21 @@ type PlanetPageContentProps = {
 	info: PlanetInfo;
 };
 
-// TODO: make font size dynamic
+const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
+
 // TODO make vertical margins dynamic
 export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) => {
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
-	
+
 	return (
 		<>
 			<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
 				<VStack as="section" alignItems="initial" w="100%" mb={6}>
-					<RoundedTextBox textType="h1" mb={2}>{`About ${planet}:`}</RoundedTextBox>
+					<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
 				</VStack>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2" mb={2}>
+					<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
 						Symbol:
 					</RoundedTextBox>
 					<RoundedTextBox textType="p">{symbolDesc}</RoundedTextBox>
@@ -37,7 +38,7 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 				justifyContent="space-between"
 			>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2" mt={1} mb={3}>
+					<RoundedTextBox textType="h2" mt={1} mb={dynamicMarginBottom}>
 						Fun Facts:
 					</RoundedTextBox>
 					<RoundedListBox list={Object.values(funFacts)} fontSize={15.5} />
