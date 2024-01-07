@@ -16,7 +16,7 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
 
 	return (
-		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} h="100%">
+		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">
 			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>{`About ${planet}:`}</RoundedTextBox>
