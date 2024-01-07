@@ -1,4 +1,4 @@
-import { AspectRatio, Skeleton, VStack } from '@chakra-ui/react';
+import { AspectRatio, Skeleton, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
@@ -6,35 +6,37 @@ type PlanetPageSkeletonProps = {
 	planet: string;
 };
 
+const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
 const dynamicBorderRadius = { xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 };
 
-// TODO: Apply all dynamic styling from PlanetPageContent to the Skeletons as well
 export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
-	<>
-		<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
-			<VStack as="section" alignItems="initial" w="100%" mb={6}>
-				<RoundedTextBox textType="h1" mb={2}>{`About ${planet}:`}</RoundedTextBox>
-				<Skeleton w="100%" h={56} borderRadius={dynamicBorderRadius} />
+	<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">
+		<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
+			<VStack as="section" alignItems="initial" w="100%">
+				<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>{`About ${planet}:`}</RoundedTextBox>
+				<Skeleton
+					w="100%"
+					h={{ xxs: 28, xs: 32, sm: 36, md: 64, xl: 60, xxl: 80 }}
+					borderRadius={dynamicBorderRadius}
+				/>
 			</VStack>
 			<VStack as="section" alignItems="initial" w="100%">
-				<RoundedTextBox textType="h2" mb={2}>
+				<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
 					Symbol:
 				</RoundedTextBox>
-				<Skeleton w="100%" h={32} borderRadius={dynamicBorderRadius} />
+				<Skeleton w="100%" h={{ xxs: 14, xs: 16, md: 32, xl: 28, xxl: 36 }} borderRadius={dynamicBorderRadius} />
 			</VStack>
 		</VStack>
-		<VStack
-			ml={{ xxs: 0, md: 10 }}
-			mt={{ xxs: 8, md: 0 }}
-			w={{ xxs: '100%', md: '50%' }}
-			h="100%"
-			justifyContent="space-between"
-		>
+		<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
 			<VStack as="section" alignItems="initial" w="100%">
-				<RoundedTextBox textType="h2" mt={1} mb={3}>
+				<RoundedTextBox textType="h2" mt={{ xxs: 0, md: 0.5, lg: 1, xl: 1.5, xxl: 3 }} mb={dynamicMarginBottom}>
 					Fun Facts:
 				</RoundedTextBox>
-				<Skeleton w="100%" h={56} borderRadius={dynamicBorderRadius} />
+				<Skeleton
+					w="100%"
+					h={{ xxs: 28, xs: 32, sm: 36, md: 64, xl: 60, xxl: 80 }}
+					borderRadius={dynamicBorderRadius}
+				/>
 			</VStack>
 			<VStack as="section" alignItems="initial" w="100%">
 				<AspectRatio ratio={480 / 219} w="100%">
@@ -42,5 +44,5 @@ export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
 				</AspectRatio>
 			</VStack>
 		</VStack>
-	</>
+	</Stack>
 );
