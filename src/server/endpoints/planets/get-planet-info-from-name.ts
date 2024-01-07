@@ -1,4 +1,4 @@
-import { firebaseApiFetcher } from '~/clients/firebase/firebase-fetcher';
+import { firebaseApiFetcher } from '~/clients/firebase/firebase-axios-functions';
 import { PlanetInfo } from '~/common/types';
 import { PlanetInfoReturnType } from '~/server/endpoints/planets/types';
 
