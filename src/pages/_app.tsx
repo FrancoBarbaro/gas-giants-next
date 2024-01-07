@@ -10,7 +10,6 @@ import { FirebaseContextProvider } from '~/context/firebase-context';
 import '../styles/globals.css';
 import { theme } from '../theme';
 
-// TODO: add server side rendering
 const App = ({ Component, pageProps }: AppProps) => (
 	<ChakraProvider theme={theme}>
 		<ContentWrapper>
