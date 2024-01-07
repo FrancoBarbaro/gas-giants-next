@@ -9,7 +9,7 @@ const navButtonStyle = {
 	lineHeight: 4,
 	fontWeight: 'bold',
 	transition: 'all 0.5s',
-	letterSpacing: '1.2px',
+	letterSpacing: { xxs: 1, sm: 1.2, xxl: 2 },
 	fontFamily: `'Varela Round', sans-serif`,
 	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6, xxl: 7 },
 	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4, xxl: 5 },
