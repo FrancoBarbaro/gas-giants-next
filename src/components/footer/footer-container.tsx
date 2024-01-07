@@ -9,8 +9,8 @@ type FooterContainerProps = {
 export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 	<Box
 		w={{ xxs: '95%', md: '90%', lg: '85%' }}
-		pt={{ xxs: 8, sm: 12, lg: 14 }}
-		pb={{ xxs: 5, sm: 6, xxl: 14 }}
+		pt={{ xxs: 7, xs: 8, sm: 12, lg: 14 }}
+		pb={{ xxs: 4, xs: 5, sm: 6, xxl: 14 }}
 		mx="auto"
 	>
 		<Flex

@@ -7,8 +7,8 @@ export const NavBar: FC = () => (
 		as="nav"
 		w={{ xxs: '95%', md: '90%', lg: '85%' }}
 		mx="auto"
-		pt={{ xxs: 5, sm: 6, xxl: 14 }}
-		pb={{ xxs: 8, sm: 12, lg: 14 }}
+		pt={{ xxs: 4, xs: 5, sm: 6, xxl: 14 }}
+		pb={{ xxs: 7, xs: 8, sm: 12, lg: 14 }}
 		justifyContent="space-between"
 	>
 		<NavButton path="/home">Home</NavButton>
