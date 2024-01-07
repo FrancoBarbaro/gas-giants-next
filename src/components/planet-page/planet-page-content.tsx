@@ -1,4 +1,4 @@
-import { AspectRatio, VStack } from '@chakra-ui/react';
+import { AspectRatio, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { PlanetInfo } from '~/common/types';
 import { FlipCard } from '~/components/flip-card/flip-card';
@@ -12,14 +12,13 @@ type PlanetPageContentProps = {
 
 const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
 
-// TODO make vertical margins dynamic
 export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) => {
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
 
 	return (
-		<>
-			<VStack mr={{ xxs: 0, md: 10 }} w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between">
-				<VStack as="section" alignItems="initial" w="100%" mb={6}>
+		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} h="100%">
+			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
+				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
 				</VStack>
@@ -30,15 +29,9 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 					<RoundedTextBox textType="p">{symbolDesc}</RoundedTextBox>
 				</VStack>
 			</VStack>
-			<VStack
-				ml={{ xxs: 0, md: 10 }}
-				mt={{ xxs: 8, md: 0 }}
-				w={{ xxs: '100%', md: '50%' }}
-				h="100%"
-				justifyContent="space-between"
-			>
+			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2" mt={1} mb={dynamicMarginBottom}>
+					<RoundedTextBox textType="h2" mt={{ xxs: 0, md: 0.5, lg: 1, xl: 1.5, xxl: 3 }} mb={dynamicMarginBottom}>
 						Fun Facts:
 					</RoundedTextBox>
 					<RoundedListBox list={Object.values(funFacts)} fontSize={15.5} />
@@ -49,6 +42,6 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 					</AspectRatio>
 				</VStack>
 			</VStack>
-		</>
+		</Stack>
 	);
 };

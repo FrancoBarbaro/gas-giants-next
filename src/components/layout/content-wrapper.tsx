@@ -29,7 +29,6 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 					pos="relative"
 					m="auto"
 					w={{ xxs: '95%', md: '90%', xl: '95%' }}
-					flexDir={{ xxs: 'column', md: 'row' }}
 				>
 					{children}
 				</Center>
