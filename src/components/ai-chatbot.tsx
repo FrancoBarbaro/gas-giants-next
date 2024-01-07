@@ -20,7 +20,6 @@ export const AiChatbot: FC = () => {
 	return (
 		<form onSubmit={submitHandler}>
 			<FormControl color={colors.white}>
-				<FormLabel fontSize={24}>AI Helper</FormLabel>
 				<Textarea h={60} bg={colors.grayBlack} opacity={0.85} value={answer} resize="none" readOnly />
 				<Flex flexDir="row">
 					<Input
