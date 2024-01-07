@@ -19,7 +19,6 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 				h="100vh"
 				bg="transparent"
 				flexDir="column"
-				justifyContent="space-between"
 				pos="relative"
 				zIndex={3}
 				w="100%"
