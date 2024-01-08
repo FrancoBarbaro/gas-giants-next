@@ -35,3 +35,18 @@ export const firebaseApiFetcher = async <T = unknown>(
 		.then((res) => ({ success: true, data: res.data } as SuccessFirebaseResult<T>))
 		.catch((error: Error) => ({ success: false, error: error.message } as FailedFirebaseResult));
 };
+
+/**
+ * Putter description
+ */
+export const firebaseApiPutter = async <T = unknown>(
+	url: string,
+	authToken: string,
+	appCheckToken: string,
+	data: T,
+): Promise<FirebaseResult<T>> => {
+	return firebaseAxiosClient
+		.put(`${url}.json?auth=${authToken}`, data, { headers: { 'X-Firebase-AppCheck': appCheckToken } })
+		.then((res) => ({ success: true, data: res.data } as SuccessFirebaseResult<T>))
+		.catch((error: Error) => ({ success: false, error: error.message } as FailedFirebaseResult));
+};
