@@ -1,13 +1,11 @@
 import { AspectRatio, Skeleton, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { dynamicBorderRadius, dynamicMarginBottom } from '~/common/dynamic-values';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 type PlanetPageSkeletonProps = {
 	planet: string;
 };
-
-const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
-const dynamicBorderRadius = { xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 };
 
 export const PlanetPageSkeleton: FC<PlanetPageSkeletonProps> = ({ planet }) => (
 	<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">

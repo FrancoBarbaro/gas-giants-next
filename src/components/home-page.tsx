@@ -1,10 +1,9 @@
 import { AspectRatio, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { dynamicMarginBottom } from '~/common/dynamic-values';
 import { AiChatbot } from '~/components/ai-chatbot';
 import { FlipCard } from '~/components/flip-card/flip-card';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
-
-const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
 
 // TODO: complete this page
 export const HomePage: FC = () => {

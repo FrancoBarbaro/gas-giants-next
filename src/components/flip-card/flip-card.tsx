@@ -1,5 +1,6 @@
 import { AspectRatio, Box, Image } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { dynamicBorderRadius } from '~/common/dynamic-values';
 import { FlipCardCaption } from '~/components/flip-card/flip-card-caption';
 import { colors } from '~/theme/colors';
 
@@ -8,8 +9,6 @@ type FlipCardProps = {
 	imageUrl: string;
 	imageAltText: string;
 };
-
-const dynamicBorderRadius = { xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 };
 
 export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText }) => (
 	<AspectRatio ratio={480 / 219}>

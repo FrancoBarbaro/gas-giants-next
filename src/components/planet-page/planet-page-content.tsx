@@ -1,5 +1,6 @@
 import { AspectRatio, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
+import { dynamicMarginBottom } from '~/common/dynamic-values';
 import { PlanetInfo } from '~/common/types';
 import { FlipCard } from '~/components/flip-card/flip-card';
 import { RoundedListBox } from '~/components/rounded-box/rounded-list-box';
@@ -9,8 +10,6 @@ type PlanetPageContentProps = {
 	planet: string;
 	info: PlanetInfo;
 };
-
-const dynamicMarginBottom = { xxs: 0, sm: 1, md: 2 };
 
 export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) => {
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
