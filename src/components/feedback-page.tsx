@@ -5,34 +5,70 @@ import {
 	FormControl,
 	FormLabel,
 	HStack,
+	Popover,
+	PopoverArrow,
+	PopoverBody,
+	PopoverCloseButton,
+	PopoverContent,
+	PopoverHeader,
+	PopoverTrigger,
 	Radio,
 	RadioGroup,
 	Stack,
 	Textarea,
-	useCheckboxGroup,
-	useRadioGroup,
+	useDisclosure,
+	useToast,
 } from '@chakra-ui/react';
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC } from 'react';
+import { useStoreUserFeedback } from '~/hooks/use-store-user-feedback';
 import { colors } from '~/theme/colors';
 
 export const FeedbackPage: FC = () => {
-	const { value: likedWebsite, setValue: setLikedWebsite } = useRadioGroup({ defaultValue: '' });
-	const { value: favoritePage, setValue: setFavoritePage } = useCheckboxGroup({ defaultValue: [] });
-	const [additionalFeedback, setAdditionalFeedback] = useState('');
+	const { isOpen: alertDialogIsOpen, onToggle: toggleAlertDialog, onClose: closeAlertDialog } = useDisclosure();
+	const toast = useToast();
+	const {
+		likedWebsite,
+		favoritePages,
+		additionalFeedback,
+		setLikedWebsite,
+		setFavoritePages,
+		setAdditionalFeedback,
+		storeUserFeedback,
+	} = useStoreUserFeedback();
 
 	const submitHandler = (event: ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		// TODO: add validation to make sure empty data is not sent
-		// send state data to firebase
+
+		if (!likedWebsite || !favoritePages.length || !additionalFeedback) {
+			toggleAlertDialog();
+			return;
+		}
+
+		const feedbackStoredPromise = storeUserFeedback();
+
+		toast.promise(feedbackStoredPromise, {
+			success: {
+				title: 'Feedback recieved!',
+				duration: 2000,
+			},
+			error: {
+				title: 'Something went wrong!',
+				description: 'An error occured while submitting your feedback. Please try again.',
+				duration: 2000,
+			},
+			loading: {
+				title: 'Submitting feedback...',
+			},
+		});
+
 		setLikedWebsite('');
-		setFavoritePage([]);
+		setFavoritePages([]);
 		setAdditionalFeedback('');
-		// TODO: use a toast to notify the user that their feedback was submitted
 	};
 
 	return (
 		<form id="feedback" onSubmit={submitHandler}>
-			<FormControl as="fieldset" color={colors.white} background={colors.galacticPurple} p={10} borderRadius="lg">
+			<FormControl as="fieldset" color={colors.white} bg={colors.galacticPurple} p={10} borderRadius="lg">
 				<Stack spacing={7}>
 					<Stack spacing={0.5}>
 						<FormLabel as="legend">Did you like this website?</FormLabel>
@@ -46,7 +82,7 @@ export const FeedbackPage: FC = () => {
 					</Stack>
 					<Stack spacing={0.5}>
 						<FormLabel as="legend">Which page was your favorite?</FormLabel>
-						<CheckboxGroup value={favoritePage} onChange={setFavoritePage}>
+						<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
 							<HStack spacing={6}>
 								<Checkbox value="Home">Home</Checkbox>
 								<Checkbox value="Jupiter">Jupiter</Checkbox>
@@ -66,9 +102,25 @@ export const FeedbackPage: FC = () => {
 							onChange={(event) => setAdditionalFeedback(event.target.value)}
 						/>
 					</Stack>
-					<Button colorScheme="blue" mr={3} form="feedback" type="submit">
-						Submit Feedback
-					</Button>
+					<Popover
+						returnFocusOnClose={false}
+						isOpen={alertDialogIsOpen}
+						onClose={closeAlertDialog}
+						placement="top"
+						closeOnBlur={false}
+					>
+						<PopoverTrigger>
+							<Button colorScheme="blue" form="feedback" type="submit">
+								Submit Feedback
+							</Button>
+						</PopoverTrigger>
+						<PopoverContent bg={colors.spaceGray}>
+							<PopoverHeader fontWeight="semibold">Empty Fields</PopoverHeader>
+							<PopoverArrow bg={colors.spaceGray} />
+							<PopoverCloseButton />
+							<PopoverBody>You must fill out all fields before submitting the feedback form.</PopoverBody>
+						</PopoverContent>
+					</Popover>
 				</Stack>
 			</FormControl>
 		</form>
