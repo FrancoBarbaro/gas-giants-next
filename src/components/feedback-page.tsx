@@ -69,6 +69,7 @@ export const FeedbackPage: FC = () => {
 		setAdditionalFeedback('');
 	};
 
+	// TODO: make the form dimensions dynamic
 	return (
 		<form id="feedback" onSubmit={submitHandler}>
 			<FormControl as="fieldset" color={colors.white} bg={colors.bluePurple} opacity={0.85} p={10} borderRadius="lg">
