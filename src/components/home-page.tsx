@@ -27,7 +27,7 @@ export const HomePage: FC = () => {
 				</VStack>
 			</VStack>
 			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" as="section" alignItems="initial">
-				<RoundedTextBox textType="h2" mt={{ xxs: 0, md: 0.5, lg: 1, xl: 1.5, xxl: 3 }} mb={dynamicMarginBottom}>
+				<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>
 					AI Chatbot:
 				</RoundedTextBox>
 				<AiChatbot />
