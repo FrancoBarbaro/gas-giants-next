@@ -18,7 +18,7 @@ export const AiChatbot: FC = () => {
 	};
 
 	return (
-		<FormControl as="form" h="100%" color={colors.white} onSubmit={submitHandler}>
+		<FormControl as="form" h="100%" minH={96} color={colors.white} onSubmit={submitHandler}>
 			<Textarea h="90%" bg={colors.grayBlack} opacity={0.85} value={answer} resize="none" readOnly />
 			<HStack spacing={0} h="10%">
 				<Input
