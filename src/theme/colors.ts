@@ -18,4 +18,5 @@ export const colors = {
 	runeShadowOnClick: '#ff3366ff',
 	runeOutlineOnClick: '#ffffffb3',
 	neptuneBlue: '#3b81f7',
+	bluePurple: '#3f1be0',
 };
