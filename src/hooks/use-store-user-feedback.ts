@@ -27,8 +27,6 @@ export const useStoreUserFeedback = () => {
 		if (!res.ok) {
 			throw new Error(res.statusText);
 		}
-
-		return true;
 	};
 
 	return {
