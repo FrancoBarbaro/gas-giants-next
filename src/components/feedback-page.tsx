@@ -23,7 +23,9 @@ import { ChangeEvent, FC } from 'react';
 import { useStoreUserFeedback } from '~/hooks/use-store-user-feedback';
 import { colors } from '~/theme/colors';
 
-// TODO: may want to hide feedback form after submission
+/* TODO: may want to hide feedback form after submission, could use a SwitchTransition to
+animate the form out, having a piece of state such as formSubmitted that is set to true after
+submission and then the form is only rendered if formSubmitted is false */
 export const FeedbackPage: FC = () => {
 	const { isOpen: alertDialogIsOpen, onToggle: toggleAlertDialog, onClose: closeAlertDialog } = useDisclosure();
 	const toast = useToast();
@@ -69,7 +71,7 @@ export const FeedbackPage: FC = () => {
 
 	return (
 		<form id="feedback" onSubmit={submitHandler}>
-			<FormControl as="fieldset" color={colors.white} bg={colors.galacticPurple} p={10} borderRadius="lg">
+			<FormControl as="fieldset" color={colors.white} bg={colors.bluePurple} opacity={0.85} p={10} borderRadius="lg">
 				<Stack spacing={7}>
 					<Stack spacing={0.5}>
 						<FormLabel as="legend">Did you like this website?</FormLabel>
@@ -111,13 +113,13 @@ export const FeedbackPage: FC = () => {
 						closeOnBlur={false}
 					>
 						<PopoverTrigger>
-							<Button colorScheme="blue" form="feedback" type="submit">
+							<Button color={colors.bluePurple} bg={colors.white} form="feedback" type="submit">
 								Submit Feedback
 							</Button>
 						</PopoverTrigger>
-						<PopoverContent bg={colors.spaceGray}>
-							<PopoverHeader fontWeight="semibold">Empty Fields</PopoverHeader>
-							<PopoverArrow bg={colors.spaceGray} />
+						<PopoverContent bg={colors.magentaPurple}>
+							<PopoverHeader>Empty Fields</PopoverHeader>
+							<PopoverArrow bg={colors.magentaPurple} />
 							<PopoverCloseButton />
 							<PopoverBody>You must fill out all fields before submitting the feedback form.</PopoverBody>
 						</PopoverContent>
