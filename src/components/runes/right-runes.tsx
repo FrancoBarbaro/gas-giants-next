@@ -1,6 +1,5 @@
 import { Flex } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { symbols } from '~/common/symbols';
 import { PageLink } from '~/components/page-link';
 
 export const RightRunes: FC = () => (
@@ -13,10 +12,10 @@ export const RightRunes: FC = () => (
 		zIndex={3}
 	>
 		<PageLink href="/uranus" variant="rune" tabIndex={-1}>
-			{symbols.uranus}
+			&#9954;
 		</PageLink>
 		<PageLink href="/neptune" variant="rune" tabIndex={-1}>
-			{symbols.neptune}
+			&#9798;
 		</PageLink>
 	</Flex>
 );
