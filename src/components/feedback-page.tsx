@@ -23,6 +23,7 @@ import { ChangeEvent, FC } from 'react';
 import { useStoreUserFeedback } from '~/hooks/use-store-user-feedback';
 import { colors } from '~/theme/colors';
 
+// TODO: may want to hide feedback form after submission
 export const FeedbackPage: FC = () => {
 	const { isOpen: alertDialogIsOpen, onToggle: toggleAlertDialog, onClose: closeAlertDialog } = useDisclosure();
 	const toast = useToast();
