@@ -1,8 +1,7 @@
-import { AspectRatio, Stack, VStack } from '@chakra-ui/react';
+import { Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { dynamicMarginBottom } from '~/common/dynamic-values';
 import { AiChatbot } from '~/components/ai-chatbot';
-import { FlipCard } from '~/components/flip-card/flip-card';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 // TODO: complete this page
@@ -21,13 +20,18 @@ export const HomePage: FC = () => {
 					</RoundedTextBox>
 				</VStack>
 				<VStack as="section" alignItems="initial" w="100%">
-					<AspectRatio ratio={480 / 274} w="100%">
-						<FlipCard imageUrl="images/interiors.jpeg" imageDesc="dummy" imageAltText="dummy" />
-					</AspectRatio>
+					<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
+						About our AI Chatbot:
+					</RoundedTextBox>
+					<RoundedTextBox textType="p">
+						Our AI chatbot is a fun way to learn about the gas giants. It is powered by the OpenAI GPT-3.5 Turbo API and
+						is able to answer questions about the gas giants. Try asking it about the gas giants&apos; atmospheres or
+						moons!
+					</RoundedTextBox>
 				</VStack>
 			</VStack>
 			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" as="section" alignItems="initial">
-				<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>
+				<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
 					AI Chatbot:
 				</RoundedTextBox>
 				<AiChatbot />
