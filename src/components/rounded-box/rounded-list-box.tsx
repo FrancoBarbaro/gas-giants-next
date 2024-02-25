@@ -1,6 +1,7 @@
 import { ListItem, UnorderedList } from '@chakra-ui/react';
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { dynamicFontSize } from '~/common/dynamic-values';
 import { RoundedBox } from '~/components/rounded-box/rounded-box';
 import { colors } from '~/theme/colors';
 
@@ -13,7 +14,7 @@ export const RoundedListBox: FC<RoundedListBoxProps> = ({ list, fontSize }) => (
 	<RoundedBox fontSize={fontSize} w="100%">
 		<UnorderedList color={colors.galacticPurple}>
 			{list.map((item, index) => (
-				<ListItem key={index} fontSize={{ xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', xxl: '2xl' }}>
+				<ListItem key={index} fontSize={dynamicFontSize}>
 					<ReactMarkdown
 						components={{
 							p: ({ children }) => <>{children}</>,

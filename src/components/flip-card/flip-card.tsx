@@ -1,6 +1,6 @@
 import { AspectRatio, Box, Image } from '@chakra-ui/react';
 import type { FC } from 'react';
-import { dynamicBorderRadius } from '~/common/dynamic-values';
+import { dynamicBorderRadius, dynamicFontSize } from '~/common/dynamic-values';
 import { FlipCardCaption } from '~/components/flip-card/flip-card-caption';
 import { colors } from '~/theme/colors';
 
@@ -42,7 +42,7 @@ export const FlipCard: FC<FlipCardProps> = ({ imageDesc, imageUrl, imageAltText 
 					overflow="hidden"
 					display="grid"
 					placeItems="center"
-					fontSize={{ xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', xxl: '2xl' }}
+					fontSize={dynamicFontSize}
 					__css={{ backfaceVisibility: 'hidden' }}
 				>
 					<FlipCardCaption imageDesc={imageDesc} />
