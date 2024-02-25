@@ -1,4 +1,5 @@
 import {
+	Box,
 	Button,
 	Checkbox,
 	CheckboxGroup,
@@ -22,6 +23,7 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { ChangeEvent, FC, useContext } from 'react';
+import { dynamicFontSize } from '~/common/dynamic-values';
 import { FeedbackContext } from '~/context/feedback-context';
 import { useStoreUserFeedback } from '~/hooks/use-store-user-feedback';
 import { colors } from '~/theme/colors';
@@ -74,9 +76,8 @@ export const FeedbackPage: FC = () => {
 		router.replace('/home');
 	};
 
-	// TODO: give the form responsive styling
 	return (
-		<>
+		<Box w={{ xxs: '100%', md: 'fit-content' }}>
 			{!hasSubmittedFeedback && (
 				<form id="feedback" onSubmit={submitHandler}>
 					<FormControl
@@ -85,36 +86,63 @@ export const FeedbackPage: FC = () => {
 						bg={colors.bluePurple}
 						opacity={0.85}
 						p={10}
-						borderRadius="lg"
+						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 					>
 						<Stack spacing={7}>
 							<Stack spacing={0.5}>
-								<FormLabel as="legend">Did you like this website?</FormLabel>
+								<FormLabel as="legend" fontSize={dynamicFontSize}>
+									Did you like this website?
+								</FormLabel>
 								<RadioGroup value={likedWebsite} onChange={setLikedWebsite}>
 									<HStack spacing={6}>
-										<Radio value="Yes">Yes</Radio>
-										<Radio value="No">No</Radio>
-										<Radio value="Kind Of">Kind Of</Radio>
+										<Radio value="Yes">
+											<Text fontSize={dynamicFontSize}>Yes</Text>
+										</Radio>
+										<Radio value="No">
+											<Text fontSize={dynamicFontSize}>No</Text>
+										</Radio>
+										<Radio value="Kind Of">
+											<Text fontSize={dynamicFontSize}>Kind Of</Text>
+										</Radio>
 									</HStack>
 								</RadioGroup>
 							</Stack>
 							<Stack spacing={0.5}>
-								<FormLabel as="legend">Which page was your favorite?</FormLabel>
+								<FormLabel as="legend" fontSize={dynamicFontSize}>
+									Which page was your favorite?
+								</FormLabel>
 								<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
-									<HStack spacing={6}>
-										<Checkbox value="Home">Home</Checkbox>
-										<Checkbox value="Jupiter">Jupiter</Checkbox>
-										<Checkbox value="Saturn">Saturn</Checkbox>
-										<Checkbox value="Uranus">Uranus</Checkbox>
-										<Checkbox value="Neptune">Neptune</Checkbox>
-									</HStack>
+									<Stack direction={{ xxs: 'column', xs: 'row' }} spacing={{ xxs: 3, xs: 6 }}>
+										<HStack spacing={6}>
+											<Checkbox value="Home">
+												<Text fontSize={dynamicFontSize}>Home</Text>
+											</Checkbox>
+											<Checkbox value="Jupiter">
+												<Text fontSize={dynamicFontSize}>Jupiter</Text>
+											</Checkbox>
+											<Checkbox value="Saturn">
+												<Text fontSize={dynamicFontSize}>Saturn</Text>
+											</Checkbox>
+										</HStack>
+										<HStack spacing={{ xxs: 5, xs: 6 }}>
+											<Checkbox value="Uranus">
+												<Text fontSize={dynamicFontSize}>Uranus</Text>
+											</Checkbox>
+											<Checkbox value="Neptune">
+												<Text fontSize={dynamicFontSize}>Neptune</Text>
+											</Checkbox>
+										</HStack>
+									</Stack>
 								</CheckboxGroup>
 							</Stack>
 							<Stack spacing={0.5}>
-								<FormLabel as="legend">Additional Feedback:</FormLabel>
+								<FormLabel as="legend" fontSize={dynamicFontSize}>
+									Additional Feedback:
+								</FormLabel>
 								<Textarea
 									h={48}
 									resize="none"
+									fontSize={dynamicFontSize}
 									placeholder="Tell us more about what you liked about the website or suggest a way that the site may be improved."
 									value={additionalFeedback}
 									onChange={(event) => setAdditionalFeedback(event.target.value)}
@@ -128,7 +156,13 @@ export const FeedbackPage: FC = () => {
 								closeOnBlur={false}
 							>
 								<PopoverTrigger>
-									<Button color={colors.bluePurple} bg={colors.white} form="feedback" type="submit">
+									<Button
+										color={colors.bluePurple}
+										bg={colors.white}
+										fontSize={dynamicFontSize}
+										form="feedback"
+										type="submit"
+									>
 										Submit Feedback
 									</Button>
 								</PopoverTrigger>
@@ -144,6 +178,6 @@ export const FeedbackPage: FC = () => {
 				</form>
 			)}
 			{hasSubmittedFeedback && <Text color={colors.neonPink}>Thank you for your feedback!</Text>}
-		</>
+		</Box>
 	);
 };
