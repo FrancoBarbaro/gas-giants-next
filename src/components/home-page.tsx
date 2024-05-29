@@ -4,7 +4,6 @@ import { dynamicMarginBottom } from '~/common/dynamic-values';
 import { AiChatbot } from '~/components/ai-chatbot';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
-// TODO: complete this page
 export const HomePage: FC = () => {
 	return (
 		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">
