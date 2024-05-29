@@ -22,8 +22,7 @@ export const AiChatbot: FC = () => {
 		<FormControl
 			as="form"
 			h="100%"
-			// TODO: maybe add more breakpoints here
-			minH={{ xxs: 56, md: 96 }}
+			minH={{ xxs: 72, md: 96 }}
 			color={colors.white}
 			borderRadius={dynamicBorderRadius}
 			border={`1px solid ${colors.whiteTranslucent}`}
@@ -31,9 +30,8 @@ export const AiChatbot: FC = () => {
 			onSubmit={submitHandler}
 		>
 			<Textarea
-				// TODO: add more breakpoints here
-				h={{ xxs: '85%', md: '90%' }}
-				minH={{ xxs: '85%', md: '90%' }}
+				h={{ xxs: '90%', xs: '85%', md: '90%' }}
+				minH={{ xxs: '90%', xs: '85%', md: '90%' }}
 				px={3}
 				py={1.5}
 				bg={colors.bluePurpleTranslucent}
@@ -45,8 +43,7 @@ export const AiChatbot: FC = () => {
 				borderBottom={`1px solid ${colors.whiteTranslucent}`}
 				readOnly
 			/>
-			{/* TODO: add more breakpoints here */}
-			<HStack spacing={0} h={{ xxs: '15%', md: '10%' }} minH={{ xxs: '15%', md: '10%' }}>
+			<HStack spacing={0} h={{ xxs: '10%', xs: '15%', md: '10%' }} minH={{ xxs: '10%', xs: '15%', md: '10%' }}>
 				<Input
 					h="100%"
 					minH="100%"
