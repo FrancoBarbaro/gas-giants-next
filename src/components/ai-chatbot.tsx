@@ -18,14 +18,8 @@ export const AiChatbot: FC = () => {
 		}
 	};
 
-	// TODO: add a loading spinner when the chatbot is fetching a response
 	// TODO: maybe use an auto resize textarea for the chatbot
-	// TODO: maybe add a character limit to the chatbot
-	// TODO: maybe replace galactic purple with blue purple everywhere
 	// TODO: make sure the dynamic styling for the chatbot is consistent with the rest of the app
-	/* TODO: right now when feedback is submitted, a redirect happens and the link
-	to the feedback page is no longer in the footer, should it be this way or should I
-	keep the page available but put a submitted screen? */
 	return (
 		<FormControl
 			as="form"
