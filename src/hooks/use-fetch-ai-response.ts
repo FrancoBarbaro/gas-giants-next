@@ -1,8 +1,10 @@
 import { useContext, useState } from 'react';
 import { FirebaseContext } from '~/context/firebase-context';
 
+const initialMessage = `Hi there! I'm the Gas Giants AI. Ask me anything about Jupiter, Saturn, Uranus, Neptune, or any space-related topic. For example, you could ask "What is a gas giant?" or "Tell me about Saturn's rings."`;
+
 export const useFetchAiResponse = () => {
-	const [answer, setAnswer] = useState('');
+	const [answer, setAnswer] = useState(initialMessage);
 	const [isReady, setIsReady] = useState(true);
 	const { authToken, appCheckToken } = useContext(FirebaseContext);
 
