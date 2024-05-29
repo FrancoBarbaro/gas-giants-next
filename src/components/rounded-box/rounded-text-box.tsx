@@ -32,7 +32,7 @@ export const RoundedTextBox: FC<RoundedTextBoxProps> = ({ textType, children, ..
 				<ReactMarkdown
 					components={{
 						p: ({ children }) => (
-							<Text fontSize={dynamicFontSize} color={colors.galacticPurple}>
+							<Text fontSize={dynamicFontSize} color={colors.bluePurple}>
 								{children}
 							</Text>
 						),

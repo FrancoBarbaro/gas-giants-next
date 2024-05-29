@@ -1,6 +1,6 @@
 export const colors = {
 	white: '#fff',
-	galacticPurple: '#561be0',
+	bluePurple: '#3f1be0',
 	lightGray: '#b4b4b4',
 	spaceGray: '#343d52',
 	darkGray: '#242a38',
@@ -18,7 +18,6 @@ export const colors = {
 	runeShadowOnClick: '#ff3366ff',
 	runeOutlineOnClick: '#ffffffb3',
 	neptuneBlue: '#3b81f7',
-	bluePurple: '#3f1be0',
 	whiteTranslucent: 'rgba(255, 255, 255, 0.85)',
 	bluePurpleTranslucent: 'rgba(63, 27, 224, 0.85)',
 	lightGrayTranslucent: 'rgba(180, 180, 180, 0.85)',

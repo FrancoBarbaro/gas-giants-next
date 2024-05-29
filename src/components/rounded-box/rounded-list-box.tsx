@@ -12,7 +12,7 @@ type RoundedListBoxProps = {
 
 export const RoundedListBox: FC<RoundedListBoxProps> = ({ list, fontSize }) => (
 	<RoundedBox fontSize={fontSize} w="100%">
-		<UnorderedList color={colors.galacticPurple}>
+		<UnorderedList color={colors.bluePurple}>
 			{list.map((item, index) => (
 				<ListItem key={index} fontSize={dynamicFontSize}>
 					<ReactMarkdown

@@ -5,7 +5,7 @@ const navButtonStyle = {
 	h: 'fit-content',
 	textTransform: 'uppercase',
 	bg: colors.white,
-	color: colors.galacticPurple,
+	color: colors.bluePurple,
 	lineHeight: 4,
 	fontWeight: 'bold',
 	transition: 'all 0.5s',
@@ -16,15 +16,15 @@ const navButtonStyle = {
 	borderRadius: { xxs: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
 	fontSize: { xxs: 8, xs: 10, sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' },
 	boxShadow: {
-		xxs: `4px 4px 0 ${colors.galacticPurple}`,
-		xs: `6px 6px 0 ${colors.galacticPurple}`,
-		sm: `8px 8px 0 ${colors.galacticPurple}`,
-		md: `10px 10px 0 ${colors.galacticPurple}`,
+		xxs: `4px 4px 0 ${colors.bluePurple}`,
+		xs: `6px 6px 0 ${colors.bluePurple}`,
+		sm: `8px 8px 0 ${colors.bluePurple}`,
+		md: `10px 10px 0 ${colors.bluePurple}`,
 	},
 };
 
 const navButtonHoverStyle = {
-	bg: colors.galacticPurple,
+	bg: colors.bluePurple,
 	color: colors.white,
 	boxShadow: {
 		xxs: `-4px -4px 0 ${colors.white}`,
