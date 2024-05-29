@@ -83,8 +83,7 @@ export const FeedbackPage: FC = () => {
 					<FormControl
 						as="fieldset"
 						color={colors.white}
-						bg={colors.bluePurple}
-						opacity={0.85}
+						bg={colors.bluePurpleTranslucent}
 						p={10}
 						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 					>
