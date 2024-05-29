@@ -20,5 +20,4 @@ export const colors = {
 	neptuneBlue: '#3b81f7',
 	whiteTranslucent: 'rgba(255, 255, 255, 0.85)',
 	bluePurpleTranslucent: 'rgba(63, 27, 224, 0.85)',
-	lightGrayTranslucent: 'rgba(180, 180, 180, 0.85)',
 };

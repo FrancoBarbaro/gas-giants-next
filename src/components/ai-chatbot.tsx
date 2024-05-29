@@ -33,7 +33,7 @@ export const AiChatbot: FC = () => {
 			minH={96}
 			color={colors.white}
 			borderRadius={dynamicBorderRadius}
-			border={`1px solid ${colors.lightGrayTranslucent}`}
+			border={`1px solid ${colors.whiteTranslucent}`}
 			overflow="hidden"
 			onSubmit={submitHandler}
 		>
@@ -48,7 +48,7 @@ export const AiChatbot: FC = () => {
 				variant="unstyled"
 				fontSize={dynamicFontSize}
 				borderRadius="none"
-				borderBottom={`1px solid ${colors.lightGrayTranslucent}`}
+				borderBottom={`1px solid ${colors.whiteTranslucent}`}
 				readOnly
 			/>
 			<HStack spacing={0} h="10%">
@@ -65,7 +65,7 @@ export const AiChatbot: FC = () => {
 					type="text"
 					value={prompt}
 					onChange={(event) => setPrompt(event.target.value)}
-					_placeholder={{ color: colors.lightGrayTranslucent }}
+					_placeholder={{ color: colors.whiteTranslucent }}
 				/>
 				<Button
 					w="15%"
@@ -76,7 +76,7 @@ export const AiChatbot: FC = () => {
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
 					color={colors.bluePurple}
-					borderLeft={`1px solid ${colors.lightGrayTranslucent}`}
+					borderLeft={`1px solid ${colors.whiteTranslucent}`}
 					_disabled={{
 						bg: colors.whiteTranslucent,
 						cursor: 'not-allowed',
