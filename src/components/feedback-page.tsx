@@ -98,7 +98,7 @@ export const FeedbackPage: FC = () => {
 								</FormLabel>
 								<RadioGroup value={likedWebsite} onChange={setLikedWebsite}>
 									{/* TODO: Original was 6, check how this looks */}
-									<HStack spacing={{ xxs: 5, xs: 6, xxl: 10 }}>
+									<HStack spacing={{ xxs: 6, xs: 8, sm: 6, xxl: 10 }}>
 										<Radio value="Yes">
 											<Text fontSize={dynamicFontSize}>Yes</Text>
 										</Radio>
@@ -116,8 +116,8 @@ export const FeedbackPage: FC = () => {
 									Which page was your favorite?
 								</FormLabel>
 								<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
-									<Stack direction={{ xxs: 'column', xs: 'row' }} spacing={{ xxs: 3, xs: 6 }}>
-										<HStack spacing={{ xxs: '26.5px', xs: 6 }}>
+									<Stack direction={{ xxs: 'column', sm: 'row' }} spacing={{ xxs: 3, sm: 6 }}>
+										<HStack spacing={{ xxs: 7, xs: 9, sm: 6 }}>
 											<Checkbox value="Home">
 												<Text fontSize={dynamicFontSize}>Home</Text>
 											</Checkbox>
@@ -128,7 +128,7 @@ export const FeedbackPage: FC = () => {
 												<Text fontSize={dynamicFontSize}>Saturn</Text>
 											</Checkbox>
 										</HStack>
-										<HStack spacing={{ xxs: 5, xs: 6 }}>
+										<HStack spacing={{ xxs: '21.5px', xs: '29.5px', sm: 6 }}>
 											<Checkbox value="Uranus">
 												<Text fontSize={dynamicFontSize}>Uranus</Text>
 											</Checkbox>
@@ -144,12 +144,13 @@ export const FeedbackPage: FC = () => {
 									Additional Feedback:
 								</FormLabel>
 								<Textarea
-									h={48}
+									h={{ xxs: 32, xs: 40, sm: 48, xxl: 64 }}
 									resize="none"
 									fontSize={dynamicFontSize}
 									placeholder="Tell us more about what you liked about the website or suggest a way that the site may be improved."
 									value={additionalFeedback}
 									onChange={(event) => setAdditionalFeedback(event.target.value)}
+									_placeholder={{ color: colors.lightGray }}
 								/>
 							</Stack>
 							<Popover
@@ -161,7 +162,7 @@ export const FeedbackPage: FC = () => {
 							>
 								<PopoverTrigger>
 									<Button
-										h={{ xxs: 10, xxl: 12 }}
+										h={{ xxs: 10, xxl: 14 }}
 										color={colors.bluePurple}
 										bg={colors.white}
 										fontSize={dynamicFontSize}

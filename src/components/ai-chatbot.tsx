@@ -33,8 +33,8 @@ export const AiChatbot: FC = () => {
 		>
 			<Textarea
 				id="ai-chatbot-answer"
-				h={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
-				minH={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
+				h={{ xxs: '90%', xs: '85%', md: '90%' }}
+				minH={{ xxs: '90%', xs: '85%', md: '90%' }}
 				px={3}
 				py={2}
 				zIndex={4} // prevents form background from appearing above bottom border
@@ -48,11 +48,7 @@ export const AiChatbot: FC = () => {
 				borderColor={colors.whiteTranslucent}
 				readOnly
 			/>
-			<HStack
-				spacing={0}
-				h={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
-				minH={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
-			>
+			<HStack spacing={0} h={{ xxs: '10%', xs: '15%', md: '10%' }} minH={{ xxs: '10%', xs: '15%', md: '10%' }}>
 				<Input
 					id="ai-chatbot-prompt"
 					h="100%"
@@ -68,7 +64,7 @@ export const AiChatbot: FC = () => {
 					value={prompt}
 					autoComplete="new-password" // workaround to prevent autofill from password managers
 					onChange={(event) => setPrompt(event.target.value)}
-					_placeholder={{ color: colors.whiteTranslucent }}
+					_placeholder={{ color: colors.lightGray }}
 				/>
 				<Button
 					w="15%"
@@ -78,7 +74,7 @@ export const AiChatbot: FC = () => {
 					fontSize={dynamicFontSize}
 					borderRadius="none"
 					isLoading={!isReady}
-					spinner={<RingLoader size={20} color={colors.bluePurple} />}
+					spinner={<RingLoader size={20} color={colors.bluePurple} />} // TODO: make custom spinner component so it can have responsive size
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
 					color={colors.bluePurple}
