@@ -79,17 +79,19 @@ export const FeedbackPage: FC = () => {
 	// TODO: adjust responsive design for feedback form so that it is bigger on larger screens
 
 	return (
-		<Box w={{ xxs: '100%', md: 'fit-content' }}>
+		<Box w={{ xxs: '90%', md: 'fit-content' }}>
 			{!hasSubmittedFeedback && (
 				<form id="feedback" onSubmit={submitHandler}>
 					<FormControl
 						as="fieldset"
 						color={colors.white}
 						bg={colors.bluePurpleTranslucent}
-						p={10}
+						p={{ xxs: 6, md: 10 }}
 						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
+						borderWidth={{ xxs: 1, xxl: 2 }}
+						borderColor={colors.whiteTranslucent}
 					>
-						<Stack spacing={7}>
+						<Stack spacing={{ xxs: 5, md: 7 }}>
 							<Stack spacing={0.5}>
 								<FormLabel as="legend" fontSize={dynamicFontSize}>
 									Did you like this website?
@@ -157,8 +159,8 @@ export const FeedbackPage: FC = () => {
 								closeOnBlur={false}
 							>
 								<PopoverTrigger>
-									{/* TODO: button should go from height of 10 to 12 on xxl */}
 									<Button
+										h={{ xxs: 10, xxl: 12 }}
 										color={colors.bluePurple}
 										bg={colors.white}
 										fontSize={dynamicFontSize}
@@ -168,7 +170,7 @@ export const FeedbackPage: FC = () => {
 										Submit Feedback
 									</Button>
 								</PopoverTrigger>
-								<PopoverContent bg={colors.magentaPurple}>
+								<PopoverContent bg={colors.magentaPurple} fontSize={dynamicFontSize} w={{ xxs: 64, md: 80 }}>
 									<PopoverHeader>Empty Fields</PopoverHeader>
 									<PopoverArrow bg={colors.magentaPurple} />
 									<PopoverCloseButton />
