@@ -65,7 +65,7 @@ export const AiChatbot: FC = () => {
 					bg={colors.bluePurpleTranslucent}
 					variant="unstyled"
 					placeholder="Ask a question"
-					fontSize={dummyDynamicFontSizes}
+					fontSize={10}
 					borderRadius="none"
 					type="text"
 					value={prompt}
