@@ -76,8 +76,6 @@ export const FeedbackPage: FC = () => {
 		router.replace('/home');
 	};
 
-	// TODO: adjust responsive design for feedback form so that it is bigger on larger screens
-
 	return (
 		<Box w={{ xxs: '90%', md: 'fit-content' }}>
 			{!hasSubmittedFeedback && (
@@ -86,18 +84,17 @@ export const FeedbackPage: FC = () => {
 						as="fieldset"
 						color={colors.white}
 						bg={colors.bluePurpleTranslucent}
-						p={{ xxs: 6, md: 10, xxl: 16 }}
+						p={{ xxs: 6, md: 10, lg: 12, xl: 14, xxl: 16 }}
 						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 						borderWidth={{ xxs: 1, xxl: 2 }}
 						borderColor={colors.whiteTranslucent}
 					>
-						<Stack spacing={{ xxs: 5, md: 7, xxl: 10 }}>
+						<Stack spacing={{ xxs: 5, md: 7, lg: 8, xl: 10, xxl: 12 }}>
 							<Stack spacing={0.5}>
 								<FormLabel as="legend" fontSize={dynamicFontSize}>
 									Did you like this website?
 								</FormLabel>
 								<RadioGroup value={likedWebsite} onChange={setLikedWebsite}>
-									{/* TODO: Original was 6, check how this looks */}
 									<HStack spacing={{ xxs: 6, xs: 8, sm: 6, xxl: 10 }}>
 										<Radio value="Yes">
 											<Text fontSize={dynamicFontSize}>Yes</Text>
@@ -117,7 +114,7 @@ export const FeedbackPage: FC = () => {
 								</FormLabel>
 								<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
 									<Stack direction={{ xxs: 'column', sm: 'row' }} spacing={{ xxs: 3, sm: 6 }}>
-										<HStack spacing={{ xxs: 7, xs: 9, sm: 6 }}>
+										<HStack spacing={{ xxs: 7, xs: 9, sm: 6, xxl: 12 }}>
 											<Checkbox value="Home">
 												<Text fontSize={dynamicFontSize}>Home</Text>
 											</Checkbox>
@@ -128,7 +125,7 @@ export const FeedbackPage: FC = () => {
 												<Text fontSize={dynamicFontSize}>Saturn</Text>
 											</Checkbox>
 										</HStack>
-										<HStack spacing={{ xxs: '21.5px', xs: '29.5px', sm: 6 }}>
+										<HStack spacing={{ xxs: '21.5px', xs: '29.5px', sm: 6, xxl: 12 }}>
 											<Checkbox value="Uranus">
 												<Text fontSize={dynamicFontSize}>Uranus</Text>
 											</Checkbox>
@@ -144,7 +141,7 @@ export const FeedbackPage: FC = () => {
 									Additional Feedback:
 								</FormLabel>
 								<Textarea
-									h={{ xxs: 32, xs: 40, sm: 48, xxl: 64 }}
+									h={{ xxs: 32, xs: 40, sm: 48, xxl: 72 }}
 									resize="none"
 									fontSize={dynamicFontSize}
 									placeholder="Tell us more about what you liked about the website or suggest a way that the site may be improved."
