@@ -55,6 +55,7 @@ export const AiChatbot: FC = () => {
 				minH={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
 			>
 				<Input
+					fontFamily="serif"
 					id="ai-chatbot-prompt"
 					h="100%"
 					minH="100%"
