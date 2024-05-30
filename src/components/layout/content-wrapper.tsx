@@ -15,7 +15,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 	return (
 		<Flex justifyContent="space-between" overflow="auto">
 			{!widthSmallerThan75em && <LeftRunes />}
-			<Flex h="100vh" bg="transparent" flexDir="column" pos="relative" zIndex={3} w="100%">
+			<Flex h="100dvh" bg="transparent" flexDir="column" pos="relative" zIndex={3} w="100%">
 				<NavBar />
 				<Center as="main" pos="relative" m="auto" w={{ xxs: '95%', md: '90%', xl: '95%' }}>
 					{children}
