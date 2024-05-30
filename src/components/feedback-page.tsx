@@ -86,18 +86,19 @@ export const FeedbackPage: FC = () => {
 						as="fieldset"
 						color={colors.white}
 						bg={colors.bluePurpleTranslucent}
-						p={{ xxs: 6, md: 10 }}
+						p={{ xxs: 6, md: 10, xxl: 16 }}
 						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 						borderWidth={{ xxs: 1, xxl: 2 }}
 						borderColor={colors.whiteTranslucent}
 					>
-						<Stack spacing={{ xxs: 5, md: 7 }}>
+						<Stack spacing={{ xxs: 5, md: 7, xxl: 10 }}>
 							<Stack spacing={0.5}>
 								<FormLabel as="legend" fontSize={dynamicFontSize}>
 									Did you like this website?
 								</FormLabel>
 								<RadioGroup value={likedWebsite} onChange={setLikedWebsite}>
-									<HStack spacing={6}>
+									{/* TODO: Original was 6, check how this looks */}
+									<HStack spacing={{ xxs: 5, xs: 6, xxl: 10 }}>
 										<Radio value="Yes">
 											<Text fontSize={dynamicFontSize}>Yes</Text>
 										</Radio>
@@ -116,7 +117,7 @@ export const FeedbackPage: FC = () => {
 								</FormLabel>
 								<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
 									<Stack direction={{ xxs: 'column', xs: 'row' }} spacing={{ xxs: 3, xs: 6 }}>
-										<HStack spacing={6}>
+										<HStack spacing={{ xxs: '26.5px', xs: 6 }}>
 											<Checkbox value="Home">
 												<Text fontSize={dynamicFontSize}>Home</Text>
 											</Checkbox>
@@ -170,7 +171,11 @@ export const FeedbackPage: FC = () => {
 										Submit Feedback
 									</Button>
 								</PopoverTrigger>
-								<PopoverContent bg={colors.magentaPurple} fontSize={dynamicFontSize} w={{ xxs: 64, md: 80 }}>
+								<PopoverContent
+									bg={colors.magentaPurple}
+									fontSize={dynamicFontSize}
+									w={{ xxs: 64, md: 80, xxl: '25em' }}
+								>
 									<PopoverHeader>Empty Fields</PopoverHeader>
 									<PopoverArrow bg={colors.magentaPurple} />
 									<PopoverCloseButton />
