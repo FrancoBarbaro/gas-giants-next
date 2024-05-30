@@ -18,6 +18,8 @@ export const AiChatbot: FC = () => {
 		}
 	};
 
+	// TODO: fix mobile scrolling getting stuck issue
+
 	return (
 		<FormControl
 			as="form"
@@ -36,6 +38,7 @@ export const AiChatbot: FC = () => {
 				minH={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
 				px={3}
 				py={1.5}
+				zIndex={4} // prevents form background from appearing above bottom border
 				bg={colors.bluePurpleTranslucent}
 				value={answer}
 				resize="none"
@@ -71,6 +74,7 @@ export const AiChatbot: FC = () => {
 				<Button
 					w="15%"
 					h="100%"
+					zIndex={4} // prevents form background from appearing above left border
 					type="submit"
 					fontSize={dynamicFontSize}
 					borderRadius="none"
