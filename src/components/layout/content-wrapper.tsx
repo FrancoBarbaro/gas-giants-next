@@ -13,7 +13,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
 	const [widthSmallerThan75em] = useMediaQuery('(max-width: 75em)');
 
 	return (
-		<Flex justifyContent="space-between" overflow="auto" css={{ WebkitOverflowScrolling: 'touch' }}>
+		<Flex justifyContent="space-between" overflow="auto">
 			{!widthSmallerThan75em && <LeftRunes />}
 			<Flex h="100vh" bg="transparent" flexDir="column" pos="relative" zIndex={3} w="100%">
 				<NavBar />
