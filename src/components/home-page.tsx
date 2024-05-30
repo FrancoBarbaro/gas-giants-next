@@ -1,4 +1,4 @@
-import { Stack, VStack } from '@chakra-ui/react';
+import { Hide, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { dynamicMarginBottom } from '~/common/dynamic-values';
 import { AiChatbot } from '~/components/ai-chatbot';
@@ -18,16 +18,18 @@ export const HomePage: FC = () => {
 						Saturn, Uranus, and Neptune.
 					</RoundedTextBox>
 				</VStack>
-				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
-						About our AI Chatbot:
-					</RoundedTextBox>
-					<RoundedTextBox textType="p">
-						Our AI chatbot is a fun way to learn about the gas giants. It is powered by the OpenAI GPT-3.5 Turbo API and
-						is able to answer questions about the gas giants. Try asking it about the gas giants&apos; atmospheres or
-						moons!
-					</RoundedTextBox>
-				</VStack>
+				<Hide below="md">
+					<VStack as="section" alignItems="initial" w="100%">
+						<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
+							About our AI Chatbot:
+						</RoundedTextBox>
+						<RoundedTextBox textType="p">
+							Our AI chatbot is a fun way to learn about the gas giants. It is powered by the OpenAI GPT-3.5 Turbo API
+							and is able to answer questions about the gas giants. Try asking it about the gas giants&apos; atmospheres
+							or moons!
+						</RoundedTextBox>
+					</VStack>
+				</Hide>
 			</VStack>
 			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" as="section" alignItems="initial">
 				<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
