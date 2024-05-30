@@ -78,7 +78,7 @@ export const AiChatbot: FC = () => {
 					px={3}
 					py={1.5}
 					bg={colors.bluePurpleTranslucent}
-					// variant="unstyled" // Comment out this line to see if the issue resolves
+					variant="unstyled"
 					placeholder="Ask a question"
 					fontSize="16px" // Replace dynamicFontSize with a static value
 					lineHeight="1.5" // Ensure lineHeight is set
