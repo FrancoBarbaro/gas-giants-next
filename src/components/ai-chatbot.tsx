@@ -67,7 +67,7 @@ export const AiChatbot: FC = () => {
 					borderRadius="none"
 					type="text"
 					value={prompt}
-					autoComplete="off"
+					autoComplete="new-password" // workaround to prevent autofill from password managers
 					onChange={(event) => setPrompt(event.target.value)}
 					_placeholder={{ color: colors.whiteTranslucent }}
 				/>
