@@ -66,6 +66,7 @@ export const AiChatbot: FC = () => {
 					variant="unstyled"
 					placeholder="Ask a question"
 					fontSize={10}
+					lineHeight="1.2"
 					borderRadius="none"
 					type="text"
 					value={prompt}
