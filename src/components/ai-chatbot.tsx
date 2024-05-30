@@ -28,13 +28,15 @@ export const AiChatbot: FC = () => {
 			minH={{ xxs: 72, md: 96 }}
 			color={colors.white}
 			borderRadius={dynamicBorderRadius}
-			border={`1px solid ${colors.whiteTranslucent}`}
+			borderWidth={{ xxs: 1, xxl: 2 }}
+			borderColor={colors.whiteTranslucent}
 			overflow="hidden"
 			onSubmit={submitHandler}
 		>
 			<Textarea
-				h={{ xxs: '90%', xs: '85%', md: '90%' }}
-				minH={{ xxs: '90%', xs: '85%', md: '90%' }}
+				id="ai-chatbot-answer"
+				h={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
+				minH={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
 				px={3}
 				py={1.5}
 				bg={colors.bluePurpleTranslucent}
@@ -43,11 +45,17 @@ export const AiChatbot: FC = () => {
 				variant="unstyled"
 				fontSize={dynamicFontSize}
 				borderRadius="none"
-				borderBottom={`1px solid ${colors.whiteTranslucent}`}
+				borderBottomWidth={{ xxs: 1, xxl: 2 }}
+				borderColor={colors.whiteTranslucent}
 				readOnly
 			/>
-			<HStack spacing={0} h={{ xxs: '10%', xs: '15%', md: '10%' }} minH={{ xxs: '10%', xs: '15%', md: '10%' }}>
+			<HStack
+				spacing={0}
+				h={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
+				minH={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
+			>
 				<Input
+					id="ai-chatbot-prompt"
 					h="100%"
 					minH="100%"
 					px={3}
@@ -59,6 +67,7 @@ export const AiChatbot: FC = () => {
 					borderRadius="none"
 					type="text"
 					value={prompt}
+					autoComplete="off"
 					onChange={(event) => setPrompt(event.target.value)}
 					_placeholder={{ color: colors.whiteTranslucent }}
 				/>
@@ -68,10 +77,14 @@ export const AiChatbot: FC = () => {
 					type="submit"
 					fontSize={dynamicFontSize}
 					borderRadius="none"
+					isLoading={!isReady}
+					// TODO: install react-spinners and use BeatLoader
+					// spinner={<BeatLoader size={8} color={colors.bluePurple} />}
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
 					color={colors.bluePurple}
-					borderLeft={`1px solid ${colors.whiteTranslucent}`}
+					borderLeftWidth={{ xxs: 1, xxl: 2 }}
+					borderColor={colors.whiteTranslucent}
 					_disabled={{
 						bg: colors.whiteTranslucent,
 						cursor: 'not-allowed',
