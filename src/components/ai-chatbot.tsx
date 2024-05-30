@@ -18,8 +18,6 @@ export const AiChatbot: FC = () => {
 		}
 	};
 
-	// TODO: fix mobile scrolling getting stuck issue
-
 	return (
 		<FormControl
 			as="form"
