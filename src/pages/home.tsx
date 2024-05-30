@@ -7,6 +7,7 @@ const Home: NextPage = () => (
 		<Head>
 			<title>The Gas Giants</title>
 			<meta name="description" content="Information about our solar system's Gas Giants" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 			<meta property="og:title" content="The Gas Giants" />
 			<meta property="og:description" content="Information about our solar system's Gas Giants" />
 			<meta property="og:image" content="/images/homebg.jpeg" />

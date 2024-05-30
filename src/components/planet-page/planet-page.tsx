@@ -23,6 +23,7 @@ export const PlanetPage: FC<PlanetPageProps> = ({ planet }) => {
 			<Head>
 				<title>{pageTitle}</title>
 				<meta name="description" content={pageDescription} />
+				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 				<meta property="og:title" content={capitalizedPlanetName} />
 				<meta property="og:description" content={pageDescription} />
 				<meta property="og:image" content={ogImageUrl} />
