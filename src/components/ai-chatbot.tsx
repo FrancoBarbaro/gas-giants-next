@@ -20,8 +20,6 @@ export const AiChatbot: FC = () => {
 
 	// TODO: fix bug where typing cursor is one character behind
 	// TODO: either zoom out after mobile zoom in or prevent zoom in
-	// const dummyDynamicFontSizes = { xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', xxl: '2xl' };
-	const dummyDynamicFontSizes = { xxs: '12px', xs: '14px', sm: '16px', md: '16px', lg: '18px', xxl: '24px' };
 
 	return (
 		<FormControl
@@ -65,8 +63,10 @@ export const AiChatbot: FC = () => {
 					bg={colors.bluePurpleTranslucent}
 					variant="unstyled"
 					placeholder="Ask a question"
-					fontSize={10}
-					lineHeight="1.2"
+					// fontSize={10}
+					fontSize="16px" // Use a slightly larger font size
+					transform="scale(0.625)" // Scale down to achieve the effect of 10px font size
+					transformOrigin="left"
 					borderRadius="none"
 					type="text"
 					value={prompt}
