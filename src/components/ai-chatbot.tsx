@@ -37,7 +37,7 @@ export const AiChatbot: FC = () => {
 				h={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
 				minH={{ xxs: '90%', xs: '85%', md: '90%', xxl: '85%' }}
 				px={3}
-				py={1.5}
+				py={2}
 				zIndex={4} // prevents form background from appearing above bottom border
 				bg={colors.bluePurpleTranslucent}
 				value={answer}
