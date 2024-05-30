@@ -62,7 +62,9 @@ export const AiChatbot: FC = () => {
 					borderRadius="none"
 					type="text"
 					value={prompt}
-					autoComplete="new-password" // workaround to prevent autofill from password managers
+					autoComplete="off" // prevents browser from suggesting previous inputs
+					data-lpignore="true" // prevents LastPass from autofilling
+					data-1p-ignore="true" // prevents 1Password from autofilling
 					onChange={(event) => setPrompt(event.target.value)}
 					_placeholder={{ color: colors.lightGray }}
 				/>
