@@ -14,9 +14,9 @@ type RoundedTextBoxProps = {
 const getDynamicFontSize = (textType: 'p' | 'h1' | 'h2') => {
 	switch (textType) {
 		case 'h1':
-			return { xxs: 'lg', xs: 'lg', sm: 'xl', md: '2xl', lg: '3xl', xxl: '5xl' };
+			return { xxs: 'lg', sm: 'xl', md: '2xl', lg: '3xl', xxl: '5xl' };
 		case 'h2':
-			return { xxs: 'md', xs: 'md', sm: 'lg', md: 'xl', lg: '2xl', xxl: '4xl' };
+			return { xxs: 'md', sm: 'lg', md: 'xl', lg: '2xl', xxl: '4xl' };
 		case 'p':
 			return paragraphDynamicFontSize;
 		default:
