@@ -63,10 +63,7 @@ export const AiChatbot: FC = () => {
 					bg={colors.bluePurpleTranslucent}
 					variant="unstyled"
 					placeholder="Ask a question"
-					// fontSize={10}
-					fontSize="16px" // Use a slightly larger font size
-					transform="scale(0.625)" // Scale down to achieve the effect of 10px font size
-					transformOrigin="left"
+					fontSize={dynamicFontSize}
 					borderRadius="none"
 					type="text"
 					value={prompt}

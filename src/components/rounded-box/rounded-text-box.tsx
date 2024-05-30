@@ -1,6 +1,7 @@
 import { Heading, Text } from '@chakra-ui/react';
 import type { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { dynamicFontSize as paragraphDynamicFontSize } from '~/common/dynamic-values';
 import { RoundedBox } from '~/components/rounded-box/rounded-box';
 import { colors } from '~/theme/colors';
 
@@ -17,7 +18,7 @@ const getDynamicFontSize = (textType: 'p' | 'h1' | 'h2') => {
 		case 'h2':
 			return { xxs: 'sm', xs: 'md', sm: 'lg', md: 'xl', lg: '2xl', xxl: '4xl' };
 		case 'p':
-			return { xxs: 10, xs: 'xs', sm: 'sm', md: 'sm', lg: 'md', xxl: '2xl' };
+			return paragraphDynamicFontSize;
 		default:
 			return;
 	}
