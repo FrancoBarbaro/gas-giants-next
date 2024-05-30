@@ -18,6 +18,9 @@ export const AiChatbot: FC = () => {
 		}
 	};
 
+	// TODO: fix bug where typing cursor is one character behind
+	// TODO: either zoom out after mobile zoom in or prevent zoom in
+
 	return (
 		<FormControl
 			as="form"

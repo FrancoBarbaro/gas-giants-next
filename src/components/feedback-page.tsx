@@ -76,6 +76,8 @@ export const FeedbackPage: FC = () => {
 		router.replace('/home');
 	};
 
+	// TODO: adjust responsive design for feedback form so that it is bigger on larger screens
+
 	return (
 		<Box w={{ xxs: '100%', md: 'fit-content' }}>
 			{!hasSubmittedFeedback && (
@@ -155,6 +157,7 @@ export const FeedbackPage: FC = () => {
 								closeOnBlur={false}
 							>
 								<PopoverTrigger>
+									{/* TODO: button should go from height of 10 to 12 on xxl */}
 									<Button
 										color={colors.bluePurple}
 										bg={colors.white}
