@@ -20,6 +20,14 @@ export const AiChatbot: FC = () => {
 
 	// TODO: fix bug where typing cursor is one character behind
 	// TODO: either zoom out after mobile zoom in or prevent zoom in
+	const dummyDynamicFontSizes = {
+		xxs: '12px',
+		xs: '14px',
+		sm: '16px',
+		md: '16px',
+		lg: '18px',
+		xxl: '24px',
+	};
 
 	return (
 		<FormControl
@@ -75,7 +83,7 @@ export const AiChatbot: FC = () => {
 					w="15%"
 					h="100%"
 					type="submit"
-					fontSize={dynamicFontSize}
+					fontSize={dummyDynamicFontSizes}
 					borderRadius="none"
 					isLoading={!isReady}
 					// TODO: install react-spinners and use BeatLoader
