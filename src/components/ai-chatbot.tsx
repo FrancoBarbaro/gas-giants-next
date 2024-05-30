@@ -45,7 +45,7 @@ export const AiChatbot: FC = () => {
 				value={answer}
 				resize="none"
 				variant="unstyled"
-				fontSize={dynamicFontSize}
+				fontSize={10}
 				borderRadius="none"
 				borderBottomWidth={{ xxs: 1, xxl: 2 }}
 				borderColor={colors.whiteTranslucent}
