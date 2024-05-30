@@ -54,23 +54,6 @@ export const AiChatbot: FC = () => {
 				h={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
 				minH={{ xxs: '10%', xs: '15%', md: '10%', xxl: '15%' }}
 			>
-				{/* <Input
-					id="ai-chatbot-prompt"
-					h="100%"
-					minH="100%"
-					px={3}
-					py={1.5}
-					bg={colors.bluePurpleTranslucent}
-					variant="unstyled"
-					placeholder="Ask a question"
-					fontSize={dynamicFontSize}
-					borderRadius="none"
-					type="text"
-					value={prompt}
-					autoComplete="new-password" // workaround to prevent autofill from password managers
-					onChange={(event) => setPrompt(event.target.value)}
-					_placeholder={{ color: colors.whiteTranslucent }}
-				/> */}
 				<Input
 					id="ai-chatbot-prompt"
 					h="100%"
@@ -80,12 +63,11 @@ export const AiChatbot: FC = () => {
 					bg={colors.bluePurpleTranslucent}
 					variant="unstyled"
 					placeholder="Ask a question"
-					fontSize={dynamicFontSize}
-					lineHeight="1.5" // Ensure lineHeight is set
+					fontSize="16px"
 					borderRadius="none"
 					type="text"
 					value={prompt}
-					autoComplete="new-password"
+					autoComplete="new-password" // workaround to prevent autofill from password managers
 					onChange={(event) => setPrompt(event.target.value)}
 					_placeholder={{ color: colors.whiteTranslucent }}
 				/>
