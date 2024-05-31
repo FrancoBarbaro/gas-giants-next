@@ -9,14 +9,14 @@ const navButtonStyle = {
 	lineHeight: 4,
 	fontWeight: 'bold',
 	transition: 'all 0.5s',
-	letterSpacing: { xxs: 1, sm: 1.2, xxl: 2 },
+	letterSpacing: { base: 1, sm: 1.2, xxl: 2 },
 	fontFamily: `'Varela Round', sans-serif`,
-	px: { xxs: 2, xs: 3, sm: 3.5, md: 5, lg: 6, xxl: 7 },
-	py: { xxs: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4, xxl: 5 },
-	borderRadius: { xxs: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
-	fontSize: { xxs: 8, xs: 10, sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' },
+	px: { base: 2, xs: 3, sm: 3.5, md: 5, lg: 6, xxl: 7 },
+	py: { base: 1, xs: 1.5, sm: 2.5, md: 3.5, lg: 4, xxl: 5 },
+	borderRadius: { base: 7, xs: 8, sm: 10, md: 13, xxl: 14 },
+	fontSize: { base: 8, xs: 10, sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' },
 	boxShadow: {
-		xxs: `4px 4px 0 ${colors.bluePurple}`,
+		base: `4px 4px 0 ${colors.bluePurple}`,
 		xs: `6px 6px 0 ${colors.bluePurple}`,
 		sm: `8px 8px 0 ${colors.bluePurple}`,
 		md: `10px 10px 0 ${colors.bluePurple}`,
@@ -27,7 +27,7 @@ const navButtonHoverStyle = {
 	bg: colors.bluePurple,
 	color: colors.white,
 	boxShadow: {
-		xxs: `-4px -4px 0 ${colors.white}`,
+		base: `-4px -4px 0 ${colors.white}`,
 		xs: `-6px -6px 0 ${colors.white}`,
 		sm: `-8px -8px 0 ${colors.white}`,
 		md: `-10px -10px 0 ${colors.white}`,
@@ -46,7 +46,7 @@ const Button = {
 
 const runeStyle = {
 	color: 'transparent',
-	fontSize: { xxs: 64, xxl: '8xl' },
+	fontSize: { base: 64, xxl: '8xl' },
 	borderRadius: 4,
 	textShadow: `0 0 0.125em ${colors.runeShadow}, 0 0 0.45em ${colors.darkPurple}`,
 	transition: 'color 0.5s linear, text-shadow 0.5s linear',

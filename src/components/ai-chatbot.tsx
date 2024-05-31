@@ -23,18 +23,18 @@ export const AiChatbot: FC = () => {
 		<FormControl
 			as="form"
 			h="100%"
-			minH={{ xxs: 72, md: 96 }}
+			minH={{ base: 72, md: 96 }}
 			color={colors.white}
 			borderRadius={dynamicBorderRadius}
-			borderWidth={{ xxs: 1, xxl: 2 }}
+			borderWidth={{ base: 1, xxl: 2 }}
 			borderColor={colors.whiteTranslucent}
 			overflow="hidden"
 			onSubmit={submitHandler}
 		>
 			<Textarea
 				id="ai-chatbot-answer"
-				h={{ xxs: '90%', xs: '85%', md: '90%' }}
-				minH={{ xxs: '90%', xs: '85%', md: '90%' }}
+				h={{ base: '90%', xs: '85%', md: '90%' }}
+				minH={{ base: '90%', xs: '85%', md: '90%' }}
 				px={3}
 				py={2}
 				zIndex={4} // prevents form background from appearing above bottom border
@@ -44,11 +44,11 @@ export const AiChatbot: FC = () => {
 				variant="unstyled"
 				fontSize={dynamicFontSize}
 				borderRadius="none"
-				borderBottomWidth={{ xxs: 1, xxl: 2 }}
+				borderBottomWidth={{ base: 1, xxl: 2 }}
 				borderColor={colors.whiteTranslucent}
 				readOnly
 			/>
-			<HStack spacing={0} h={{ xxs: '10%', xs: '15%', md: '10%' }} minH={{ xxs: '10%', xs: '15%', md: '10%' }}>
+			<HStack spacing={0} h={{ base: '10%', xs: '15%', md: '10%' }} minH={{ base: '10%', xs: '15%', md: '10%' }}>
 				<Input
 					id="ai-chatbot-prompt"
 					h="100%"
@@ -80,7 +80,7 @@ export const AiChatbot: FC = () => {
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
 					color={colors.bluePurple}
-					borderLeftWidth={{ xxs: 1, xxl: 2 }}
+					borderLeftWidth={{ base: 1, xxl: 2 }}
 					borderColor={colors.whiteTranslucent}
 					_disabled={{
 						bg: colors.whiteTranslucent,

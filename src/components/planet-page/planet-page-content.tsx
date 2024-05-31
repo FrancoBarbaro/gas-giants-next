@@ -15,8 +15,8 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 	const { planetDesc, symbolDesc, funFacts, imageUrl, imageAltText, imageDesc } = info;
 
 	return (
-		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">
-			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
+		<Stack spacing={{ base: 6, md: 20 }} direction={{ base: 'column', md: 'row' }} w="100%" h="100%">
+			<VStack w={{ base: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>{`About ${planet}:`}</RoundedTextBox>
 					<RoundedTextBox textType="p">{planetDesc}</RoundedTextBox>
@@ -28,9 +28,9 @@ export const PlanetPageContent: FC<PlanetPageContentProps> = ({ planet, info }) 
 					<RoundedTextBox textType="p">{symbolDesc}</RoundedTextBox>
 				</VStack>
 			</VStack>
-			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
+			<VStack w={{ base: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={6}>
 				<VStack as="section" alignItems="initial" w="100%">
-					<RoundedTextBox textType="h2" mt={{ xxs: 0, md: 0.5, lg: 1, xl: 1.5, xxl: 3 }} mb={dynamicMarginBottom}>
+					<RoundedTextBox textType="h2" mt={{ base: 0, md: 0.5, lg: 1, xl: 1.5, xxl: 3 }} mb={dynamicMarginBottom}>
 						Fun Facts:
 					</RoundedTextBox>
 					<RoundedListBox list={Object.values(funFacts)} fontSize={15.5} />

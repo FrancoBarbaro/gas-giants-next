@@ -8,9 +8,9 @@ type FooterContainerProps = {
 
 export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 	<Box
-		w={{ xxs: '95%', md: '90%', lg: '85%' }}
-		pt={{ xxs: 7, xs: 8, sm: 12, lg: 14 }}
-		pb={{ xxs: 4, xs: 5, sm: 6, xxl: 14 }}
+		w={{ base: '95%', md: '90%', lg: '85%' }}
+		pt={{ base: 7, xs: 8, sm: 12, lg: 14 }}
+		pb={{ base: 4, xs: 5, sm: 6, xxl: 14 }}
 		mx="auto"
 	>
 		<Flex
@@ -22,8 +22,8 @@ export const FooterContainer: FC<FooterContainerProps> = ({ children }) => (
 			color={colors.lightGray}
 			justifyContent="space-around"
 			alignItems="center"
-			fontSize={{ xxs: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' }}
-			flexDir={{ xxs: 'column', sm: 'row' }}
+			fontSize={{ base: '8px', xs: '10px', sm: 'sm', md: 'md', lg: 'lg', xxl: '2xl' }}
+			flexDir={{ base: 'column', sm: 'row' }}
 		>
 			{children}
 		</Flex>

@@ -16,7 +16,7 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => (
 		</Hide>
 		<Flex h="100dvh" bg="transparent" flexDir="column" pos="relative" zIndex={3} w="100%">
 			<NavBar />
-			<Center as="main" pos="relative" m="auto" w={{ xxs: '95%', md: '90%', xl: '95%' }}>
+			<Center as="main" pos="relative" m="auto" w={{ base: '95%', md: '90%', xl: '95%' }}>
 				{children}
 			</Center>
 			<Footer />

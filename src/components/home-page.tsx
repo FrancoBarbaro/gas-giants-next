@@ -6,8 +6,8 @@ import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 export const HomePage: FC = () => {
 	return (
-		<Stack spacing={{ xxs: 6, md: 20 }} direction={{ xxs: 'column', md: 'row' }} w="100%" h="100%">
-			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={{ xxs: 6, md: 24 }}>
+		<Stack spacing={{ base: 6, md: 20 }} direction={{ base: 'column', md: 'row' }} w="100%" h="100%">
+			<VStack w={{ base: '100%', md: '50%' }} h="100%" justifyContent="space-between" spacing={{ base: 6, md: 24 }}>
 				<VStack as="section" alignItems="initial" w="100%">
 					<RoundedTextBox textType="h1" mb={dynamicMarginBottom}>
 						What is a Gas Giant?
@@ -31,7 +31,7 @@ export const HomePage: FC = () => {
 					</VStack>
 				</Hide>
 			</VStack>
-			<VStack w={{ xxs: '100%', md: '50%' }} h="100%" as="section" alignItems="initial">
+			<VStack w={{ base: '100%', md: '50%' }} h="100%" as="section" alignItems="initial">
 				<RoundedTextBox textType="h2" mb={dynamicMarginBottom}>
 					AI Chatbot:
 				</RoundedTextBox>

@@ -77,25 +77,25 @@ export const FeedbackPage: FC = () => {
 	};
 
 	return (
-		<Box w={{ xxs: '90%', md: 'fit-content' }}>
+		<Box w={{ base: '90%', md: 'fit-content' }}>
 			{!hasSubmittedFeedback && (
 				<form id="feedback" onSubmit={submitHandler}>
 					<FormControl
 						as="fieldset"
 						color={colors.white}
 						bg={colors.bluePurpleTranslucent}
-						p={{ xxs: 6, md: 10, lg: 12, xl: 14, xxl: 16 }}
-						borderRadius={{ xxs: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
-						borderWidth={{ xxs: 1, xxl: 2 }}
+						p={{ base: 6, md: 10, lg: 12, xl: 14, xxl: 16 }}
+						borderRadius={{ base: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
+						borderWidth={{ base: 1, xxl: 2 }}
 						borderColor={colors.whiteTranslucent}
 					>
-						<Stack spacing={{ xxs: 5, md: 7, lg: 8, xl: 10, xxl: 12 }}>
+						<Stack spacing={{ base: 5, md: 7, lg: 8, xl: 10, xxl: 12 }}>
 							<Stack spacing={0.5}>
 								<FormLabel as="legend" fontSize={dynamicFontSize}>
 									Did you like this website?
 								</FormLabel>
 								<RadioGroup value={likedWebsite} onChange={setLikedWebsite}>
-									<HStack spacing={{ xxs: 6, xs: 8, sm: 6, xxl: 10 }}>
+									<HStack spacing={{ base: 6, xs: 8, sm: 6, xxl: 10 }}>
 										<Radio value="Yes">
 											<Text fontSize={dynamicFontSize}>Yes</Text>
 										</Radio>
@@ -113,8 +113,8 @@ export const FeedbackPage: FC = () => {
 									Which page was your favorite?
 								</FormLabel>
 								<CheckboxGroup value={favoritePages} onChange={setFavoritePages}>
-									<Stack direction={{ xxs: 'column', sm: 'row' }} spacing={{ xxs: 3, sm: 6 }}>
-										<HStack spacing={{ xxs: 7, xs: 9, sm: 6, xxl: 12 }}>
+									<Stack direction={{ base: 'column', sm: 'row' }} spacing={{ base: 3, sm: 6 }}>
+										<HStack spacing={{ base: 7, xs: 9, sm: 6, xxl: 12 }}>
 											<Checkbox value="Home">
 												<Text fontSize={dynamicFontSize}>Home</Text>
 											</Checkbox>
@@ -125,7 +125,7 @@ export const FeedbackPage: FC = () => {
 												<Text fontSize={dynamicFontSize}>Saturn</Text>
 											</Checkbox>
 										</HStack>
-										<HStack spacing={{ xxs: '21.5px', xs: '29.5px', sm: 6, xxl: 12 }}>
+										<HStack spacing={{ base: '21.5px', xs: '29.5px', sm: 6, xxl: 12 }}>
 											<Checkbox value="Uranus">
 												<Text fontSize={dynamicFontSize}>Uranus</Text>
 											</Checkbox>
@@ -141,7 +141,7 @@ export const FeedbackPage: FC = () => {
 									Additional Feedback:
 								</FormLabel>
 								<Textarea
-									h={{ xxs: 32, xs: 40, sm: 48, xxl: 72 }}
+									h={{ base: 32, xs: 40, sm: 48, xxl: 72 }}
 									resize="none"
 									fontSize={dynamicFontSize}
 									placeholder="Tell us more about what you liked about the website or suggest a way that the site may be improved."
@@ -159,7 +159,7 @@ export const FeedbackPage: FC = () => {
 							>
 								<PopoverTrigger>
 									<Button
-										h={{ xxs: 10, xxl: 14 }}
+										h={{ base: 10, xxl: 14 }}
 										color={colors.bluePurple}
 										bg={colors.white}
 										fontSize={dynamicFontSize}
@@ -172,7 +172,7 @@ export const FeedbackPage: FC = () => {
 								<PopoverContent
 									bg={colors.magentaPurple}
 									fontSize={dynamicFontSize}
-									w={{ xxs: 64, md: 80, xxl: '25em' }}
+									w={{ base: 64, md: 80, xxl: '25em' }}
 								>
 									<PopoverHeader>Empty Fields</PopoverHeader>
 									<PopoverArrow bg={colors.magentaPurple} />
