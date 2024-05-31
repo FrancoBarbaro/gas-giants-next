@@ -14,7 +14,14 @@ export const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => (
 		<Hide breakpoint="(max-width: 75em)">
 			<LeftRunes />
 		</Hide>
-		<Flex h="100dvh" bg="transparent" flexDir="column" pos="relative" zIndex={3} w="100%">
+		<Flex
+			h="100dvh" // using dynamic viewport height makes scrolling smooth on Safari regardless of search bar presence
+			bg="transparent"
+			flexDir="column"
+			pos="relative"
+			zIndex={3}
+			w="100%"
+		>
 			<NavBar />
 			<Center as="main" pos="relative" m="auto" w={{ base: '95%', md: '90%', xl: '95%' }}>
 				{children}
