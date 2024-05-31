@@ -84,12 +84,12 @@ export const FeedbackPage: FC = () => {
 						as="fieldset"
 						color={colors.white}
 						bg={colors.bluePurpleTranslucent}
-						p={{ base: 6, md: 10, lg: 12, xl: 14, xxl: 16 }}
+						p={{ base: 6, md: 8, lg: 10, xxl: 16 }}
 						borderRadius={{ base: 'lg', xs: 10, sm: 'xl', md: 14, lg: '2xl', xxl: 20 }}
 						borderWidth={{ base: 1, xxl: 2 }}
 						borderColor={colors.whiteTranslucent}
 					>
-						<Stack spacing={{ base: 5, md: 7, lg: 8, xl: 10, xxl: 12 }}>
+						<Stack spacing={{ base: 5, md: 7, lg: 8, xxl: 12 }}>
 							<Stack spacing={0.5}>
 								<FormLabel as="legend" fontSize={dynamicFontSize}>
 									Did you like this website?
