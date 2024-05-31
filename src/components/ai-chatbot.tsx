@@ -1,7 +1,7 @@
 import { Button, FormControl, HStack, Input, Textarea } from '@chakra-ui/react';
 import { FC, FormEvent, useState } from 'react';
-import { RingLoader } from 'react-spinners';
 import { dynamicBorderRadius, dynamicFontSize } from '~/common/dynamic-values';
+import { AiChatbotSpinner } from '~/components/ai-chatbot-spinner';
 import { useFetchAiResponse } from '~/hooks/use-fetch-ai-response';
 import { colors } from '~/theme/colors';
 
@@ -75,8 +75,10 @@ export const AiChatbot: FC = () => {
 					type="submit"
 					fontSize={dynamicFontSize}
 					borderRadius="none"
-					isLoading={!isReady}
-					spinner={<RingLoader size={20} color={colors.bluePurple} />} // TODO: make custom spinner component so it can have responsive size
+					// TODO: change this back when done testing
+					// isLoading={!isReady}
+					isLoading={true}
+					spinner={<AiChatbotSpinner />}
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
 					color={colors.bluePurple}
