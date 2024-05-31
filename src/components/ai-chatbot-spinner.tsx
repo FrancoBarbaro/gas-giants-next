@@ -5,8 +5,8 @@ import { colors } from '~/theme/colors';
 
 export const AiChatbotSpinner: FC = () => {
 	const size = useBreakpointValue(
-		{ base: 18, xs: 20, sm: 22, md: 23, lg: 24, xl: 25, xxl: 30 },
-		{ ssr: false, fallback: 'lg' },
+		{ base: 18, xs: 21, sm: 22, md: 23, lg: 24, xl: 25, xxl: 30 },
+		{ ssr: false, fallback: 'sm' },
 	);
 
 	return <RingLoader size={size} color={colors.bluePurple} speedMultiplier={1.5} />;
