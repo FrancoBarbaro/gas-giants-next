@@ -75,7 +75,8 @@ export const AiChatbot: FC = () => {
 					type="submit"
 					fontSize={dynamicFontSize}
 					borderRadius="none"
-					isLoading={!isReady}
+					// isLoading={!isReady}
+					isLoading={true}
 					spinner={<AiChatbotSpinner />}
 					disabled={!validPrompt || !isReady}
 					bg={colors.white}
