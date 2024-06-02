@@ -19,7 +19,6 @@
 
 	// NPM settings
 	"npm.packageManager": "npm",
-	"eslint.packageManager": "npm",
 
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
