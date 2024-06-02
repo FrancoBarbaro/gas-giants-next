@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gas Giants Next
 
-## Getting Started
+## Description
 
-First, run the development server:
+A recreation of my original Gas Giants website, transitioning from HTML and CSS to a modern Next.js and Chakra UI web app.
+
+## Features
+
+- **AI-Powered Q&A**: An AI chatbot powered by OpenAI's GPT-3.5 Turbo API to answer user questions about the solar system.
+- **Detailed Planet Pages**: Individual pages for Jupiter, Saturn, Uranus, and Neptune, each featuring an "About" section, planet symbols, fun facts, and interactive flip-cards with interesting images.
+- **User Feedback Form**: A feedback page with a form that allows users to share their thoughts about the site, storing feedback using Firebase Realtime Database.
+- **Firebase Integration**: Use of Firebase Realtime Database for content and feedback storage, along with Firebase Anonymous Authentication and Firebase AppCheck for security.
+- **Dynamic Backgrounds**: Zooming and animated backgrounds with shooting stars, tailored for each page.
+- **Responsive Design**: The website is optimized to look great on all devices, from desktops to tablets and smartphones, ensuring a consistent and user-friendly experience across different screen sizes.
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Chakra UI
+- Firebase
+- GPT-3.5 Turbo API
+
+## Installation
+
+To get a local copy up and running, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/FrancoBarbaro/gas-giants-next.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd gas-giants-next
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000/ with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is deployed using Vercel. You can visit the live project at: https://gas-giants-next.vercel.app
