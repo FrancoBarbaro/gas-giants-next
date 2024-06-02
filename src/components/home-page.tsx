@@ -1,7 +1,7 @@
 import { Hide, Stack, VStack } from '@chakra-ui/react';
 import type { FC } from 'react';
 import { dynamicMarginBottom } from '~/common/dynamic-values';
-import { AiChatbot } from '~/components/ai-chatbot';
+import { AiChatbot } from '~/components/ai-chatbot/ai-chatbot';
 import { RoundedTextBox } from '~/components/rounded-box/rounded-text-box';
 
 export const HomePage: FC = () => {

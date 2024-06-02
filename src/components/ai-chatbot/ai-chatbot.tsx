@@ -1,7 +1,7 @@
 import { Button, FormControl, HStack, Input, Textarea } from '@chakra-ui/react';
 import { FC, FormEvent, useState } from 'react';
 import { dynamicBorderRadius, dynamicFontSize } from '~/common/dynamic-values';
-import { AiChatbotSpinner } from '~/components/ai-chatbot-spinner';
+import { AiChatbotSpinner } from '~/components/ai-chatbot/ai-chatbot-spinner';
 import { useFetchAiResponse } from '~/hooks/use-fetch-ai-response';
 import { colors } from '~/theme/colors';
 
